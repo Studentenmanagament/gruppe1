@@ -6,7 +6,7 @@
 package studentenmanagement.Klasse;
 
 /**
- *
+ * new comment
  * @author user
  */
 public class Temp {
