@@ -11,4 +11,10 @@ package studentenmanagement.Klasse;
  */
 public class Temp {
     int temp;
+    int temp2;
+    
+    
+    public int foo(){
+        return 3;
+    }
 }
