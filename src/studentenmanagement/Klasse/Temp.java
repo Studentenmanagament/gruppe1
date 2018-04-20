@@ -14,7 +14,7 @@ public class Temp {
     int temp2;
     
     
-    public int foo(){
-        return 3;
+    public int foo(int foo){
+        return foo;
     }
 }
