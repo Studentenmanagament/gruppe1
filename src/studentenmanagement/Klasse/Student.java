@@ -28,6 +28,7 @@ public class Student {
     String Tel;
     String Email;
     
+    int temp;
     
-    
+       
 }
