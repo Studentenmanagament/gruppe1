@@ -140,7 +140,6 @@
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                                                   <Component id="TfElternvertreter" min="-2" pref="128" max="-2" attributes="0"/>
-                                                  <EmptySpace max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
                                                   <EmptySpace max="32767" attributes="0"/>
@@ -151,10 +150,7 @@
                                                       <Component id="TfFremdsprache" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
                                                       <Component id="TfSchuleintrittsreihe" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
                                                       <Component id="TfSchuleintrittsnote" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="TfSchuleintrittsart" min="-2" pref="128" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                      </Group>
+                                                      <Component id="TfSchuleintrittsart" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
@@ -472,7 +468,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="VornameSb" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -486,14 +482,14 @@
                                   <Component id="TfMatrikelnummerSb" min="-2" pref="142" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="324" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="JbAuswahlenSb" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -628,7 +624,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="VornameErziehungsberechtigter1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                           <Component id="TfVornameErziehungsberechtigter1Sb" min="-2" pref="142" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
@@ -643,23 +639,31 @@
                                               <Component id="Klasse1" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="Elternvertreter1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="TfElternvertreter1Sb" pref="142" max="32767" attributes="0"/>
-                                              <Component id="TfKlasse1Sb" max="32767" attributes="0"/>
-                                              <Component id="TfKontingent1Sb" max="32767" attributes="0"/>
-                                              <Component id="TfPraferenzreihenfolge1Sb" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="TfFach1Sb" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="TfFremdsprache1Sb" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="TfSchuleintrittsreihe1Sb" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="TfSchuleintrittsnote1Sb" alignment="1" max="32767" attributes="0"/>
-                                              <Component id="TfSchuleintrittsart1Sb" alignment="1" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                                  <Component id="TfElternvertreter1Sb" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="TfKontingent1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                                      <Component id="TfPraferenzreihenfolge1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                                      <Component id="TfFach1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                                      <Component id="TfFremdsprache1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                                      <Component id="TfSchuleintrittsreihe1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                                      <Component id="TfSchuleintrittsnote1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                                      <Component id="TfSchuleintrittsart1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                       </Group>
+                                      <Component id="TfKlasse1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="156" max="32767" attributes="0"/>
+                          <EmptySpace pref="136" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
