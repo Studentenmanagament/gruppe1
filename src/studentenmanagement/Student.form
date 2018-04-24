@@ -47,8 +47,8 @@
         <Container class="javax.swing.JPanel" name="StudentKlasseZuteilen">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Student Klasse zuteilen">
-                <Property name="tabTitle" type="java.lang.String" value="Student Klasse zuteilen"/>
+              <JTabbedPaneConstraints tabName="Student einf&#xfc;gen">
+                <Property name="tabTitle" type="java.lang.String" value="Student einf&#xfc;gen"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -418,6 +418,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton1">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="99" red="ff" type="rgb"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Speichern"/>
                   </Properties>
                   <Events>
@@ -523,7 +526,7 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLayeredPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="66" max="32767" attributes="0"/>
+                      <EmptySpace pref="81" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

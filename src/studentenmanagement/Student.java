@@ -192,6 +192,7 @@ public class Student extends javax.swing.JFrame {
 
         VornameErziehungsberechtigter.setText("VornameErziehungsberechtigter");
 
+        jButton1.setBackground(new java.awt.Color(255, 153, 255));
         jButton1.setText("Speichern");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -366,7 +367,7 @@ public class Student extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Student Klasse zuteilen", StudentKlasseZuteilen);
+        jTabbedPane1.addTab("Student einfügen", StudentKlasseZuteilen);
         jTabbedPane1.addTab("Student suchen", Studentsuchen);
         jTabbedPane1.addTab("Student löschen", Studentlöschen);
 
@@ -702,7 +703,7 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Student bearbeiten", Studentbearbeiten);
