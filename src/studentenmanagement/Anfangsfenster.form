@@ -59,11 +59,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Student"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StudentActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Lehrer">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lehrer"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LehrerActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Klasse">
       <Properties>

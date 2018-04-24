@@ -5,12 +5,26 @@
  */
 package studentenmanagement;
 
+import javax.swing.*;
+import java.io.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.*;
+import studentenmanagement.Klasse.*;
 /**
  *
  * @author mertcenk
  */
 public class Anfangsfenster extends javax.swing.JFrame {
-
+    
+    File studenten_file = null;
+    File raum_file = null;
+    File klasse_file = null;
+    File lehrer_file = null;
+    Connection con = null;
     /**
      * Creates new form Anfangsfenster
      * 
@@ -38,8 +52,18 @@ public class Anfangsfenster extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Student.setText("Student");
+        Student.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StudentActionPerformed(evt);
+            }
+        });
 
         Lehrer.setText("Lehrer");
+        Lehrer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LehrerActionPerformed(evt);
+            }
+        });
 
         Klasse.setText("Klasse");
 
@@ -91,12 +115,25 @@ public class Anfangsfenster extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RaumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaumActionPerformed
-        // TODO add your handling code here:
+        Raum frame= new Raum();
+        frame.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_RaumActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void StudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentActionPerformed
+        // TODO add your handling code here:
+        Student frame= new Student();
+        frame.setVisible(true);
+    }//GEN-LAST:event_StudentActionPerformed
+
+    private void LehrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LehrerActionPerformed
+        // TODO add your handling code here:
+        Lehrer frame= new Lehrer();
+        frame.setVisible(true);
+    }//GEN-LAST:event_LehrerActionPerformed
 
     /**
      * @param args the command line arguments
