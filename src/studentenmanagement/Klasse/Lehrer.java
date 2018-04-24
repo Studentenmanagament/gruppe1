@@ -11,9 +11,9 @@ package studentenmanagement.Klasse;
  */
 public class Lehrer {
     
-    double Pkey;
+    //double Pkey;
     String Vorname;
     String Nachname;
-    String emirhan;
+    
     
 }
