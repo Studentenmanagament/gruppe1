@@ -76,8 +76,6 @@ public class Student extends javax.swing.JFrame {
         TfElternvertreter = new javax.swing.JTextField();
         TfVornameErziehungsberechtigter = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        Studentsuchen = new javax.swing.JTabbedPane();
-        Studentlöschen = new javax.swing.JTabbedPane();
         Studentbearbeiten = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
@@ -139,6 +137,34 @@ public class Student extends javax.swing.JFrame {
         TfGeschlecht1Sb = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        Studentsuchen = new javax.swing.JPanel();
+        VornameSs = new javax.swing.JLabel();
+        NachnameSs = new javax.swing.JLabel();
+        MatrikelnummerSs = new javax.swing.JLabel();
+        TfVornameSs = new javax.swing.JTextField();
+        TfNachnameSs = new javax.swing.JTextField();
+        TfMatrikelnummerSs = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ListeStudentSs = new javax.swing.JList<>();
+        BtSuchenSs = new javax.swing.JButton();
+        Vorname2Ss = new javax.swing.JLabel();
+        Nachname2Ss = new javax.swing.JLabel();
+        Matrikelnummer2Ss = new javax.swing.JLabel();
+        TfVorname2Ss = new javax.swing.JTextField();
+        TfNachname2Ss = new javax.swing.JTextField();
+        TfMatrikelnummer2Ss = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        StudentListeSs = new javax.swing.JList<>();
+        Studentlöschen = new javax.swing.JPanel();
+        VornameSl = new javax.swing.JLabel();
+        NachnameSl = new javax.swing.JLabel();
+        MatrikelnummerSl = new javax.swing.JLabel();
+        TfVornameSl = new javax.swing.JTextField();
+        TfNachnameSl = new javax.swing.JTextField();
+        TfMatrikelnummerSl = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ListeStudentSl = new javax.swing.JList<>();
+        BtlöschenSl = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -368,8 +394,6 @@ public class Student extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Student einfügen", StudentKlasseZuteilen);
-        jTabbedPane1.addTab("Student suchen", Studentsuchen);
-        jTabbedPane1.addTab("Student löschen", Studentlöschen);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -708,6 +732,191 @@ public class Student extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Student bearbeiten", Studentbearbeiten);
 
+        VornameSs.setText("Vorname");
+
+        NachnameSs.setText("Nachname");
+
+        MatrikelnummerSs.setText("Matrikelnummer");
+
+        ListeStudentSs.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(ListeStudentSs);
+
+        BtSuchenSs.setText("Suchen");
+
+        Vorname2Ss.setText("Vorname");
+
+        Nachname2Ss.setText("Nachname");
+
+        Matrikelnummer2Ss.setText("Matrikelnummer");
+
+        StudentListeSs.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(StudentListeSs);
+
+        javax.swing.GroupLayout StudentsuchenLayout = new javax.swing.GroupLayout(Studentsuchen);
+        Studentsuchen.setLayout(StudentsuchenLayout);
+        StudentsuchenLayout.setHorizontalGroup(
+            StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StudentsuchenLayout.createSequentialGroup()
+                .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StudentsuchenLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(StudentsuchenLayout.createSequentialGroup()
+                                .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(VornameSs, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(NachnameSs)
+                                    .addComponent(MatrikelnummerSs))
+                                .addGap(30, 30, 30)
+                                .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(TfVornameSs)
+                                    .addComponent(TfNachnameSs)
+                                    .addComponent(TfMatrikelnummerSs, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
+                            .addGroup(StudentsuchenLayout.createSequentialGroup()
+                                .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentsuchenLayout.createSequentialGroup()
+                                        .addComponent(Nachname2Ss)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                    .addGroup(StudentsuchenLayout.createSequentialGroup()
+                                        .addComponent(Vorname2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(1, 1, 1)))
+                                .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(TfVorname2Ss, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TfNachname2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(StudentsuchenLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Matrikelnummer2Ss)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TfMatrikelnummer2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(51, 51, 51)
+                .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4))
+                .addGap(35, 35, 35)
+                .addComponent(BtSuchenSs)
+                .addContainerGap(390, Short.MAX_VALUE))
+        );
+        StudentsuchenLayout.setVerticalGroup(
+            StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StudentsuchenLayout.createSequentialGroup()
+                .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtSuchenSs)
+                    .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(StudentsuchenLayout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(VornameSs)
+                                .addComponent(TfVornameSs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(NachnameSs)
+                                .addComponent(TfNachnameSs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(MatrikelnummerSs)
+                                .addComponent(TfMatrikelnummerSs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(StudentsuchenLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StudentsuchenLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Vorname2Ss)
+                            .addComponent(TfVorname2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Nachname2Ss)
+                            .addComponent(TfNachname2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Matrikelnummer2Ss)
+                            .addComponent(TfMatrikelnummer2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(StudentsuchenLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(489, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Student suchen", Studentsuchen);
+
+        VornameSl.setText("Vorname");
+
+        NachnameSl.setText("Nachname");
+
+        MatrikelnummerSl.setText("Matrikelnummer");
+
+        TfMatrikelnummerSl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfMatrikelnummerSlActionPerformed(evt);
+            }
+        });
+
+        ListeStudentSl.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(ListeStudentSl);
+
+        BtlöschenSl.setText("löschen");
+
+        javax.swing.GroupLayout StudentlöschenLayout = new javax.swing.GroupLayout(Studentlöschen);
+        Studentlöschen.setLayout(StudentlöschenLayout);
+        StudentlöschenLayout.setHorizontalGroup(
+            StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StudentlöschenLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(MatrikelnummerSl)
+                    .addComponent(NachnameSl)
+                    .addComponent(VornameSl))
+                .addGap(56, 56, 56)
+                .addGroup(StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TfMatrikelnummerSl, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+                    .addComponent(TfNachnameSl)
+                    .addComponent(TfVornameSl))
+                .addGap(129, 129, 129)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(BtlöschenSl)
+                .addContainerGap(284, Short.MAX_VALUE))
+        );
+        StudentlöschenLayout.setVerticalGroup(
+            StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StudentlöschenLayout.createSequentialGroup()
+                .addGroup(StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StudentlöschenLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(VornameSl)
+                            .addComponent(TfVornameSl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NachnameSl)
+                            .addComponent(TfNachnameSl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MatrikelnummerSl)
+                            .addComponent(TfMatrikelnummerSl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(StudentlöschenLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(StudentlöschenLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(BtlöschenSl)))
+                .addContainerGap(648, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Student löschen", Studentlöschen);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -738,6 +947,10 @@ public class Student extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void TfMatrikelnummerSlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfMatrikelnummerSlActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfMatrikelnummerSlActionPerformed
 
     /**
      * @param args the command line arguments
@@ -777,6 +990,8 @@ public class Student extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Bezirk;
     private javax.swing.JLabel Bezirk1;
+    private javax.swing.JButton BtSuchenSs;
+    private javax.swing.JButton BtlöschenSl;
     private javax.swing.JLabel Elternvertreter;
     private javax.swing.JLabel Elternvertreter1;
     private javax.swing.JLabel Email;
@@ -799,10 +1014,18 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel Klasse1;
     private javax.swing.JLabel Kontingent;
     private javax.swing.JLabel Kontingent1;
+    private javax.swing.JList<String> ListeStudentSl;
+    private javax.swing.JList<String> ListeStudentSs;
+    private javax.swing.JLabel Matrikelnummer2Ss;
     private javax.swing.JLabel MatrikelnummerSb;
+    private javax.swing.JLabel MatrikelnummerSl;
+    private javax.swing.JLabel MatrikelnummerSs;
     private javax.swing.JLabel Nachname;
     private javax.swing.JLabel Nachname1;
+    private javax.swing.JLabel Nachname2Ss;
     private javax.swing.JLabel NachnameSb;
+    private javax.swing.JLabel NachnameSl;
+    private javax.swing.JLabel NachnameSs;
     private javax.swing.JLabel Ort;
     private javax.swing.JLabel Ort1;
     private javax.swing.JLabel PLZ;
@@ -818,10 +1041,11 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel Strasse;
     private javax.swing.JLabel Strasse1;
     private javax.swing.JPanel StudentKlasseZuteilen;
+    private javax.swing.JList<String> StudentListeSs;
     private javax.swing.JPanel StudentNeu;
     private javax.swing.JPanel Studentbearbeiten;
-    private javax.swing.JTabbedPane Studentlöschen;
-    private javax.swing.JTabbedPane Studentsuchen;
+    private javax.swing.JPanel Studentlöschen;
+    private javax.swing.JPanel Studentsuchen;
     private javax.swing.JLabel TC;
     private javax.swing.JLabel TC1;
     private javax.swing.JLabel Tel;
@@ -848,10 +1072,16 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTextField TfKlasse1Sb;
     private javax.swing.JTextField TfKontingent;
     private javax.swing.JTextField TfKontingent1Sb;
+    private javax.swing.JTextField TfMatrikelnummer2Ss;
     private javax.swing.JTextField TfMatrikelnummerSb;
+    private javax.swing.JTextField TfMatrikelnummerSl;
+    private javax.swing.JTextField TfMatrikelnummerSs;
     private javax.swing.JTextField TfNachname;
     private javax.swing.JTextField TfNachname1Sb;
+    private javax.swing.JTextField TfNachname2Ss;
     private javax.swing.JTextField TfNachnameSb;
+    private javax.swing.JTextField TfNachnameSl;
+    private javax.swing.JTextField TfNachnameSs;
     private javax.swing.JTextField TfOrt;
     private javax.swing.JTextField TfOrt1Sb;
     private javax.swing.JTextField TfPLZ;
@@ -872,20 +1102,29 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTextField TfTel1Sb;
     private javax.swing.JTextField TfVorname;
     private javax.swing.JTextField TfVorname1Sb;
+    private javax.swing.JTextField TfVorname2Ss;
     private javax.swing.JTextField TfVornameErziehungsberechtigter;
     private javax.swing.JTextField TfVornameErziehungsberechtigter1Sb;
     private javax.swing.JTextField TfVornameSb;
+    private javax.swing.JTextField TfVornameSl;
+    private javax.swing.JTextField TfVornameSs;
     private javax.swing.JLabel Vorname;
     private javax.swing.JLabel Vorname1;
+    private javax.swing.JLabel Vorname2Ss;
     private javax.swing.JLabel VornameErziehungsberechtigter;
     private javax.swing.JLabel VornameErziehungsberechtigter1;
     private javax.swing.JLabel VornameSb;
+    private javax.swing.JLabel VornameSl;
+    private javax.swing.JLabel VornameSs;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
