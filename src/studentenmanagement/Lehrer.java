@@ -66,6 +66,7 @@ public class Lehrer extends javax.swing.JFrame {
         jScrollPaneLb = new javax.swing.JScrollPane();
         jListLb = new javax.swing.JList<>();
         jBLehrerSpeichernBp = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         LehrerSuchen = new javax.swing.JPanel();
         VornameLs = new javax.swing.JLabel();
         NachnameLs = new javax.swing.JLabel();
@@ -90,6 +91,7 @@ public class Lehrer extends javax.swing.JFrame {
         jScrollPaneLs = new javax.swing.JScrollPane();
         jListLs = new javax.swing.JList<>();
         jBLehrerOkaySp = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         LehrerLöschen = new javax.swing.JPanel();
         VornameLl = new javax.swing.JLabel();
         NachnameLl = new javax.swing.JLabel();
@@ -100,6 +102,7 @@ public class Lehrer extends javax.swing.JFrame {
         jBLehrerLöschenLl = new javax.swing.JButton();
         jScrollPaneLl = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -304,6 +307,8 @@ public class Lehrer extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Suchen");
+
         javax.swing.GroupLayout LehrerBearbeitenLayout = new javax.swing.GroupLayout(LehrerBearbeiten);
         LehrerBearbeiten.setLayout(LehrerBearbeitenLayout);
         LehrerBearbeitenLayout.setHorizontalGroup(
@@ -319,19 +324,21 @@ public class Lehrer extends javax.swing.JFrame {
                             .addComponent(jBLehrerEingebenLb)))
                     .addGroup(LehrerBearbeitenLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addGroup(LehrerBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(LehrerBearbeitenLayout.createSequentialGroup()
-                                .addComponent(BenutzernameLb)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                                .addComponent(TfBenutzernameLb, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(LehrerBearbeitenLayout.createSequentialGroup()
-                                .addGroup(LehrerBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(VornameLb)
-                                    .addComponent(NachnameLb))
-                                .addGap(97, 97, 97)
-                                .addGroup(LehrerBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(TfNachnameLb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                                    .addComponent(TfVornameLb, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addGroup(LehrerBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(LehrerBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(LehrerBearbeitenLayout.createSequentialGroup()
+                                    .addComponent(BenutzernameLb)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                                    .addComponent(TfBenutzernameLb, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(LehrerBearbeitenLayout.createSequentialGroup()
+                                    .addGroup(LehrerBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(VornameLb)
+                                        .addComponent(NachnameLb))
+                                    .addGap(97, 97, 97)
+                                    .addGroup(LehrerBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(TfNachnameLb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                                        .addComponent(TfVornameLb, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addComponent(jButton1))
                         .addGap(104, 104, 104)
                         .addComponent(jScrollPaneLb, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(65, Short.MAX_VALUE))
@@ -355,7 +362,9 @@ public class Lehrer extends javax.swing.JFrame {
                                 .addComponent(BenutzernameLb))
                             .addGroup(LehrerBearbeitenLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(TfBenutzernameLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(TfBenutzernameLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1))
                     .addComponent(jScrollPaneLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(LehrerBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -484,6 +493,8 @@ public class Lehrer extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Suchen");
+
         javax.swing.GroupLayout LehrerSuchenLayout = new javax.swing.GroupLayout(LehrerSuchen);
         LehrerSuchen.setLayout(LehrerSuchenLayout);
         LehrerSuchenLayout.setHorizontalGroup(
@@ -491,16 +502,21 @@ public class Lehrer extends javax.swing.JFrame {
             .addGroup(LehrerSuchenLayout.createSequentialGroup()
                 .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(LehrerSuchenLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
                         .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BenutzernameLs)
-                            .addComponent(VornameLs)
-                            .addComponent(NachnameLs))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TfNachnameLs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TfVornameLs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TfBenutzernameLs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(LehrerSuchenLayout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BenutzernameLs)
+                                    .addComponent(VornameLs)
+                                    .addComponent(NachnameLs))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TfNachnameLs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TfVornameLs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TfBenutzernameLs, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(LehrerSuchenLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2)))
                         .addGap(102, 102, 102)
                         .addComponent(jScrollPaneLs, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(LehrerSuchenLayout.createSequentialGroup()
@@ -516,7 +532,7 @@ public class Lehrer extends javax.swing.JFrame {
             LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LehrerSuchenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(LehrerSuchenLayout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -529,13 +545,15 @@ public class Lehrer extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BenutzernameLs)
-                            .addComponent(TfBenutzernameLs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(TfBenutzernameLs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2))
                     .addComponent(jScrollPaneLs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(LehrerSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(LehrerSuchenLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
+                        .addGap(39, 39, 39)
                         .addComponent(jLayeredPaneS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(59, Short.MAX_VALUE))
+                        .addContainerGap(31, Short.MAX_VALUE))
                     .addGroup(LehrerSuchenLayout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addComponent(jBLehrerEingebenLs)
@@ -566,6 +584,8 @@ public class Lehrer extends javax.swing.JFrame {
         });
         jScrollPaneLl.setViewportView(jList1);
 
+        jButton3.setText("Suchen");
+
         javax.swing.GroupLayout LehrerLöschenLayout = new javax.swing.GroupLayout(LehrerLöschen);
         LehrerLöschen.setLayout(LehrerLöschenLayout);
         LehrerLöschenLayout.setHorizontalGroup(
@@ -585,8 +605,10 @@ public class Lehrer extends javax.swing.JFrame {
                         .addComponent(BenutzernameLl)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                         .addGroup(LehrerLöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TfBenutzernameLl, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPaneLl, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPaneLl, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(LehrerLöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jButton3)
+                                .addComponent(TfBenutzernameLl, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(301, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LehrerLöschenLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -608,9 +630,11 @@ public class Lehrer extends javax.swing.JFrame {
                 .addGroup(LehrerLöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BenutzernameLl)
                     .addComponent(TfBenutzernameLl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(jScrollPaneLl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addGap(72, 72, 72)
                 .addComponent(jBLehrerLöschenLl)
                 .addGap(99, 99, 99))
         );
@@ -763,6 +787,9 @@ public class Lehrer extends javax.swing.JFrame {
     private javax.swing.JButton jBLehrerOkaySp;
     private javax.swing.JButton jBLehrerSpeichern;
     private javax.swing.JButton jBLehrerSpeichernBp;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLayeredPane jLayeredPaneB;
     private javax.swing.JLayeredPane jLayeredPaneS;
     private javax.swing.JList<String> jList1;
