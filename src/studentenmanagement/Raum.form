@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" min="-2" pref="429" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <Component id="jTabbedPane1" min="-2" pref="356" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="NeuRaum">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="NeuRaum">
+                <Property name="tabTitle" type="java.lang.String" value="NeuRaum"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="BtSpeichernNr" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="LageBeschreibung" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="RaumName" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="Kapazitaet" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="RaumFach" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="TfRaumFachNr" min="-2" pref="100" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="TfKapazitaet" pref="100" max="32767" attributes="0"/>
+                              <Component id="TfRaumName" max="32767" attributes="0"/>
+                              <Component id="TfLageBescreibung" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="161" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LageBeschreibung" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfLageBescreibung" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="RaumName" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="TfRaumName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Kapazitaet" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfKapazitaet" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="RaumFach" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfRaumFachNr" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="110" max="32767" attributes="0"/>
+                      <Component id="BtSpeichernNr" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="LageBeschreibung">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LageBeschreibung"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RaumName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="RaumName"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="Kapazitaet">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kapazit&#xe4;t"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfLageBescreibung">
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfRaumName">
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfKapazitaet">
+            </Component>
+            <Component class="javax.swing.JButton" name="BtSpeichernNr">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Speichern"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RaumFach">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="RaumFach"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfRaumFachNr">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="RaumBearbeiten">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="RaumBearbeiten">
+                <Property name="tabTitle" type="java.lang.String" value="RaumBearbeiten"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="BtSpeichernRb" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="LageBeschreibungRb" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="RaumNameRb" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="KapazitaetRb" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="TfLageBescreibungRb" alignment="0" pref="100" max="32767" attributes="0"/>
+                          <Component id="TfRaumNameRb" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TfKapazitaetRb" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TfRaumFachRb" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="172" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="LageBeschreibungRb" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfLageBescreibungRb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="RaumNameRb" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfRaumNameRb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="KapazitaetRb" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfKapazitaetRb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfRaumFachRb" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="62" max="32767" attributes="0"/>
+                      <Component id="BtSpeichernRb" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="LageBeschreibungRb">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="LageBeschreibung"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RaumNameRb">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="RaumName"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="KapazitaetRb">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kapazit&#xe4;t"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfLageBescreibungRb">
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfRaumNameRb">
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfKapazitaetRb">
+            </Component>
+            <Component class="javax.swing.JButton" name="BtSpeichernRb">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Speichern"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="RaumFach"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfRaumFachRb">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TfRaumFachRbActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="RaumL&#xf6;schen">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="RaumL&#xf6;schen">
+                <Property name="tabTitle" type="java.lang.String" value="RaumL&#xf6;schen"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                      <Component id="TfRaumNameRl" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace pref="142" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="BtLoeschenRl" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfRaumNameRl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="176" max="32767" attributes="0"/>
+                      <Component id="BtLoeschenRl" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Raum Name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfRaumNameRl">
+            </Component>
+            <Component class="javax.swing.JButton" name="BtLoeschenRl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="L&#xf6;schen"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="RaumSuchen">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="RaumSuchen">
+                <Property name="tabTitle" type="java.lang.String" value="RaumSuchen"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="BtSuchenRs" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="RaumNameRs" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                              <Component id="TfRaumSuchen" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="154" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="RaumNameRs" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TfRaumSuchen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <Component id="BtSuchenRs" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="155" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="RaumNameRs">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="RaumName"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TfRaumSuchen">
+            </Component>
+            <Component class="javax.swing.JButton" name="BtSuchenRs">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Suchen"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
