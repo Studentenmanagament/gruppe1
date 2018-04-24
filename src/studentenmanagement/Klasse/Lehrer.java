@@ -14,6 +14,6 @@ public class Lehrer {
     //double Pkey;
     String Vorname;
     String Nachname;
-    
+    String Merve;
     
 }
