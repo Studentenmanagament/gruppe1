@@ -16,7 +16,7 @@ public class Studentenmanagement {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Lehrer a = new Lehrer();
+        Anfangsfenster a = new Anfangsfenster();
         a.setVisible(true);
     }
     
