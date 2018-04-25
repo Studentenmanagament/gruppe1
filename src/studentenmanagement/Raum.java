@@ -52,15 +52,15 @@ public class Raum extends javax.swing.JFrame {
         jScrollPaneRb = new javax.swing.JScrollPane();
         jListRb = new javax.swing.JList<>();
         jLayeredPaneRb = new javax.swing.JLayeredPane();
-        LageBeschreibungRb = new javax.swing.JLabel();
-        KapazitaetRb = new javax.swing.JLabel();
-        RaumFachRb = new javax.swing.JLabel();
-        TfRaumFachRb = new javax.swing.JTextField();
-        TfKapazitaetRb = new javax.swing.JTextField();
-        TfLageBescreibungRb = new javax.swing.JTextField();
         BtSpeichernRb = new javax.swing.JButton();
         BtAuswaehlenRb = new javax.swing.JButton();
         BtSuchenRb = new javax.swing.JButton();
+        KapazitaetRb = new javax.swing.JLabel();
+        RaumFachRb = new javax.swing.JLabel();
+        LageBeschreibungRb = new javax.swing.JLabel();
+        TfKapazitaetRb = new javax.swing.JTextField();
+        TfRaumFachRb = new javax.swing.JTextField();
+        TfLageBescreibungRb = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -132,25 +132,25 @@ public class Raum extends javax.swing.JFrame {
         RaumLöschen.setLayout(RaumLöschenLayout);
         RaumLöschenLayout.setHorizontalGroup(
             RaumLöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RaumLöschenLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel2)
-                .addGap(89, 89, 89)
-                .addComponent(TfRaumNameRl, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(440, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RaumLöschenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(617, Short.MAX_VALUE)
                 .addComponent(BtLoeschenRl)
                 .addGap(43, 43, 43))
+            .addGroup(RaumLöschenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(26, 26, 26)
+                .addComponent(TfRaumNameRl, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RaumLöschenLayout.setVerticalGroup(
             RaumLöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RaumLöschenLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
+                .addContainerGap()
                 .addGroup(RaumLöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(TfRaumNameRl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 296, Short.MAX_VALUE)
                 .addComponent(BtLoeschenRl)
                 .addGap(38, 38, 38))
         );
@@ -166,26 +166,26 @@ public class Raum extends javax.swing.JFrame {
         RaumSuchenLayout.setHorizontalGroup(
             RaumSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RaumSuchenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(RaumNameRs)
+                .addGap(30, 30, 30)
+                .addComponent(TfRaumSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(511, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RaumSuchenLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtSuchenRs)
-                .addGap(18, 18, 18))
-            .addGroup(RaumSuchenLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(RaumNameRs)
-                .addGap(67, 67, 67)
-                .addComponent(TfRaumSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 445, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
         RaumSuchenLayout.setVerticalGroup(
             RaumSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RaumSuchenLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addGroup(RaumSuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RaumNameRs)
                     .addComponent(TfRaumSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 298, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
                 .addComponent(BtSuchenRs)
-                .addContainerGap())
+                .addGap(33, 33, 33))
         );
 
         jTabbedPane1.addTab("Raum Suchen", RaumSuchen);
@@ -199,18 +199,6 @@ public class Raum extends javax.swing.JFrame {
         });
         jScrollPaneRb.setViewportView(jListRb);
 
-        LageBeschreibungRb.setText("Lage Beschreibung");
-
-        KapazitaetRb.setText("Kapazität");
-
-        RaumFachRb.setText("Raum Fach");
-
-        TfRaumFachRb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TfRaumFachRbActionPerformed(evt);
-            }
-        });
-
         BtSpeichernRb.setText("Speichern");
         BtSpeichernRb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,55 +206,20 @@ public class Raum extends javax.swing.JFrame {
             }
         });
 
-        jLayeredPaneRb.setLayer(LageBeschreibungRb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneRb.setLayer(KapazitaetRb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneRb.setLayer(RaumFachRb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneRb.setLayer(TfRaumFachRb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneRb.setLayer(TfKapazitaetRb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneRb.setLayer(TfLageBescreibungRb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPaneRb.setLayer(BtSpeichernRb, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPaneRbLayout = new javax.swing.GroupLayout(jLayeredPaneRb);
         jLayeredPaneRb.setLayout(jLayeredPaneRbLayout);
         jLayeredPaneRbLayout.setHorizontalGroup(
             jLayeredPaneRbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPaneRbLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPaneRbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jLayeredPaneRbLayout.createSequentialGroup()
-                        .addGroup(jLayeredPaneRbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RaumFachRb)
-                            .addComponent(KapazitaetRb))
-                        .addGap(55, 55, 55)
-                        .addGroup(jLayeredPaneRbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TfKapazitaetRb, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(TfRaumFachRb)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPaneRbLayout.createSequentialGroup()
-                        .addComponent(LageBeschreibungRb)
-                        .addGap(18, 18, 18)
-                        .addComponent(TfLageBescreibungRb)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(BtSpeichernRb)
-                .addGap(18, 18, 18))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPaneRbLayout.createSequentialGroup()
+                .addGap(0, 289, Short.MAX_VALUE)
+                .addComponent(BtSpeichernRb))
         );
         jLayeredPaneRbLayout.setVerticalGroup(
             jLayeredPaneRbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPaneRbLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPaneRbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(KapazitaetRb)
-                    .addComponent(TfKapazitaetRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jLayeredPaneRbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RaumFachRb)
-                    .addComponent(TfRaumFachRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jLayeredPaneRbLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LageBeschreibungRb)
-                    .addComponent(TfLageBescreibungRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPaneRbLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 116, Short.MAX_VALUE)
                 .addComponent(BtSpeichernRb))
         );
 
@@ -279,45 +232,86 @@ public class Raum extends javax.swing.JFrame {
             }
         });
 
+        KapazitaetRb.setText("Kapazität");
+
+        RaumFachRb.setText("Raum Fach");
+
+        LageBeschreibungRb.setText("Lage Beschreibung");
+
+        TfRaumFachRb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfRaumFachRbActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout RaumBearbeitenLayout = new javax.swing.GroupLayout(RaumBearbeiten);
         RaumBearbeiten.setLayout(RaumBearbeitenLayout);
         RaumBearbeitenLayout.setHorizontalGroup(
             RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RaumBearbeitenLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(RaumBearbeitenLayout.createSequentialGroup()
+                        .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(KapazitaetRb)
+                            .addComponent(RaumFachRb)
+                            .addComponent(LageBeschreibungRb))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TfKapazitaetRb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                            .addComponent(TfRaumFachRb, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(TfLageBescreibungRb, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(BtAuswaehlenRb)
                         .addGroup(RaumBearbeitenLayout.createSequentialGroup()
-                            .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(RaumBearbeitenLayout.createSequentialGroup()
-                                    .addComponent(RaumNameRb)
-                                    .addGap(52, 52, 52)
-                                    .addComponent(TfRaumNameRb, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(BtSuchenRb))
-                            .addGap(157, 157, 157)
-                            .addComponent(jScrollPaneRb, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLayeredPaneRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(169, Short.MAX_VALUE))
+                            .addComponent(RaumNameRb)
+                            .addGap(56, 56, 56)
+                            .addComponent(TfRaumNameRb, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtSuchenRb)))
+                .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RaumBearbeitenLayout.createSequentialGroup()
+                        .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(RaumBearbeitenLayout.createSequentialGroup()
+                                .addGap(110, 110, 110)
+                                .addComponent(jScrollPaneRb))
+                            .addGroup(RaumBearbeitenLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtAuswaehlenRb)))
+                        .addGap(70, 70, 70))
+                    .addGroup(RaumBearbeitenLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLayeredPaneRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(81, Short.MAX_VALUE))))
         );
         RaumBearbeitenLayout.setVerticalGroup(
             RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RaumBearbeitenLayout.createSequentialGroup()
-                .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPaneRb, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(RaumBearbeitenLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
                         .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(RaumNameRb)
                             .addComponent(TfRaumNameRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addComponent(BtSuchenRb))
-                    .addGroup(RaumBearbeitenLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPaneRb, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BtSuchenRb)))
+                .addGap(17, 17, 17)
                 .addComponent(BtAuswaehlenRb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jLayeredPaneRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLayeredPaneRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(RaumBearbeitenLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(KapazitaetRb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RaumFachRb))
+                    .addGroup(RaumBearbeitenLayout.createSequentialGroup()
+                        .addComponent(TfKapazitaetRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(TfRaumFachRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(RaumBearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(TfLageBescreibungRb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LageBeschreibungRb))))
                 .addGap(37, 37, 37))
         );
 
