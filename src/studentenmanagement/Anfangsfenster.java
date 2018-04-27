@@ -66,6 +66,11 @@ public class Anfangsfenster extends javax.swing.JFrame {
         });
 
         Klasse.setText("Klasse");
+        Klasse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                KlasseActionPerformed(evt);
+            }
+        });
 
         Raum.setText("Raum");
         Raum.addActionListener(new java.awt.event.ActionListener() {
@@ -134,6 +139,11 @@ public class Anfangsfenster extends javax.swing.JFrame {
         Lehrer frame= new Lehrer();
         frame.setVisible(true);
     }//GEN-LAST:event_LehrerActionPerformed
+
+    private void KlasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KlasseActionPerformed
+        Studentenklasse frame = new Studentenklasse ();
+        frame.setVisible (true);// TODO add your handling code here:
+    }//GEN-LAST:event_KlasseActionPerformed
 
     /**
      * @param args the command line arguments
