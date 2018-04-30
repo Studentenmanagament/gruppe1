@@ -443,34 +443,35 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLayeredPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="35" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="VornameSb" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="NachnameSb" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="MatrikelnummerSb" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLayeredPane1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="VornameSb" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="NachnameSb" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="MatrikelnummerSb" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="TfNachnameSb" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                          <Component id="TfVornameSb" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                          <Component id="TfMatrikelnummerSb" min="-2" pref="142" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="TfNachnameSb" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                  <Component id="TfVornameSb" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
-                                  <Component id="TfMatrikelnummerSb" min="-2" pref="142" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JbAuswahlenSb" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" alignment="1" min="-2" pref="324" max="-2" attributes="0"/>
-                          <Component id="JbAuswahlenSb" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -494,13 +495,14 @@
                                   <Component id="MatrikelnummerSb" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="TfMatrikelnummerSb" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="JbAuswahlenSb" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jScrollPane5" min="-2" pref="163" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="JbAuswahlenSb" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLayeredPane1" min="-2" max="-2" attributes="0"/>
@@ -510,31 +512,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="jList1">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JLabel" name="VornameSb">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Vorname"/>
@@ -568,86 +545,86 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jButton2" min="-2" pref="76" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Vorname1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Nachname1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="TC1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="GebTag1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="GebMonat1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="GebJahr1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Geschlecht1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="PLZ1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Ort1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Bezirk1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Strasse1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Hausnummer1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Email1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Tel1" min="-2" pref="106" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="TfVorname1Sb" pref="142" max="32767" attributes="0"/>
+                              <Component id="TfNachname1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfTC1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfGebTag1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfGebMonat1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfGebJahr1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfGeschlecht1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfPLZ1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfOrt1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfBezirk1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfStrasse1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfHausnummer1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfTel1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfEmail1Sb" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="VornameErziehungsberechtigter1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="TfVornameErziehungsberechtigter1Sb" min="-2" pref="142" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="Vorname1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Nachname1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="TC1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="GebTag1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="GebMonat1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="GebJahr1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Geschlecht1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="PLZ1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Ort1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Bezirk1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Strasse1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Hausnummer1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Email1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Tel1" min="-2" pref="106" max="-2" attributes="0"/>
+                                      <Component id="Schuleintrittsart1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Schuleintrittsnote1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Schuleintrittsreihe1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Fremdsprache1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Fach1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Praferenzreihenfolge1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Kontingent1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Klasse1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Elternvertreter1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="TfVorname1Sb" pref="142" max="32767" attributes="0"/>
-                                      <Component id="TfNachname1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfTC1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfGebTag1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfGebMonat1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfGebJahr1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfGeschlecht1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfPLZ1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfOrt1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfBezirk1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfStrasse1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfHausnummer1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfTel1Sb" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="TfEmail1Sb" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="VornameErziehungsberechtigter1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="TfVornameErziehungsberechtigter1Sb" min="-2" pref="142" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                          <Component id="TfElternvertreter1Sb" min="-2" pref="142" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="Schuleintrittsart1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Schuleintrittsnote1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Schuleintrittsreihe1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Fremdsprache1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Fach1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Praferenzreihenfolge1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Kontingent1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Klasse1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="Elternvertreter1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                                                  <Component id="TfElternvertreter1Sb" min="-2" pref="142" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="TfKontingent1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
-                                                      <Component id="TfPraferenzreihenfolge1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
-                                                      <Component id="TfFach1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
-                                                      <Component id="TfFremdsprache1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
-                                                      <Component id="TfSchuleintrittsreihe1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
-                                                      <Component id="TfSchuleintrittsnote1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
-                                                      <Component id="TfSchuleintrittsart1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
+                                              <Component id="TfKontingent1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                              <Component id="TfPraferenzreihenfolge1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                              <Component id="TfFach1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                              <Component id="TfFremdsprache1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                              <Component id="TfSchuleintrittsreihe1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                              <Component id="TfSchuleintrittsnote1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
+                                              <Component id="TfSchuleintrittsart1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <Component id="TfKlasse1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <Component id="TfKlasse1Sb" alignment="1" min="-2" pref="142" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="136" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButton2" min="-2" pref="76" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -744,9 +721,9 @@
                               <Component id="Email1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="TfEmail1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="34" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace pref="34" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -935,6 +912,54 @@
                 <Property name="text" type="java.lang.String" value="Suchen"/>
               </Properties>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable1">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="4">
+                        <Column editable="true" title="Matrikelnummer" type="java.lang.String"/>
+                        <Column editable="true" title="Vorname" type="java.lang.String"/>
+                        <Column editable="true" title="Nachname" type="java.lang.String"/>
+                        <Column editable="true" title="Fach" type="java.lang.String"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Studentsuchen">
@@ -950,12 +975,17 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                              <Component id="BtSuchenSs" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -992,18 +1022,19 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jScrollPane4" pref="275" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane3" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="BtSuchenSs" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1012,7 +1043,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="VornameSs" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="TfVornameSs" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1027,14 +1058,12 @@
                                   <Component id="MatrikelnummerSs" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="TfMatrikelnummerSs" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
-                              <Component id="BtSuchenSs" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane7" min="-2" pref="163" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="TfVorname2Ss" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Vorname2Ss" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1049,11 +1078,16 @@
                                   <Component id="Matrikelnummer2Ss" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="TfMatrikelnummer2Ss" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="BtSuchenSs" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="jScrollPane6" min="-2" pref="163" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="270" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -1084,31 +1118,6 @@
             </Component>
             <Component class="javax.swing.JTextField" name="TfMatrikelnummerSs">
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JList" name="ListeStudentSs">
-                  <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JButton" name="BtSuchenSs">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Suchen"/>
@@ -1135,36 +1144,107 @@
             </Component>
             <Component class="javax.swing.JTextField" name="TfMatrikelnummer2Ss">
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+            <Component class="javax.swing.JButton" name="jButton4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Okay"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="StudentListeSs">
+                <Component class="javax.swing.JTable" name="jTable2">
                   <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="4">
+                        <Column editable="true" title="Matrikelnummer" type="java.lang.String"/>
+                        <Column editable="true" title="Vorname" type="java.lang.String"/>
+                        <Column editable="true" title="Nachname" type="java.lang.String"/>
+                        <Column editable="true" title="Fach" type="java.lang.String"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="jButton4">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Okay"/>
-              </Properties>
-            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable3">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="4">
+                        <Column editable="true" title="Matrikelnummer" type="java.lang.String"/>
+                        <Column editable="true" title="Vorname" type="java.lang.String"/>
+                        <Column editable="true" title="Nachname" type="java.lang.String"/>
+                        <Column editable="true" title="Fach" type="java.lang.String"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="Studentl&#xf6;schen">
@@ -1179,8 +1259,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="BtlöschenSl" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
@@ -1195,20 +1275,20 @@
                                   <Component id="TfNachnameSl" alignment="1" max="32767" attributes="0"/>
                                   <Component id="TfMatrikelnummerSl" alignment="1" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="283" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jScrollPane8" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="216" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="VornameSl" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="TfVornameSl" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1224,14 +1304,11 @@
                                   <Component id="TfMatrikelnummerSl" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jScrollPane8" min="-2" pref="163" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="BtlöschenSl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="608" max="32767" attributes="0"/>
+                      <EmptySpace pref="610" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1261,36 +1338,59 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TfMatrikelnummerSlActionPerformed"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+            <Component class="javax.swing.JButton" name="Btl&#xf6;schenSl">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="L&#xf6;schen"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane8">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="ListeStudentSl">
+                <Component class="javax.swing.JTable" name="jTable4">
                   <Properties>
-                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="5">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                        <StringItem index="4" value="Item 5"/>
-                      </StringArray>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="4">
+                        <Column editable="true" title="Matrikelnummer" type="java.lang.String"/>
+                        <Column editable="true" title="Vorname" type="java.lang.String"/>
+                        <Column editable="true" title="Nachname" type="java.lang.String"/>
+                        <Column editable="true" title="Fach" type="java.lang.String"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="Btl&#xf6;schenSl">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="L&#xf6;schen"/>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
       </SubComponents>
