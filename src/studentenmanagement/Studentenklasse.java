@@ -29,49 +29,51 @@ public class Studentenklasse extends javax.swing.JFrame {
 
         Klasse = new javax.swing.JTabbedPane();
         Klasseneu = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        klassename = new javax.swing.JLabel();
+        kapazitat = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         speichern = new javax.swing.JButton();
         Klassebearbeiten = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        klassename_2 = new javax.swing.JLabel();
+        kapazitat_2 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         arbeiten = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
+        fach = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         Klassesuchen = new javax.swing.JPanel();
         suchen = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        klassename_3 = new javax.swing.JTextField();
         klasselist = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jLabel8 = new javax.swing.JLabel();
+        klasselist2 = new javax.swing.JLabel();
         Klasselöschen = new javax.swing.JPanel();
         löschen = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        klassename_4 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         suchen_2 = new javax.swing.JButton();
         klasselist_2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
-        jLabel7 = new javax.swing.JLabel();
+        klasselist3 = new javax.swing.JLabel();
         Klassefachzuteilen = new javax.swing.JPanel();
         zuteilen = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
-        jLabel9 = new javax.swing.JLabel();
+        klasselist_3 = new javax.swing.JList<>();
+        klasselist4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Klasse Name");
+        klassename.setText("Klasse Name");
 
-        jLabel2.setText("Kapazitat");
+        kapazitat.setText("Kapazitat");
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         speichern.setText("Speichern");
 
@@ -82,8 +84,8 @@ public class Studentenklasse extends javax.swing.JFrame {
             .addGroup(KlasseneuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(KlasseneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(klassename)
+                    .addComponent(kapazitat))
                 .addGap(18, 18, 18)
                 .addGroup(KlasseneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
@@ -99,11 +101,11 @@ public class Studentenklasse extends javax.swing.JFrame {
             .addGroup(KlasseneuLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(KlasseneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(klassename)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(172, 172, 172)
                 .addGroup(KlasseneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(kapazitat)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                 .addComponent(speichern)
@@ -112,19 +114,13 @@ public class Studentenklasse extends javax.swing.JFrame {
 
         Klasse.addTab("Klasse neu", Klasseneu);
 
-        jLabel3.setText("Klasse Name");
+        klassename_2.setText("Klasse Name");
 
-        jLabel4.setText("Kapazitat");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
+        kapazitat_2.setText("Kapazitat");
 
         arbeiten.setText("Arbeiten");
 
-        jLabel10.setText("Fach");
-
-        jTextField7.setText("jTextField7");
+        fach.setText("Fach");
 
         javax.swing.GroupLayout KlassebearbeitenLayout = new javax.swing.GroupLayout(Klassebearbeiten);
         Klassebearbeiten.setLayout(KlassebearbeitenLayout);
@@ -137,20 +133,16 @@ public class Studentenklasse extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(arbeiten))
                     .addGroup(KlassebearbeitenLayout.createSequentialGroup()
+                        .addGroup(KlassebearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(klassename_2)
+                            .addComponent(fach)
+                            .addComponent(kapazitat_2))
+                        .addGap(33, 33, 33)
                         .addGroup(KlassebearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(KlassebearbeitenLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(33, 33, 33)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(KlassebearbeitenLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(KlassebearbeitenLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 595, Short.MAX_VALUE)))
+                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                            .addComponent(jTextField7)
+                            .addComponent(jTextField4))
+                        .addGap(0, 542, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         KlassebearbeitenLayout.setVerticalGroup(
@@ -158,16 +150,16 @@ public class Studentenklasse extends javax.swing.JFrame {
             .addGroup(KlassebearbeitenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(KlassebearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(klassename_2)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(KlassebearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
+                    .addComponent(fach)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(KlassebearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(kapazitat_2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 326, Short.MAX_VALUE)
                 .addComponent(arbeiten)
                 .addContainerGap())
@@ -179,8 +171,6 @@ public class Studentenklasse extends javax.swing.JFrame {
 
         jLabel5.setText("Klasse Name");
 
-        jTextField5.setText("jTextField5");
-
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -188,7 +178,7 @@ public class Studentenklasse extends javax.swing.JFrame {
         });
         klasselist.setViewportView(jList1);
 
-        jLabel8.setText("Klasse List");
+        klasselist2.setText("Klasse List");
 
         javax.swing.GroupLayout KlassesuchenLayout = new javax.swing.GroupLayout(Klassesuchen);
         Klassesuchen.setLayout(KlassesuchenLayout);
@@ -198,13 +188,13 @@ public class Studentenklasse extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(29, 29, 29)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(klassename_3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(566, 566, 566))
             .addGroup(KlassesuchenLayout.createSequentialGroup()
                 .addGroup(KlassesuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(KlassesuchenLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel8))
+                        .addComponent(klasselist2))
                     .addGroup(KlassesuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(KlassesuchenLayout.createSequentialGroup()
                             .addContainerGap()
@@ -220,11 +210,11 @@ public class Studentenklasse extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(KlassesuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(klassename_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77)
                 .addComponent(suchen)
                 .addGap(5, 5, 5)
-                .addComponent(jLabel8)
+                .addComponent(klasselist2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(klasselist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(146, Short.MAX_VALUE))
@@ -234,9 +224,7 @@ public class Studentenklasse extends javax.swing.JFrame {
 
         löschen.setText("Löschen");
 
-        jLabel6.setText("Klasse Name");
-
-        jTextField6.setText("jTextField6");
+        klassename_4.setText("Klasse Name");
 
         suchen_2.setText("Suchen");
 
@@ -247,7 +235,7 @@ public class Studentenklasse extends javax.swing.JFrame {
         });
         klasselist_2.setViewportView(jList2);
 
-        jLabel7.setText("Klasse List");
+        klasselist3.setText("Klasse List");
 
         javax.swing.GroupLayout KlasselöschenLayout = new javax.swing.GroupLayout(Klasselöschen);
         Klasselöschen.setLayout(KlasselöschenLayout);
@@ -262,8 +250,8 @@ public class Studentenklasse extends javax.swing.JFrame {
                 .addGroup(KlasselöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(KlasselöschenLayout.createSequentialGroup()
                         .addGroup(KlasselöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
+                            .addComponent(klassename_4)
+                            .addComponent(klasselist3))
                         .addGroup(KlasselöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(KlasselöschenLayout.createSequentialGroup()
                                 .addGap(122, 122, 122)
@@ -279,12 +267,12 @@ public class Studentenklasse extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KlasselöschenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(KlasselöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(klassename_4)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                 .addComponent(suchen_2)
                 .addGap(32, 32, 32)
-                .addComponent(jLabel7)
+                .addComponent(klasselist3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(klasselist_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(104, 104, 104)
@@ -296,14 +284,14 @@ public class Studentenklasse extends javax.swing.JFrame {
 
         zuteilen.setText("Zuteilen");
 
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+        klasselist_3.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane3.setViewportView(jList3);
+        jScrollPane3.setViewportView(klasselist_3);
 
-        jLabel9.setText("Klasse List");
+        klasselist4.setText("Klasse List");
 
         javax.swing.GroupLayout KlassefachzuteilenLayout = new javax.swing.GroupLayout(Klassefachzuteilen);
         Klassefachzuteilen.setLayout(KlassefachzuteilenLayout);
@@ -317,7 +305,7 @@ public class Studentenklasse extends javax.swing.JFrame {
                         .addComponent(zuteilen))
                     .addGroup(KlassefachzuteilenLayout.createSequentialGroup()
                         .addGroup(KlassefachzuteilenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
+                            .addComponent(klasselist4)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 523, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -326,7 +314,7 @@ public class Studentenklasse extends javax.swing.JFrame {
             KlassefachzuteilenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KlassefachzuteilenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
+                .addComponent(klasselist4)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
@@ -355,6 +343,10 @@ public class Studentenklasse extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,29 +391,29 @@ public class Studentenklasse extends javax.swing.JFrame {
     private javax.swing.JPanel Klasseneu;
     private javax.swing.JPanel Klassesuchen;
     private javax.swing.JButton arbeiten;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel fach;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel kapazitat;
+    private javax.swing.JLabel kapazitat_2;
     private javax.swing.JScrollPane klasselist;
+    private javax.swing.JLabel klasselist2;
+    private javax.swing.JLabel klasselist3;
+    private javax.swing.JLabel klasselist4;
     private javax.swing.JScrollPane klasselist_2;
+    private javax.swing.JList<String> klasselist_3;
+    private javax.swing.JLabel klassename;
+    private javax.swing.JLabel klassename_2;
+    private javax.swing.JTextField klassename_3;
+    private javax.swing.JLabel klassename_4;
     private javax.swing.JButton löschen;
     private javax.swing.JButton speichern;
     private javax.swing.JButton suchen;
