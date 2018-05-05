@@ -5,6 +5,13 @@
  */
 package studentenmanagement;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author emirhan
@@ -113,6 +120,24 @@ public class Lehrer extends javax.swing.JFrame {
         Tel.setText("Telefonnummer");
 
         Email.setText("Email");
+
+        TfVorname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfVornameActionPerformed(evt);
+            }
+        });
+
+        TfNachname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfNachnameActionPerformed(evt);
+            }
+        });
+
+        TfTel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfTelActionPerformed(evt);
+            }
+        });
 
         Benutzername.setText("Benutzername");
 
@@ -308,6 +333,11 @@ public class Lehrer extends javax.swing.JFrame {
         });
 
         jButton1.setText("Suchen");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout LehrerBearbeitenLayout = new javax.swing.GroupLayout(LehrerBearbeiten);
         LehrerBearbeiten.setLayout(LehrerBearbeitenLayout);
@@ -668,7 +698,30 @@ public class Lehrer extends javax.swing.JFrame {
     }//GEN-LAST:event_jBLehrerEingebenLsActionPerformed
 
     private void jBLehrerSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLehrerSpeichernActionPerformed
-        // TODO add your handling code here:
+               try { 
+            System.out.println("Connecting database..."); 
+            Class.forName("org.hsqldb.jdbcDriver"); 
+            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";           
+            System.out.println("Database connected!"); 
+            String query ="insert into G1"   //burayı duzenle
+               +"(Vorname,Nachname,Benutzername,Passwort,Telefonnummer,Email)"
+               +"values(?,?,?,?,?)";
+                   Connection con = DriverManager.getConnection(url,"G1", "1234"); 
+                   PreparedStatement pst = con.prepareStatement(query);
+               pst.setString(1,TfVorname.getText()); 
+               pst.setString(2,TfNachname.getText());
+               pst.setString(3,TfBenutzername.getText());
+               pst.setString(4,TfPasswort.getText());
+               pst.setString(5,TfTel.getText());
+               pst.setString(5,TfEmail.getText());
+                  pst.executeUpdate();
+                  DefaultTableModel model = (DefaultTableModel) Table_Lehrer.getModel();
+                  model.setRowCount(0);
+                  show_user();
+            JOptionPane.showMessageDialog(null,"Kaydedildi!");}      
+        catch (ClassNotFoundException | SQLException e) { 
+            JOptionPane.showMessageDialog(null,e);
+       }
     }//GEN-LAST:event_jBLehrerSpeichernActionPerformed
 
     private void jBLehrerEingebenLbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLehrerEingebenLbActionPerformed
@@ -687,11 +740,28 @@ public class Lehrer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TfEmailBpActionPerformed
 
+    private void TfVornameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfVornameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfVornameActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TfNachnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfNachnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfNachnameActionPerformed
+
+    private void TfTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TfTelActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -800,4 +870,10 @@ public class Lehrer extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPaneLs;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void show_user() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 }

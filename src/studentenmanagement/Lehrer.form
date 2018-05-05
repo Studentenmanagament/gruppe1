@@ -161,10 +161,19 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TfVorname">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TfVornameActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="TfNachname">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TfNachnameActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="TfTel">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TfTelActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="TfEmail">
             </Component>
@@ -474,6 +483,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Suchen"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
