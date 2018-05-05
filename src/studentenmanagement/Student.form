@@ -550,8 +550,6 @@
                               <Component id="Nachname1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="TC1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="GebTag1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="GebMonat1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="GebJahr1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="Geschlecht1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="PLZ1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="Ort1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -567,8 +565,6 @@
                               <Component id="TfNachname1Sb" alignment="0" max="32767" attributes="0"/>
                               <Component id="TfTC1Sb" alignment="0" max="32767" attributes="0"/>
                               <Component id="TfGebTag1Sb" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TfGebMonat1Sb" alignment="0" max="32767" attributes="0"/>
-                              <Component id="TfGebJahr1Sb" alignment="0" max="32767" attributes="0"/>
                               <Component id="TfGeschlecht1Sb" alignment="0" max="32767" attributes="0"/>
                               <Component id="TfPLZ1Sb" alignment="0" max="32767" attributes="0"/>
                               <Component id="TfOrt1Sb" alignment="0" max="32767" attributes="0"/>
@@ -661,15 +657,11 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="GebMonat1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="TfGebMonat1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Fach1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="TfFach1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="GebJahr1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="TfGebJahr1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Praferenzreihenfolge1" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="TfPraferenzreihenfolge1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -752,20 +744,10 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="GebTag1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="GebTag"/>
+                    <Property name="text" type="java.lang.String" value="Geburtsdatum"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="TfStrasse1Sb">
-                </Component>
-                <Component class="javax.swing.JLabel" name="GebMonat1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="GebMonat"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="GebJahr1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="GebJahr"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Klasse1">
                   <Properties>
@@ -890,10 +872,6 @@
                 <Component class="javax.swing.JTextField" name="TfTC1Sb">
                 </Component>
                 <Component class="javax.swing.JTextField" name="TfGebTag1Sb">
-                </Component>
-                <Component class="javax.swing.JTextField" name="TfGebMonat1Sb">
-                </Component>
-                <Component class="javax.swing.JTextField" name="TfGebJahr1Sb">
                 </Component>
                 <Component class="javax.swing.JTextField" name="TfGeschlecht1Sb">
                 </Component>

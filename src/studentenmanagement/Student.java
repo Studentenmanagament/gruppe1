@@ -93,8 +93,6 @@ public class Student extends javax.swing.JFrame {
         TfBezirk1Sb = new javax.swing.JTextField();
         GebTag1 = new javax.swing.JLabel();
         TfStrasse1Sb = new javax.swing.JTextField();
-        GebMonat1 = new javax.swing.JLabel();
-        GebJahr1 = new javax.swing.JLabel();
         Klasse1 = new javax.swing.JLabel();
         Elternvertreter1 = new javax.swing.JLabel();
         VornameErziehungsberechtigter1 = new javax.swing.JLabel();
@@ -130,8 +128,6 @@ public class Student extends javax.swing.JFrame {
         TfNachname1Sb = new javax.swing.JTextField();
         TfTC1Sb = new javax.swing.JTextField();
         TfGebTag1Sb = new javax.swing.JTextField();
-        TfGebMonat1Sb = new javax.swing.JTextField();
-        TfGebJahr1Sb = new javax.swing.JTextField();
         TfGeschlecht1Sb = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -410,11 +406,7 @@ public class Student extends javax.swing.JFrame {
 
         TC1.setText("TC");
 
-        GebTag1.setText("GebTag");
-
-        GebMonat1.setText("GebMonat");
-
-        GebJahr1.setText("GebJahr");
+        GebTag1.setText("Geburtsdatum");
 
         Klasse1.setText("Klasse");
 
@@ -467,8 +459,6 @@ public class Student extends javax.swing.JFrame {
         jLayeredPane1.setLayer(TfBezirk1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(GebTag1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfStrasse1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(GebMonat1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(GebJahr1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Klasse1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Elternvertreter1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(VornameErziehungsberechtigter1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -504,8 +494,6 @@ public class Student extends javax.swing.JFrame {
         jLayeredPane1.setLayer(TfNachname1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfTC1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfGebTag1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(TfGebMonat1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(TfGebJahr1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfGeschlecht1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -520,8 +508,6 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(Nachname1)
                     .addComponent(TC1)
                     .addComponent(GebTag1)
-                    .addComponent(GebMonat1)
-                    .addComponent(GebJahr1)
                     .addComponent(Geschlecht1)
                     .addComponent(PLZ1)
                     .addComponent(Ort1)
@@ -536,8 +522,6 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(TfNachname1Sb)
                     .addComponent(TfTC1Sb)
                     .addComponent(TfGebTag1Sb)
-                    .addComponent(TfGebMonat1Sb)
-                    .addComponent(TfGebJahr1Sb)
                     .addComponent(TfGeschlecht1Sb)
                     .addComponent(TfPLZ1Sb)
                     .addComponent(TfOrt1Sb)
@@ -614,14 +598,10 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(TfFremdsprache1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GebMonat1)
-                    .addComponent(TfGebMonat1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fach1)
                     .addComponent(TfFach1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GebJahr1)
-                    .addComponent(TfGebJahr1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Praferenzreihenfolge1)
                     .addComponent(TfPraferenzreihenfolge1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1013,6 +993,7 @@ public class Student extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1076,8 +1057,6 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel Fremdsprache;
     private javax.swing.JLabel Fremdsprache1;
     private javax.swing.JLabel GebJahr;
-    private javax.swing.JLabel GebJahr1;
-    private javax.swing.JLabel GebMonat1;
     private javax.swing.JLabel GebTag;
     private javax.swing.JLabel GebTag1;
     private javax.swing.JLabel Geschlecht;
@@ -1133,8 +1112,6 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTextField TfFremdsprache;
     private javax.swing.JTextField TfFremdsprache1Sb;
     private javax.swing.JTextField TfGebJahr;
-    private javax.swing.JTextField TfGebJahr1Sb;
-    private javax.swing.JTextField TfGebMonat1Sb;
     private javax.swing.JTextField TfGebTag1Sb;
     private javax.swing.JTextField TfGeschlecht;
     private javax.swing.JTextField TfGeschlecht1Sb;
