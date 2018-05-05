@@ -131,7 +131,7 @@
                                       <Component id="TfNachname" alignment="0" max="32767" attributes="0"/>
                                       <Component id="TfEmail" max="32767" attributes="0"/>
                                       <Component id="TfVorname" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jDateChooser1" max="32767" attributes="0"/>
+                                      <Component id="jDateChooser3" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -213,7 +213,7 @@
                                   <Component id="TfFremdsprache" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="GebJahr" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jDateChooser3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -443,7 +443,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser3">
                 </Component>
               </SubComponents>
             </Container>
@@ -482,15 +482,10 @@
                                   </Group>
                                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                      <Component id="JbAuswahlenSb" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jScrollPane5" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JbAuswahlenSb" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -604,7 +599,6 @@
                               <Component id="TfHausnummer1Sb" alignment="0" max="32767" attributes="0"/>
                               <Component id="TfTel1Sb" alignment="0" max="32767" attributes="0"/>
                               <Component id="TfEmail1Sb" max="32767" attributes="0"/>
-                              <Component id="jDateChooser2" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -681,13 +675,10 @@
                               <Component id="TfSchuleintrittsreihe1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Geburtsdatum" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Fremdsprache1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="TfFremdsprache1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="Geburtsdatum" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Fremdsprache1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TfFremdsprache1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -908,8 +899,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
                 </Component>
               </SubComponents>
             </Container>

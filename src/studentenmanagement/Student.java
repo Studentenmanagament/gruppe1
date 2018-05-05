@@ -79,7 +79,7 @@ public class Student extends javax.swing.JFrame {
         TfElternvertreter = new javax.swing.JTextField();
         TfVornameErziehungsberechtigter = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDateChooser3 = new com.toedter.calendar.JDateChooser();
         Studentbearbeiten = new javax.swing.JPanel();
         VornameSb = new javax.swing.JLabel();
         NachnameSb = new javax.swing.JLabel();
@@ -133,7 +133,6 @@ public class Student extends javax.swing.JFrame {
         TfTC1Sb = new javax.swing.JTextField();
         TfGeschlecht1Sb = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jButton3 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -276,7 +275,7 @@ public class Student extends javax.swing.JFrame {
                             .addComponent(TfNachname, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TfEmail)
                             .addComponent(TfVorname, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(153, 153, 153)
                         .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(StudentNeuLayout.createSequentialGroup()
@@ -340,7 +339,7 @@ public class Student extends javax.swing.JFrame {
                         .addComponent(Fremdsprache)
                         .addComponent(TfFremdsprache, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(GebJahr))
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Fach)
@@ -512,7 +511,6 @@ public class Student extends javax.swing.JFrame {
         jLayeredPane1.setLayer(TfTC1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfGeschlecht1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jDateChooser2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -549,8 +547,7 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(TfStrasse1Sb)
                     .addComponent(TfHausnummer1Sb)
                     .addComponent(TfTel1Sb)
-                    .addComponent(TfEmail1Sb)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(TfEmail1Sb))
                 .addGap(64, 64, 64)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
@@ -612,12 +609,10 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(Schuleintrittsreihe1)
                     .addComponent(TfSchuleintrittsreihe1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Geburtsdatum)
-                        .addComponent(Fremdsprache1)
-                        .addComponent(TfFremdsprache1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Geburtsdatum)
+                    .addComponent(Fremdsprache1)
+                    .addComponent(TfFremdsprache1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Fach1)
@@ -711,13 +706,10 @@ public class Student extends javax.swing.JFrame {
                                     .addComponent(TfVornameSb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TfMatrikelnummerSb, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jButton3))
+                        .addGap(71, 71, 71)
                         .addGroup(StudentbearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(StudentbearbeitenLayout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(StudentbearbeitenLayout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(JbAuswahlenSb)))))
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JbAuswahlenSb))))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
         StudentbearbeitenLayout.setVerticalGroup(
@@ -1011,6 +1003,17 @@ public class Student extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String Vorname = TfVorname.getText();
+        String Nachname = TfNachname.getText();
+        String TC = TfTC.getText();
+        String Geschlecht = TfGeschlecht.getText();
+        String PLZ = TfPLZ.getText();
+        String Ort = TfOrt.getText();
+        String Bezirk = TfBezirk.getText();
+        String Strasse = TfStrasse.getText();
+        String Hausnummer = TfHausnummer.getText();
+        String Tel = TfTel.getText();
+        String Email = TfEmail.getText();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1187,8 +1190,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private com.toedter.calendar.JDateChooser jDateChooser3;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane5;
