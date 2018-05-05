@@ -5,6 +5,7 @@
  */
 package studentenmanagement;
 
+
 import javax.swing.*;
 import java.io.*;
 import java.sql.Connection;
@@ -14,11 +15,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
 import studentenmanagement.Klasse.*;
+
+   
+
 /**
  *
  * @author mertcenk
  */
 public class Anfangsfenster extends javax.swing.JFrame {
+
     
     File studenten_file = null;
     File raum_file = null;
@@ -154,22 +159,31 @@ public class Anfangsfenster extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Anfangsfenster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Anfangsfenster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Anfangsfenster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Anfangsfenster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+         try { 
+
+ 
+
+            System.out.println("Connecting database..."); 
+
+            Class.forName("org.hsqldb.jdbcDriver"); 
+
+            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\"; 
+
+            Connection con = DriverManager.getConnection(url, "G1", "1234"); 
+
+            System.out.println("Database connected!"); 
+
+ 
+
+        } catch (ClassNotFoundException e) { 
+
+            System.out.println("Database connection error. ClassNotFoundException"); 
+
+        } catch (SQLException e) { 
+
+            System.out.println("Database connection error. SQLException"); 
+
+        } 
         //</editor-fold>
 
         /* Create and display the form */
