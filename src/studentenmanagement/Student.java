@@ -5,6 +5,9 @@
  */
 package studentenmanagement;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author mertcenk
@@ -27,6 +30,7 @@ public class Student extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         StudentKlasseZuteilen = new javax.swing.JPanel();
         StudentNeu = new javax.swing.JPanel();
@@ -46,7 +50,6 @@ public class Student extends javax.swing.JFrame {
         TfVorname = new javax.swing.JTextField();
         TfNachname = new javax.swing.JTextField();
         TfTC = new javax.swing.JTextField();
-        TfGebJahr = new javax.swing.JTextField();
         TfGeschlecht = new javax.swing.JTextField();
         TfPLZ = new javax.swing.JTextField();
         TfOrt = new javax.swing.JTextField();
@@ -76,6 +79,7 @@ public class Student extends javax.swing.JFrame {
         TfElternvertreter = new javax.swing.JTextField();
         TfVornameErziehungsberechtigter = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        dateChooserPanel1 = new datechooser.beans.DateChooserPanel();
         Studentbearbeiten = new javax.swing.JPanel();
         VornameSb = new javax.swing.JLabel();
         NachnameSb = new javax.swing.JLabel();
@@ -91,7 +95,7 @@ public class Student extends javax.swing.JFrame {
         TfOrt1Sb = new javax.swing.JTextField();
         TC1 = new javax.swing.JLabel();
         TfBezirk1Sb = new javax.swing.JTextField();
-        GebTag1 = new javax.swing.JLabel();
+        Geburtsdatum = new javax.swing.JLabel();
         TfStrasse1Sb = new javax.swing.JTextField();
         Klasse1 = new javax.swing.JLabel();
         Elternvertreter1 = new javax.swing.JLabel();
@@ -163,6 +167,19 @@ public class Student extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
 
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Vorname.setText("Vorname");
@@ -233,10 +250,13 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addGroup(StudentNeuLayout.createSequentialGroup()
                         .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Vorname)
+                            .addComponent(Nachname)
+                            .addComponent(Hausnummer)
+                            .addComponent(Email)
+                            .addComponent(Tel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(StudentNeuLayout.createSequentialGroup()
                                 .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Vorname)
-                                    .addComponent(Nachname)
                                     .addComponent(TC)
                                     .addComponent(GebTag)
                                     .addComponent(Geschlecht)
@@ -244,30 +264,24 @@ public class Student extends javax.swing.JFrame {
                                     .addComponent(Ort)
                                     .addComponent(Bezirk)
                                     .addComponent(Strasse)
-                                    .addComponent(Hausnummer)
-                                    .addComponent(Email)
-                                    .addComponent(Tel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(41, 41, 41)
-                                .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(TfTel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                                    .addComponent(TfHausnummer, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfStrasse, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfBezirk, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfOrt, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfPLZ, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfGeschlecht, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfGebJahr, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfTC, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfNachname, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TfEmail)
-                                    .addComponent(TfVorname, javax.swing.GroupLayout.Alignment.LEADING)))
-                            .addComponent(GebJahr, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(GebJahr, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(dateChooserPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(TfTel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                            .addComponent(TfHausnummer, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfStrasse, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfBezirk, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfOrt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfPLZ, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfGeschlecht, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfTC, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfNachname, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfEmail)
+                            .addComponent(TfVorname, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(45, 45, 45)
                         .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(StudentNeuLayout.createSequentialGroup()
-                                .addComponent(VornameErziehungsberechtigter)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TfVornameErziehungsberechtigter))
                             .addGroup(StudentNeuLayout.createSequentialGroup()
                                 .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(Schuleintrittsart)
@@ -293,8 +307,12 @@ public class Student extends javax.swing.JFrame {
                                             .addComponent(TfSchuleintrittsreihe, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(TfSchuleintrittsnote, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(TfSchuleintrittsart, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(TfKlasse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(193, Short.MAX_VALUE))
+                            .addComponent(TfKlasse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(StudentNeuLayout.createSequentialGroup()
+                                .addComponent(VornameErziehungsberechtigter)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TfVornameErziehungsberechtigter)))))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
         StudentNeuLayout.setVerticalGroup(
             StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,43 +330,45 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(Schuleintrittsnote)
                     .addComponent(TfSchuleintrittsnote, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TfSchuleintrittsreihe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(TC)
-                        .addComponent(TfTC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Schuleintrittsreihe)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GebTag)
-                    .addComponent(Fremdsprache)
-                    .addComponent(TfFremdsprache, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TfGebJahr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GebJahr))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Fach)
-                    .addComponent(TfFach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Geschlecht)
-                    .addComponent(TfGeschlecht, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Praferenzreihenfolge)
-                    .addComponent(TfPraferenzreihenfolge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PLZ)
-                    .addComponent(TfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Kontingent)
-                    .addComponent(TfKontingent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ort)
-                    .addComponent(TfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Klasse)
-                    .addComponent(TfKlasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Bezirk)
-                    .addComponent(TfBezirk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(StudentNeuLayout.createSequentialGroup()
+                        .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfSchuleintrittsreihe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(TC)
+                                .addComponent(TfTC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Schuleintrittsreihe)))
+                        .addGap(14, 14, 14)
+                        .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(GebTag)
+                            .addComponent(Fremdsprache)
+                            .addComponent(TfFremdsprache, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GebJahr))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Fach)
+                            .addComponent(TfFach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Geschlecht)
+                            .addComponent(TfGeschlecht, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Praferenzreihenfolge)
+                            .addComponent(TfPraferenzreihenfolge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PLZ)
+                            .addComponent(TfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Kontingent)
+                            .addComponent(TfKontingent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Ort)
+                            .addComponent(TfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Klasse)
+                            .addComponent(TfKlasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Bezirk)
+                            .addComponent(TfBezirk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(dateChooserPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Elternvertreter)
@@ -365,11 +385,11 @@ public class Student extends javax.swing.JFrame {
                 .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tel)
                     .addComponent(TfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(34, 34, 34)
                 .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Email)
                     .addComponent(TfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 296, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(80, 80, 80))
         );
@@ -406,7 +426,7 @@ public class Student extends javax.swing.JFrame {
 
         TC1.setText("TC");
 
-        GebTag1.setText("Geburtsdatum");
+        Geburtsdatum.setText("Geburtsdatum");
 
         Klasse1.setText("Klasse");
 
@@ -444,6 +464,12 @@ public class Student extends javax.swing.JFrame {
 
         Kontingent1.setText("Kontingent");
 
+        TfGebTag1Sb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TfGebTag1SbActionPerformed(evt);
+            }
+        });
+
         jButton2.setText("Okay");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,7 +483,7 @@ public class Student extends javax.swing.JFrame {
         jLayeredPane1.setLayer(TfOrt1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TC1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfBezirk1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(GebTag1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(Geburtsdatum, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfStrasse1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Klasse1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(Elternvertreter1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -507,29 +533,34 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(Vorname1)
                     .addComponent(Nachname1)
                     .addComponent(TC1)
-                    .addComponent(GebTag1)
+                    .addComponent(Geburtsdatum)
                     .addComponent(Geschlecht1)
-                    .addComponent(PLZ1)
-                    .addComponent(Ort1)
-                    .addComponent(Bezirk1)
-                    .addComponent(Strasse1)
-                    .addComponent(Hausnummer1)
-                    .addComponent(Email1)
-                    .addComponent(Tel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(Ort1)
+                        .addComponent(PLZ1))
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Strasse1)
+                            .addComponent(Bezirk1)
+                            .addComponent(Tel1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Hausnummer1)
+                            .addComponent(Email1))))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TfVorname1Sb, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                    .addComponent(TfNachname1Sb)
-                    .addComponent(TfTC1Sb)
-                    .addComponent(TfGebTag1Sb)
-                    .addComponent(TfGeschlecht1Sb)
-                    .addComponent(TfPLZ1Sb)
-                    .addComponent(TfOrt1Sb)
-                    .addComponent(TfBezirk1Sb)
-                    .addComponent(TfStrasse1Sb)
-                    .addComponent(TfHausnummer1Sb)
-                    .addComponent(TfTel1Sb)
-                    .addComponent(TfEmail1Sb))
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TfBezirk1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(TfVorname1Sb, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                        .addComponent(TfNachname1Sb)
+                        .addComponent(TfTC1Sb)
+                        .addComponent(TfGebTag1Sb)
+                        .addComponent(TfGeschlecht1Sb)
+                        .addComponent(TfPLZ1Sb)
+                        .addComponent(TfOrt1Sb)
+                        .addComponent(TfStrasse1Sb)
+                        .addComponent(TfHausnummer1Sb)
+                        .addComponent(TfTel1Sb)
+                        .addComponent(TfEmail1Sb)))
                 .addGap(64, 64, 64)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
@@ -563,7 +594,7 @@ public class Student extends javax.swing.JFrame {
                                     .addComponent(TfSchuleintrittsnote1Sb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TfSchuleintrittsart1Sb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(TfKlasse1Sb, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -592,61 +623,57 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(TfSchuleintrittsreihe1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(GebTag1)
+                    .addComponent(Geburtsdatum)
                     .addComponent(TfGebTag1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Fremdsprache1)
                     .addComponent(TfFremdsprache1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Fach1)
-                    .addComponent(TfFach1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TfFach1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Geschlecht1)
+                    .addComponent(TfGeschlecht1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Praferenzreihenfolge1)
-                    .addComponent(TfPraferenzreihenfolge1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TfPraferenzreihenfolge1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PLZ1)
+                    .addComponent(TfPLZ1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Geschlecht1)
-                    .addComponent(TfGeschlecht1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Kontingent1)
-                    .addComponent(TfKontingent1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TfKontingent1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ort1)
+                    .addComponent(TfOrt1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PLZ1)
-                    .addComponent(TfPLZ1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Klasse1)
-                    .addComponent(TfKlasse1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Ort1)
-                    .addComponent(TfOrt1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Elternvertreter1)
-                    .addComponent(TfElternvertreter1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TfKlasse1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Bezirk1)
-                    .addComponent(TfBezirk1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VornameErziehungsberechtigter1)
-                    .addComponent(TfVornameErziehungsberechtigter1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TfBezirk1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Elternvertreter1)
+                    .addComponent(TfElternvertreter1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Strasse1)
                     .addComponent(TfStrasse1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(VornameErziehungsberechtigter1)
+                    .addComponent(TfVornameErziehungsberechtigter1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tel1)
+                    .addComponent(TfTel1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Hausnummer1)
                     .addComponent(TfHausnummer1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tel1)
-                    .addComponent(TfTel1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(10, 10, 10)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Email1)
                     .addComponent(TfEmail1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(60, 60, 60)
                 .addComponent(jButton2)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jButton3.setText("Suchen");
@@ -697,7 +724,7 @@ public class Student extends javax.swing.JFrame {
                         .addGroup(StudentbearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JbAuswahlenSb))))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
         StudentbearbeitenLayout.setVerticalGroup(
             StudentbearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -798,14 +825,7 @@ public class Student extends javax.swing.JFrame {
         StudentsuchenLayout.setHorizontalGroup(
             StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentsuchenLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(260, 260, 260))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentsuchenLayout.createSequentialGroup()
                 .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(StudentsuchenLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(BtSuchenSs))
                     .addGroup(StudentsuchenLayout.createSequentialGroup()
                         .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(StudentsuchenLayout.createSequentialGroup()
@@ -823,13 +843,13 @@ public class Student extends javax.swing.JFrame {
                                 .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(StudentsuchenLayout.createSequentialGroup()
                                         .addComponent(Matrikelnummer2Ss)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
                                         .addComponent(TfMatrikelnummer2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentsuchenLayout.createSequentialGroup()
                                         .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(Nachname2Ss)
                                             .addComponent(Vorname2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 261, Short.MAX_VALUE)
                                         .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(TfNachname2Ss, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                                             .addComponent(TfVorname2Ss))))))
@@ -839,7 +859,12 @@ public class Student extends javax.swing.JFrame {
                                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentsuchenLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(StudentsuchenLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton4)
+                            .addComponent(BtSuchenSs))))
                 .addGap(97, 97, 97))
         );
         StudentsuchenLayout.setVerticalGroup(
@@ -862,7 +887,7 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(StudentsuchenLayout.createSequentialGroup()
-                        .addGap(133, 133, 133)
+                        .addGap(165, 165, 165)
                         .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TfVorname2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Vorname2Ss))
@@ -873,15 +898,15 @@ public class Student extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(StudentsuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Matrikelnummer2Ss)
-                            .addComponent(TfMatrikelnummer2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(143, 143, 143)
-                        .addComponent(jButton4))
+                            .addComponent(TfMatrikelnummer2Ss, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(StudentsuchenLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(BtSuchenSs)
                         .addGap(60, 60, 60)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addGap(84, 84, 84)
+                .addComponent(jButton4)
+                .addContainerGap(284, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Student suchen", Studentsuchen);
@@ -926,7 +951,7 @@ public class Student extends javax.swing.JFrame {
         StudentlöschenLayout.setHorizontalGroup(
             StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentlöschenLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+                .addContainerGap(199, Short.MAX_VALUE)
                 .addGroup(StudentlöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(BtlöschenSl)
                     .addGroup(StudentlöschenLayout.createSequentialGroup()
@@ -1008,6 +1033,12 @@ public class Student extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TfNachnameSsActionPerformed
 
+    private void TfGebTag1SbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfGebTag1SbActionPerformed
+       String txtDate = new SimpleDateFormat ("dd/MM/yyyy").format(new Date());
+     Geburtsdatum.setText(txtDate);
+     // TODO add your handling code here:
+    }//GEN-LAST:event_TfGebTag1SbActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1058,7 +1089,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel Fremdsprache1;
     private javax.swing.JLabel GebJahr;
     private javax.swing.JLabel GebTag;
-    private javax.swing.JLabel GebTag1;
+    private javax.swing.JLabel Geburtsdatum;
     private javax.swing.JLabel Geschlecht;
     private javax.swing.JLabel Geschlecht1;
     private javax.swing.JLabel Hausnummer;
@@ -1111,7 +1142,6 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTextField TfFach1Sb;
     private javax.swing.JTextField TfFremdsprache;
     private javax.swing.JTextField TfFremdsprache1Sb;
-    private javax.swing.JTextField TfGebJahr;
     private javax.swing.JTextField TfGebTag1Sb;
     private javax.swing.JTextField TfGeschlecht;
     private javax.swing.JTextField TfGeschlecht1Sb;
@@ -1165,10 +1195,12 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel VornameSb;
     private javax.swing.JLabel VornameSl;
     private javax.swing.JLabel VornameSs;
+    private datechooser.beans.DateChooserPanel dateChooserPanel1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
