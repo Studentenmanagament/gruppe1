@@ -414,6 +414,7 @@ public class Student extends javax.swing.JFrame {
 
         MatrikelnummerSb.setText("Matrikelnummer");
 
+        JbAuswahlenSb.setBackground(new java.awt.Color(51, 204, 255));
         JbAuswahlenSb.setText("Auswahlen");
 
         Vorname1.setText("Vorname");
@@ -737,11 +738,10 @@ public class Student extends javax.swing.JFrame {
                             .addComponent(MatrikelnummerSb)
                             .addComponent(TfMatrikelnummerSb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(107, 107, 107)
-                        .addComponent(jButton3))
-                    .addGroup(StudentbearbeitenLayout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(JbAuswahlenSb)))
+                        .addGroup(StudentbearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3)
+                            .addComponent(JbAuswahlenSb)))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(114, 114, 114)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
