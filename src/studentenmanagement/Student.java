@@ -131,9 +131,9 @@ public class Student extends javax.swing.JFrame {
         Kontingent1 = new javax.swing.JLabel();
         TfNachname1Sb = new javax.swing.JTextField();
         TfTC1Sb = new javax.swing.JTextField();
-        TfGebTag1Sb = new javax.swing.JTextField();
         TfGeschlecht1Sb = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jButton3 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -385,7 +385,7 @@ public class Student extends javax.swing.JFrame {
                 .addGroup(StudentNeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Email)
                     .addComponent(TfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 296, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(80, 80, 80))
         );
@@ -401,7 +401,7 @@ public class Student extends javax.swing.JFrame {
         StudentKlasseZuteilenLayout.setVerticalGroup(
             StudentKlasseZuteilenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StudentKlasseZuteilenLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addComponent(StudentNeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -460,12 +460,6 @@ public class Student extends javax.swing.JFrame {
 
         Kontingent1.setText("Kontingent");
 
-        TfGebTag1Sb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TfGebTag1SbActionPerformed(evt);
-            }
-        });
-
         jButton2.setText("Okay");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -515,9 +509,9 @@ public class Student extends javax.swing.JFrame {
         jLayeredPane1.setLayer(Kontingent1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfNachname1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfTC1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(TfGebTag1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(TfGeschlecht1Sb, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jDateChooser2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -543,20 +537,19 @@ public class Student extends javax.swing.JFrame {
                             .addComponent(Hausnummer1)
                             .addComponent(Email1))))
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TfBezirk1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(TfVorname1Sb, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                        .addComponent(TfNachname1Sb)
-                        .addComponent(TfTC1Sb)
-                        .addComponent(TfGebTag1Sb)
-                        .addComponent(TfGeschlecht1Sb)
-                        .addComponent(TfPLZ1Sb)
-                        .addComponent(TfOrt1Sb)
-                        .addComponent(TfStrasse1Sb)
-                        .addComponent(TfHausnummer1Sb)
-                        .addComponent(TfTel1Sb)
-                        .addComponent(TfEmail1Sb)))
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TfBezirk1Sb, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                    .addComponent(TfVorname1Sb, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                    .addComponent(TfNachname1Sb)
+                    .addComponent(TfTC1Sb)
+                    .addComponent(TfGeschlecht1Sb)
+                    .addComponent(TfPLZ1Sb)
+                    .addComponent(TfOrt1Sb)
+                    .addComponent(TfStrasse1Sb)
+                    .addComponent(TfHausnummer1Sb)
+                    .addComponent(TfTel1Sb)
+                    .addComponent(TfEmail1Sb)
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(64, 64, 64)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
@@ -618,11 +611,12 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(Schuleintrittsreihe1)
                     .addComponent(TfSchuleintrittsreihe1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Geburtsdatum)
-                    .addComponent(TfGebTag1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Fremdsprache1)
-                    .addComponent(TfFremdsprache1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Geburtsdatum)
+                        .addComponent(Fremdsprache1)
+                        .addComponent(TfFremdsprache1Sb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Fach1)
@@ -716,11 +710,14 @@ public class Student extends javax.swing.JFrame {
                                     .addComponent(TfVornameSb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(TfMatrikelnummerSb, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jButton3))
-                        .addGap(71, 71, 71)
                         .addGroup(StudentbearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JbAuswahlenSb))))
-                .addContainerGap(212, Short.MAX_VALUE))
+                            .addGroup(StudentbearbeitenLayout.createSequentialGroup()
+                                .addGap(71, 71, 71)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(StudentbearbeitenLayout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(JbAuswahlenSb)))))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         StudentbearbeitenLayout.setVerticalGroup(
             StudentbearbeitenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -745,9 +742,9 @@ public class Student extends javax.swing.JFrame {
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
                         .addComponent(JbAuswahlenSb)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(114, 114, 114)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Student bearbeiten", Studentbearbeiten);
@@ -902,7 +899,7 @@ public class Student extends javax.swing.JFrame {
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(84, 84, 84)
                 .addComponent(jButton4)
-                .addContainerGap(284, Short.MAX_VALUE))
+                .addContainerGap(317, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Student suchen", Studentsuchen);
@@ -984,7 +981,7 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(BtlöschenSl)
-                .addContainerGap(610, Short.MAX_VALUE))
+                .addContainerGap(643, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Student löschen", Studentlöschen);
@@ -1028,12 +1025,6 @@ public class Student extends javax.swing.JFrame {
     private void TfNachnameSsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfNachnameSsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TfNachnameSsActionPerformed
-
-    private void TfGebTag1SbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfGebTag1SbActionPerformed
-       String txtDate = new SimpleDateFormat ("dd/MM/yyyy").format(new Date());
-     Geburtsdatum.setText(txtDate);
-     // TODO add your handling code here:
-    }//GEN-LAST:event_TfGebTag1SbActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1138,7 +1129,6 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTextField TfFach1Sb;
     private javax.swing.JTextField TfFremdsprache;
     private javax.swing.JTextField TfFremdsprache1Sb;
-    private javax.swing.JTextField TfGebTag1Sb;
     private javax.swing.JTextField TfGeschlecht;
     private javax.swing.JTextField TfGeschlecht1Sb;
     private javax.swing.JTextField TfHausnummer;
@@ -1196,6 +1186,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane5;

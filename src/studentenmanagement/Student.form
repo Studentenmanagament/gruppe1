@@ -85,7 +85,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <EmptySpace pref="49" max="32767" attributes="0"/>
                       <Component id="StudentNeu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -267,7 +267,7 @@
                               <Component id="Email" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="TfEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="296" max="32767" attributes="0"/>
+                          <EmptySpace pref="308" max="32767" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
                       </Group>
@@ -482,14 +482,19 @@
                                   </Group>
                                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JbAuswahlenSb" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                      <Component id="JbAuswahlenSb" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="212" max="32767" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -522,9 +527,9 @@
                               <Component id="JbAuswahlenSb" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                       <Component id="jLayeredPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="81" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -585,21 +590,19 @@
                               </Group>
                           </Group>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TfBezirk1Sb" min="-2" pref="142" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="TfVorname1Sb" pref="142" max="32767" attributes="0"/>
-                                  <Component id="TfNachname1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfTC1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfGebTag1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfGeschlecht1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfPLZ1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfOrt1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfStrasse1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfHausnummer1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfTel1Sb" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TfEmail1Sb" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="TfBezirk1Sb" pref="142" max="32767" attributes="0"/>
+                              <Component id="TfVorname1Sb" pref="142" max="32767" attributes="0"/>
+                              <Component id="TfNachname1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfTC1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfGeschlecht1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfPLZ1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfOrt1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfStrasse1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfHausnummer1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfTel1Sb" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TfEmail1Sb" max="32767" attributes="0"/>
+                              <Component id="jDateChooser2" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -676,11 +679,13 @@
                               <Component id="TfSchuleintrittsreihe1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="Geburtsdatum" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="TfGebTag1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Fremdsprache1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="TfFremdsprache1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="Geburtsdatum" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Fremdsprache1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TfFremdsprache1Sb" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -892,11 +897,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="TfTC1Sb">
                 </Component>
-                <Component class="javax.swing.JTextField" name="TfGebTag1Sb">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TfGebTag1SbActionPerformed"/>
-                  </Events>
-                </Component>
                 <Component class="javax.swing.JTextField" name="TfGeschlecht1Sb">
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton2">
@@ -906,6 +906,8 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser2">
                 </Component>
               </SubComponents>
             </Container>
@@ -1088,7 +1090,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                       <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="284" max="32767" attributes="0"/>
+                      <EmptySpace pref="317" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1308,7 +1310,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="BtlöschenSl" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="610" max="32767" attributes="0"/>
+                      <EmptySpace pref="643" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
