@@ -46,17 +46,17 @@ public class Studentenklasse extends javax.swing.JFrame {
         suchen = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         klassename_3 = new javax.swing.JTextField();
-        klasselist = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         klasselist2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         Klasselöschen = new javax.swing.JPanel();
         löschen = new javax.swing.JButton();
         klassename_4 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         suchen_2 = new javax.swing.JButton();
-        klasselist_2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
         klasselist3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Klassefachzuteilen = new javax.swing.JPanel();
         zuteilen = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -90,7 +90,7 @@ public class Studentenklasse extends javax.swing.JFrame {
                 .addGroup(KlasseneuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                     .addComponent(jTextField2))
-                .addContainerGap(586, Short.MAX_VALUE))
+                .addContainerGap(646, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KlasseneuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(speichern)
@@ -142,7 +142,7 @@ public class Studentenklasse extends javax.swing.JFrame {
                             .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                             .addComponent(jTextField7)
                             .addComponent(jTextField4))
-                        .addGap(0, 542, Short.MAX_VALUE)))
+                        .addGap(0, 602, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         KlassebearbeitenLayout.setVerticalGroup(
@@ -171,21 +171,27 @@ public class Studentenklasse extends javax.swing.JFrame {
 
         jLabel5.setText("Klasse Name");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        klasselist.setViewportView(jList1);
-
         klasselist2.setText("Klasse List");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Sprache", "Fach"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout KlassesuchenLayout = new javax.swing.GroupLayout(Klassesuchen);
         Klassesuchen.setLayout(KlassesuchenLayout);
         KlassesuchenLayout.setHorizontalGroup(
             KlassesuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KlassesuchenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(29, 29, 29)
                 .addComponent(klassename_3, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,15 +199,14 @@ public class Studentenklasse extends javax.swing.JFrame {
             .addGroup(KlassesuchenLayout.createSequentialGroup()
                 .addGroup(KlassesuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(KlassesuchenLayout.createSequentialGroup()
+                        .addGap(175, 175, 175)
+                        .addComponent(suchen))
+                    .addGroup(KlassesuchenLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(klasselist2))
-                    .addGroup(KlassesuchenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(KlassesuchenLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(klasselist, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, KlassesuchenLayout.createSequentialGroup()
-                            .addGap(175, 175, 175)
-                            .addComponent(suchen))))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(KlassesuchenLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(klasselist2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         KlassesuchenLayout.setVerticalGroup(
@@ -213,11 +218,11 @@ public class Studentenklasse extends javax.swing.JFrame {
                     .addComponent(klassename_3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(77, 77, 77)
                 .addComponent(suchen)
-                .addGap(5, 5, 5)
+                .addGap(15, 15, 15)
                 .addComponent(klasselist2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(klasselist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         Klasse.addTab("Klasse suchen", Klassesuchen);
@@ -228,26 +233,31 @@ public class Studentenklasse extends javax.swing.JFrame {
 
         suchen_2.setText("Suchen");
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        klasselist_2.setViewportView(jList2);
-
         klasselist3.setText("Klasse List");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Sprache", "Fach"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout KlasselöschenLayout = new javax.swing.GroupLayout(Klasselöschen);
         Klasselöschen.setLayout(KlasselöschenLayout);
         KlasselöschenLayout.setHorizontalGroup(
             KlasselöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KlasselöschenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(löschen)
-                .addContainerGap())
             .addGroup(KlasselöschenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(KlasselöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(KlasselöschenLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(KlasselöschenLayout.createSequentialGroup()
                         .addGroup(KlasselöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(klassename_4)
@@ -258,9 +268,9 @@ public class Studentenklasse extends javax.swing.JFrame {
                                 .addComponent(suchen_2))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, KlasselöschenLayout.createSequentialGroup()
                                 .addGap(62, 62, 62)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(klasselist_2, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(162, 485, Short.MAX_VALUE))
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 466, Short.MAX_VALUE)
+                        .addComponent(löschen))))
         );
         KlasselöschenLayout.setVerticalGroup(
             KlasselöschenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,9 +283,9 @@ public class Studentenklasse extends javax.swing.JFrame {
                 .addComponent(suchen_2)
                 .addGap(32, 32, 32)
                 .addComponent(klasselist3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(klasselist_2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
                 .addComponent(löschen)
                 .addContainerGap())
         );
@@ -307,7 +317,7 @@ public class Studentenklasse extends javax.swing.JFrame {
                         .addGroup(KlassefachzuteilenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(klasselist4)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 523, Short.MAX_VALUE)))
+                        .addGap(0, 583, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         KlassefachzuteilenLayout.setVerticalGroup(
@@ -393,9 +403,11 @@ public class Studentenklasse extends javax.swing.JFrame {
     private javax.swing.JButton arbeiten;
     private javax.swing.JLabel fach;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -404,11 +416,9 @@ public class Studentenklasse extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JLabel kapazitat;
     private javax.swing.JLabel kapazitat_2;
-    private javax.swing.JScrollPane klasselist;
     private javax.swing.JLabel klasselist2;
     private javax.swing.JLabel klasselist3;
     private javax.swing.JLabel klasselist4;
-    private javax.swing.JScrollPane klasselist_2;
     private javax.swing.JList<String> klasselist_3;
     private javax.swing.JLabel klassename;
     private javax.swing.JLabel klassename_2;
