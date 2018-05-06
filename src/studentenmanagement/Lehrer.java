@@ -887,7 +887,7 @@ public class Lehrer extends javax.swing.JFrame {
                   DefaultTableModel model = (DefaultTableModel) Lehrer.getModel();
                   model.setRowCount(0);
                   show_user();
-            JOptionPane.showMessageDialog(null,"Kaydedildi!");}      
+            JOptionPane.showMessageDialog(null,"Gespeichert!");}      
         catch (ClassNotFoundException | SQLException e) { 
             JOptionPane.showMessageDialog(null,e);
        }
@@ -934,7 +934,7 @@ public class Lehrer extends javax.swing.JFrame {
                   DefaultTableModel model = (DefaultTableModel) Lehrer.getModel();
                   model.setRowCount(0);
                   show_user();
-            JOptionPane.showMessageDialog(null,"Kaydedildi!");}      
+            JOptionPane.showMessageDialog(null,"Gespeichert!");}      
         catch (ClassNotFoundException | SQLException e) { 
             JOptionPane.showMessageDialog(null,e);
        }        // TODO add your handling code here:
@@ -1190,7 +1190,7 @@ public class Lehrer extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 
-    private void show_user() {
+    private void close() {
         
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
