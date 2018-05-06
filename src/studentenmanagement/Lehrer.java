@@ -10,8 +10,18 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
 
 /**
  *
@@ -28,8 +38,47 @@ public class Lehrer extends javax.swing.JFrame {
      */
     public Lehrer() {
         initComponents();
+        show_user();
     }
-
+ public ArrayList<user> userList(){
+        ArrayList<user> usersList= new ArrayList<>();
+        
+     try { 
+           Class.forName("org.hsqldb.jdbcDriver"); 
+           String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";  
+           con = DriverManager.getConnection(url,"G1", "1234");
+           String query ="SELECT * FROM Lehrer";
+           Statement st= con.createStatement();
+           rs =st.executeQuery(query);
+           user User;
+            while(rs.next()){
+                User =new user(rs.getString("Vorname"),rs.getString("Nachname"),rs.getString("Benutzername"),rs.getString("Passwort"),rs.getString("Telefonnummer"),rs.getString("Email"));
+                usersList.add(User);
+                
+            
+            }
+           }
+     
+            catch (Exception e) { 
+            JOptionPane.showMessageDialog(null,e);
+       }
+            return usersList;
+    }
+    public void show_user(){
+    ArrayList<user> list = userList();
+    DefaultTableModel model = (DefaultTableModel) Lehrer.getModel();
+        Object[] row = new Object[6];
+        for(int i=0;i<list.size();i++){
+        row[0]=list.get(i).getVorname();
+        row[1]=list.get(i).getNachname();
+        row[2]=list.get(i).getBenutzername();
+        row[3]=list.get(i).getPasswort();
+        row[4]=list.get(i).getTel();
+        row[5]=list.get(i).getEmail();
+        model.addRow(row);
+        
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -789,6 +838,28 @@ public class Lehrer extends javax.swing.JFrame {
 
     private void jBLehrerLöschenLlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLehrerLöschenLlActionPerformed
         // TODO add your handling code here:
+        TfVorname.setText("");
+        TfNachname.setText("");
+        TfBenutzername.setText("");
+        TfPasswort.setText("");
+        TfTel.setText("");
+        TfEmail.setText("");
+        TfVornameLb.setText("");
+        TfNachnameLb.setText("");
+        TfBenutzernameLb.setText("");
+        TfPasswortBp.setText("");
+        TfTelBp.setText("");
+        TfEmailBp.setText("");
+        TfVornameBp.setText("");
+        TfNachnameBp.setText("");
+        TfBenutzernameBp.setText("");
+        TfVornameLs.setText("");
+        TfNachnameLs.setText("");
+        TfBenutzernameLs.setText("");
+        TfVornameLl.setText("");
+        TfNachnameLl.setText("");
+        TfBenutzernameLl.setText("");
+        
     }//GEN-LAST:event_jBLehrerLöschenLlActionPerformed
 
     private void jBLehrerEingebenLsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLehrerEingebenLsActionPerformed
@@ -823,21 +894,21 @@ public class Lehrer extends javax.swing.JFrame {
     }//GEN-LAST:event_jBLehrerSpeichernActionPerformed
 
     private void jBLehrerEingebenLbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLehrerEingebenLbActionPerformed
-     int column=Lehrer.getSelectedColumn();
+     int row=Lehrer.getSelectedRow();
             DefaultTableModel model = (DefaultTableModel) Lehrer.getModel();
        
                       
-                      TfVorname.setText(model.getValueAt(column, 0).toString());
+                      TfVorname.setText(model.getValueAt(row, 0).toString());
                       
-                      TfNachname.setText(model.getValueAt(column, 1).toString());   
+                      TfNachname.setText(model.getValueAt(row, 1).toString());   
                       
-                      TfBenutzername.setText(model.getValueAt(column, 2).toString());
+                      TfBenutzername.setText(model.getValueAt(row, 2).toString());
                       
-                      TfPasswort.setText(model.getValueAt(column, 3).toString());
+                      TfPasswort.setText(model.getValueAt(row, 3).toString());
                       
-                      TfTel.setText(model.getValueAt(column, 4).toString());
+                      TfTel.setText(model.getValueAt(row, 4).toString());
                       
-                      TfEmail.setText(model.getValueAt(column, 5).toString());  
+                      TfEmail.setText(model.getValueAt(row, 5).toString());  
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jBLehrerEingebenLbActionPerformed
