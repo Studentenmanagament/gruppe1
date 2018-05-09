@@ -54,23 +54,18 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="neu" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="idl" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="löschen" min="-2" pref="167" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                           <Component id="lösche" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="vn" min="-2" max="-2" attributes="0"/>
-                                      <Component id="id" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="vn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="ID" min="-2" pref="140" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="vor" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="vor" pref="140" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -104,17 +99,9 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="sem" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="304" max="-2" attributes="0"/>
-                                          <Component id="bearbeit" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="smail" min="-2" pref="176" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Component id="smail" min="-2" pref="176" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -143,6 +130,10 @@
                               </Group>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="bearbeit" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -153,8 +144,6 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="ID" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="su" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="such" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="suche" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -218,6 +207,8 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="neu" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lösche" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="löschen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="idl" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -411,13 +402,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="neuActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="ID">
-        </Component>
-        <Component class="javax.swing.JLabel" name="id">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="sid">
         </Component>
         <Component class="javax.swing.JTextField" name="svor">
@@ -466,6 +450,13 @@
         <Component class="javax.swing.JTextField" name="stel">
         </Component>
         <Component class="javax.swing.JTextField" name="smail">
+        </Component>
+        <Component class="javax.swing.JTextField" name="l&#xf6;schen">
+        </Component>
+        <Component class="javax.swing.JLabel" name="idl">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

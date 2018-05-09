@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,43 +26,58 @@ public class hocalar extends javax.swing.JFrame {
 
     
     Connection con = null;
-     PreparedStatement pst=null;
-     ResultSet rs=null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
     /**
      * Creates new form hocalar
      */
     public hocalar() {
         initComponents();
+        initDB();
         show_user();
+    }
+    
+    public void initDB() {
+        
+        try { 
+            Class.forName("org.hsqldb.jdbcDriver");
+            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";  
+            con = DriverManager.getConnection(url,"G1", "1234");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(hocalar.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(hocalar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true"; 
     }
     
     public ArrayList<user> userList(){
         ArrayList<user> usersList= new ArrayList<>();
         
-     try { 
-           Class.forName("org.hsqldb.jdbcDriver"); 
-           String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";  
-           con = DriverManager.getConnection(url,"G1", "1234");
-           String query ="SELECT * FROM hoca";
-           Statement st= con.createStatement();
-           rs =st.executeQuery(query);
-           user User;
-            while(rs.next()){
-                User =new user(rs.getInt("ID"), rs.getString("Vorname"),rs.getString("Nachname"),rs.getString("Benutzername"),rs.getString("Passwort"),rs.getString("Telefonnummer"),rs.getString("Email"));
-                usersList.add(User);
-                
-            
+        if (con != null) {
+            try { 
+
+                String query ="SELECT * FROM hoca";
+                Statement st= con.createStatement();
+                rs =st.executeQuery(query);
+                user User;
+                while(rs.next()){
+                     User =new user(rs.getInt("ID"), rs.getString("Vorname"),rs.getString("Nachname"),rs.getString("Benutzername"),rs.getString("Passwort"),rs.getString("Telefonnummer"),rs.getString("Email"));
+                     usersList.add(User);
+
+
+                }
+            } catch (Exception e) { 
+                   JOptionPane.showMessageDialog(null,e);
             }
-           }
-     
-            catch (Exception e) { 
-            JOptionPane.showMessageDialog(null,e);
-       }
-            return usersList;
+        }
+        return usersList;
     }
+    
     public void show_user(){
-    ArrayList<user> list = userList();
-    DefaultTableModel model = (DefaultTableModel) hoca.getModel();
+        ArrayList<user> list = userList();
+        DefaultTableModel model = (DefaultTableModel) hoca.getModel();
+        model.setRowCount(0);
         Object[] row = new Object[7];
         for(int i=0;i<list.size();i++){
             row[0]=list.get(i).getID();
@@ -71,7 +88,6 @@ public class hocalar extends javax.swing.JFrame {
             row[5]=list.get(i).getTel();
             row[6]=list.get(i).getEmail();
             model.addRow(row);
-        
         }
     }
 
@@ -106,8 +122,6 @@ public class hocalar extends javax.swing.JFrame {
         bearbeit = new javax.swing.JButton();
         lösche = new javax.swing.JButton();
         neu = new javax.swing.JButton();
-        ID = new javax.swing.JTextField();
-        id = new javax.swing.JLabel();
         sid = new javax.swing.JTextField();
         svor = new javax.swing.JTextField();
         snach = new javax.swing.JTextField();
@@ -122,6 +136,8 @@ public class hocalar extends javax.swing.JFrame {
         spass = new javax.swing.JTextField();
         stel = new javax.swing.JTextField();
         smail = new javax.swing.JTextField();
+        löschen = new javax.swing.JTextField();
+        idl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -231,8 +247,6 @@ public class hocalar extends javax.swing.JFrame {
             }
         });
 
-        id.setText("ID");
-
         sID.setText("ID");
 
         svn.setText("Vorname");
@@ -247,6 +261,8 @@ public class hocalar extends javax.swing.JFrame {
 
         sem.setText("Email");
 
+        idl.setText("ID");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -258,19 +274,17 @@ public class hocalar extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(neu)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(idl)
+                        .addGap(50, 50, 50)
+                        .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79)
                         .addComponent(lösche))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(vn)
-                                    .addComponent(id))
+                                .addComponent(vn)
                                 .addGap(61, 61, 61)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(vor)))
+                                .addComponent(vor, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tn)
@@ -296,14 +310,9 @@ public class hocalar extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(sem)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(304, 304, 304)
-                                        .addComponent(bearbeit))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(smail, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(143, 143, 143))))
+                                .addGap(78, 78, 78)
+                                .addComponent(smail, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(143, 143, 143))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -324,7 +333,10 @@ public class hocalar extends javax.swing.JFrame {
                                     .addComponent(sben, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(stel, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
                                 .addGap(87, 87, 87)
-                                .addComponent(suche)))))
+                                .addComponent(suche))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(bearbeit)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -332,8 +344,6 @@ public class hocalar extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(id)
                     .addComponent(su)
                     .addComponent(such, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(suche))
@@ -387,7 +397,9 @@ public class hocalar extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(neu)
-                    .addComponent(lösche))
+                    .addComponent(lösche)
+                    .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(idl))
                 .addContainerGap())
         );
 
@@ -413,32 +425,29 @@ public class hocalar extends javax.swing.JFrame {
     }//GEN-LAST:event_suchActionPerformed
 
     private void speichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speichernActionPerformed
-   try { 
-            System.out.println("Connecting database..."); 
-            Class.forName("org.hsqldb.jdbcDriver"); 
-            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";           
-            System.out.println("Database connected!"); 
-            String query ="insert into hoca"   
-               +"(ID,Vorname,Nachname,Benutzername,Passwort,Telefonnummer,Email)"
-               +"values(?,?,?,?,?,?,?)";
-                   Connection con = DriverManager.getConnection(url,"G1", "1234"); 
-                   PreparedStatement pst = con.prepareStatement(query);
-                   pst.setString(1,ID.getText());
-                   pst.setString(2,vor.getText()); 
-                   pst.setString(3,nach.getText());
-                   pst.setString(4,benutzer.getText());
-                   pst.setString(5,pass.getText());
-                   pst.setString(6,tel.getText());
-                   pst.setString(7,mail.getText());
-                   pst.executeUpdate();
-                  DefaultTableModel model = (DefaultTableModel) hoca.getModel();
-                  model.setRowCount(0);
-                  show_user();
-            JOptionPane.showMessageDialog(null,"Gespeichert!");}      
-        catch (ClassNotFoundException | SQLException e) { 
-            JOptionPane.showMessageDialog(null,"Sie haben sich falsch angemeldet!");
-       }
+         
+        if (con != null) {
+            try { 
+            
+                String query ="insert into hoca"   
+                   +"(Vorname,Nachname,Benutzername,Passwort,Telefonnummer,Email)"
+                   +"values(?,?,?,?,?,?)";
+                PreparedStatement pst = con.prepareStatement(query);
 
+                pst.setString(1,vor.getText()); 
+                pst.setString(2,nach.getText());
+                pst.setString(3,benutzer.getText());
+                pst.setString(4,pass.getText());
+                pst.setString(5,tel.getText());
+                pst.setString(6,mail.getText());
+                pst.executeUpdate();
+                
+                show_user();
+                JOptionPane.showMessageDialog(null,"Gespeichert!");
+            }  catch (SQLException e) { 
+                JOptionPane.showMessageDialog(null,"Sie haben sich falsch angemeldet!");
+            }
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_speichernActionPerformed
 
@@ -450,186 +459,101 @@ public class hocalar extends javax.swing.JFrame {
     }//GEN-LAST:event_suchKeyReleased
 
     private void sucheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sucheActionPerformed
- // hala aramayı tuşla yaptıramamakla birlikte bulamadım bir de diğer suche olayı da oluyo mu belli değil :(
 
-           try {             
-             Class.forName("org.hsqldb.jdbcDriver"); 
-            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";           
-            String query ="select * from hoca WHERE ID=?";
-            con = DriverManager.getConnection(url,"G1", "1234"); 
-            pst = con.prepareStatement(query);
+        if (con != null) {
+           
+            try {             
+                       
+                String query ="select * from hoca WHERE ID=?";
+                pst = con.prepareStatement(query);
                 pst.setString(1,such.getText()); 
-                  rs = pst.executeQuery();
-                  if(rs.next()){
-                      String sucht1=rs.getString("ID");
-                      sid.setText(sucht1);
-                      String sucht2=rs.getString("Vorname");
-                      svor.setText(sucht2);
-                      String sucht3=rs.getString("Nachname");
-                      snach.setText(sucht3);   
-                      String sucht4=rs.getString("Benutzername");
-                      sben.setText(sucht4);
-                      String sucht5=rs.getString("Passwort");
-                      spass.setText(sucht5);
-                      String sucht6=rs.getString("Telefonnummer");
-                      stel.setText(sucht6);
-                      String sucht7=rs.getString("Email");
-                      smail.setText(sucht7);
-                      
-                  }
-            }      
-        catch (Exception e) { 
+                rs = pst.executeQuery();
+                if(rs.next()){
+                    String sucht1=rs.getString("ID");
+                    sid.setText(sucht1);
+                    String sucht2=rs.getString("Vorname");
+                    svor.setText(sucht2);
+                    String sucht3=rs.getString("Nachname");
+                    snach.setText(sucht3);   
+                    String sucht4=rs.getString("Benutzername");
+                    sben.setText(sucht4);
+                    String sucht5=rs.getString("Passwort");
+                    spass.setText(sucht5);
+                    String sucht6=rs.getString("Telefonnummer");
+                    stel.setText(sucht6);
+                    String sucht7=rs.getString("Email");
+                    smail.setText(sucht7);
+                    pst.executeUpdate();
+                } else {
+                      JOptionPane.showMessageDialog(null,"Nicht gefunden!");
+                }
+        }  catch (SQLException e) { 
             JOptionPane.showMessageDialog(null,e);
-       }
-     try {             
-            Class.forName("org.hsqldb.jdbcDriver"); 
-            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";           
-            String query ="select * from hoca WHERE Vorname=?";
-            con = DriverManager.getConnection(url,"G1", "1234"); 
-            pst = con.prepareStatement(query);
-                pst.setString(1,such.getText()); 
-                  rs = pst.executeQuery();
-                  if(rs.next()){
-                      String sucht1=rs.getString("ID");
-                      sid.setText(sucht1);
-                      String sucht2=rs.getString("Vorname");
-                      svor.setText(sucht2);
-                      String sucht3=rs.getString("Nachname");
-                      snach.setText(sucht3);   
-                      String sucht4=rs.getString("Benutzername");
-                      sben.setText(sucht4);
-                      String sucht5=rs.getString("Passwort");
-                      spass.setText(sucht5);
-                      String sucht6=rs.getString("Telefonnummer");
-                      stel.setText(sucht6);
-                      String sucht7=rs.getString("Email");
-                      smail.setText(sucht7);
-                      
-                  }
-            }      
-        catch (Exception e) { 
-            JOptionPane.showMessageDialog(null,e);
-       }
-        
-        try {             
-             Class.forName("org.hsqldb.jdbcDriver"); 
-            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";           
-            String query ="select * from hoca WHERE Nachname=?";
-            con = DriverManager.getConnection(url,"G1", "1234"); 
-            pst = con.prepareStatement(query);
-                pst.setString(1,such.getText()); 
-                  rs = pst.executeQuery();
-                  if(rs.next()){
-                      String sucht1=rs.getString("ID");
-                      sid.setText(sucht1);
-                      String sucht2=rs.getString("Vorname");
-                      svor.setText(sucht2);
-                      String sucht3=rs.getString("Nachname");
-                      snach.setText(sucht3);   
-                      String sucht4=rs.getString("Benutzername");
-                      sben.setText(sucht4);
-                      String sucht5=rs.getString("Passwort");
-                      spass.setText(sucht5);
-                      String sucht6=rs.getString("Telefonnummer");
-                      stel.setText(sucht6);
-                      String sucht7=rs.getString("Email");
-                      smail.setText(sucht7);
-                      
-                  }
-            }      
-        catch (Exception e) { 
-            JOptionPane.showMessageDialog(null,e);
-       }
-                 
-           try {             
-             Class.forName("org.hsqldb.jdbcDriver"); 
-            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";           
-            String query ="select * from hoca WHERE Benutzername=?";
-            con = DriverManager.getConnection(url,"G1", "1234"); 
-            pst = con.prepareStatement(query);
-                pst.setString(1,such.getText()); 
-                  rs = pst.executeQuery();
-                  if(rs.next()){
-                      String sucht1=rs.getString("ID");
-                      sid.setText(sucht1);
-                      String sucht2=rs.getString("Vorname");
-                      svor.setText(sucht2);
-                      String sucht3=rs.getString("Nachname");
-                      snach.setText(sucht3);   
-                      String sucht4=rs.getString("Benutzername");
-                      sben.setText(sucht4);
-                      String sucht5=rs.getString("Passwort");
-                      spass.setText(sucht5);
-                      String sucht6=rs.getString("Telefonnummer");
-                      stel.setText(sucht6);
-                      String sucht7=rs.getString("Email");
-                      smail.setText(sucht7);
-                      
-                  }
-            }      
-        catch (Exception e) { 
-            JOptionPane.showMessageDialog(null,e);
-       }         
- 
+        }
+     
+        }
 // TODO add your handling code here:
     }//GEN-LAST:event_sucheActionPerformed
 
     private void löscheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_löscheActionPerformed
     
+        if (con != null) {
+            int onay = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "hoca", JOptionPane.YES_NO_OPTION);
 
-        int onay = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "hoca", JOptionPane.YES_NO_OPTION);
-
-            if (onay == 0) {   
+            if (onay == JOptionPane.YES_OPTION) {   
                                          
-                 try{ System.out.println("Connecting database..."); 
-                 Class.forName("org.hsqldb.jdbcDriver"); 
-                 String url = "jdbc:hsqldb:file:C:\\Users\\Destkop\\sql\\;shutdown=true"; 
-                 String query ="DELETE FROM G1 WHERE ID =?";                
-                 con = DriverManager.getConnection(url,"G1", "1234"); 
-                 pst = con.prepareStatement(query);
-                  pst.setString(1,ID.getText());
-                  pst.executeUpdate();
-                  DefaultTableModel model = (DefaultTableModel) hoca.getModel();
-                  model.setRowCount(0);
-                  rs.deleteRow();
-                  show_user();
-            JOptionPane.showMessageDialog(null,"Gespeichert!");}
-   
-                 catch (Exception ex) {
-            
-                     JOptionPane.showMessageDialog(null, "Nicht Gelöscht!");
-        }
-                
-                
+                try{ 
+                    String query ="DELETE FROM hoca WHERE id=?";                
+                    pst = con.prepareStatement(query);
+                    pst.setInt(1,Integer.parseInt(löschen.getText()));
+                    pst.executeUpdate();
+                    
+                    
+                    show_user();
+                    JOptionPane.showMessageDialog(null,"Gelöscht!");
+                } catch (Exception e) {
+                    System.out.println(e);
+                    JOptionPane.showMessageDialog(null, "Nicht Gelöscht!");
+                }
+                     
             } else {           
 
             }
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_löscheActionPerformed
 
     private void bearbeitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bearbeitActionPerformed
-    
-       try {
-             Class.forName("org.hsqldb.jdbcDriver"); 
-            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";           
-            String query ="select * from hoca WHERE Benutzername=?";
-            con = DriverManager.getConnection(url,"G1", "1234"); 
-            pst = con.prepareStatement(query); 
+         
+        if (con != null) {
+            int yes= JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "hoca", JOptionPane.YES_NO_OPTION);
+            if (yes == 0) {  
             
-            rs.updateString("Vorname", vor.getText());
-            rs.updateString("Nachname", nach.getText());
-            rs.updateString("Benutzername", benutzer.getText());
-            rs.updateString("Passwort", pass.getText());
-            rs.updateString("Telefonnummer", tel.getText());
-            rs.updateString("Email", mail.getText());
-    
-            rs.updateRow();
-            
-            
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Nicht Bearbeitet!");
-        }
+                try { 
 
+                    String query ="UPDATE hoca SET Vorname=?,Nachname=?,Benutzername=?,Passwort=?,Telefonnummer=?,Email=? WHERE ID=?";                
+                    pst = con.prepareStatement(query);
+
+                    pst.setString(1, svor.getText());
+                    pst.setString(2,snach.getText());
+                    pst.setString(3,sben.getText());
+                    pst.setString(4,spass.getText());
+                    pst.setString(5,stel.getText());
+                    pst.setString(6,smail.getText());
+                    pst.setInt(7,Integer.parseInt(sid.getText()));   
+                    pst.executeUpdate();
+                    
+                    
+                    show_user();
+                    JOptionPane.showMessageDialog(null,"Bearbeitet!");
+                } catch ( SQLException e) { 
+                    System.out.println(e);
+                    JOptionPane.showMessageDialog(null,"Sie haben sich falsch angemeldet!");
+                }
+          } else {
+              JOptionPane.showMessageDialog(null,"Nicht bearbeitet!");
+          }
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_bearbeitActionPerformed
 
@@ -653,52 +577,19 @@ public class hocalar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mailActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(hocalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(hocalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(hocalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(hocalar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new hocalar().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ID;
     private javax.swing.JButton bearbeit;
     private javax.swing.JTextField benutzer;
     private javax.swing.JLabel bn;
     private javax.swing.JLabel em;
     private javax.swing.JTable hoca;
-    private javax.swing.JLabel id;
+    private javax.swing.JLabel idl;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton lösche;
+    private javax.swing.JTextField löschen;
     private javax.swing.JTextField mail;
     private javax.swing.JTextField nach;
     private javax.swing.JButton neu;
