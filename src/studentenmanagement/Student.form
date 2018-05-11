@@ -55,66 +55,68 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbGeburtsdatum" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LbSuche" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="jTextField14" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbVorname" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbNachname" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbTC" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbGeschlecht" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbPLZ" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbMartikel" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField6" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField2" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfMartikel" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfPLZ" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfGesclecht" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfTC" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfNachname" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfVorname" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jDateChooser1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbOrt" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbBezirk" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbStrasse" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbHausnummer" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbTel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbTemp" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextField8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField10" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField11" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField9" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField13" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jTextField12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfTemp" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfOrt" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfStrasse" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfHausnummer" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfBezirk" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfEmail" min="-2" max="-2" attributes="0"/>
+                                              <Component id="tfTel" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jButton5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btBearbeiten" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btSpeichern" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btNeu" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btLoeschen" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btSuchen" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -130,60 +132,64 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="LbSuche" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextField14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btSuchen" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbMartikel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbOrt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfMartikel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfOrt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btNeu" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbVorname" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbBezirk" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfVorname" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfBezirk" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbNachname" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbStrasse" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfNachname" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfStrasse" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btSpeichern" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbTC" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbHausnummer" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfTC" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfHausnummer" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbGeschlecht" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbTel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfGesclecht" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfTel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btBearbeiten" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbPLZ" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfPLZ" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbGeburtsdatum" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btLoeschen" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbTemp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfTemp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="42" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="85" max="-2" attributes="0"/>
@@ -197,7 +203,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="Tablo_Student">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
@@ -211,140 +217,135 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lbMartikel">
           <Properties>
             <Property name="text" type="java.lang.String" value="MartikelNummer"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lbVorname">
           <Properties>
             <Property name="text" type="java.lang.String" value="Vorname"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel3">
+        <Component class="javax.swing.JLabel" name="lbNachname">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nachname"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lbTC">
           <Properties>
             <Property name="text" type="java.lang.String" value="TC"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
+        <Component class="javax.swing.JLabel" name="lbGeschlecht">
           <Properties>
             <Property name="text" type="java.lang.String" value="Geschlecht"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="lbPLZ">
           <Properties>
             <Property name="text" type="java.lang.String" value="PLZ"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="lbGeburtsdatum">
           <Properties>
             <Property name="text" type="java.lang.String" value="Geburtsdatum"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
+        <Component class="javax.swing.JLabel" name="lbOrt">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ort"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
+        <Component class="javax.swing.JLabel" name="lbBezirk">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bezirk"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel10">
+        <Component class="javax.swing.JLabel" name="lbStrasse">
           <Properties>
             <Property name="text" type="java.lang.String" value="Strasse"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel11">
+        <Component class="javax.swing.JLabel" name="lbHausnummer">
           <Properties>
             <Property name="text" type="java.lang.String" value="Hausnummer"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
+        <Component class="javax.swing.JLabel" name="lbTel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Telefonnummer"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel13">
+        <Component class="javax.swing.JLabel" name="lbEmail">
           <Properties>
             <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="tfMartikel">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="tfVorname">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField2"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="tfNachname">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField3"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="tfTC">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField4"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="tfGesclecht">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField5"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="tfPLZ">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField6"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField7"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="tfOrt">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField8"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfOrtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField9">
+        <Component class="javax.swing.JTextField" name="tfBezirk">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField9"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField10">
+        <Component class="javax.swing.JTextField" name="tfStrasse">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField10"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField11">
+        <Component class="javax.swing.JTextField" name="tfHausnummer">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField11"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField12">
+        <Component class="javax.swing.JTextField" name="tfTel">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField12"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField13">
+        <Component class="javax.swing.JTextField" name="tfEmail">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField13"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel14">
+        <Component class="javax.swing.JLabel" name="LbSuche">
           <Properties>
             <Property name="text" type="java.lang.String" value="Suche"/>
           </Properties>
@@ -354,30 +355,42 @@
             <Property name="text" type="java.lang.String" value="jTextField14"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btSuchen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Suchen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btNeu">
           <Properties>
             <Property name="text" type="java.lang.String" value="NeueStudent"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="btSpeichern">
           <Properties>
             <Property name="text" type="java.lang.String" value="Speichern"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="btBearbeiten">
           <Properties>
             <Property name="text" type="java.lang.String" value="Bearbeiten"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="btLoeschen">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton5"/>
+            <Property name="text" type="java.lang.String" value="L&#xf6;schen"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbTemp">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Temp"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tfTemp">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jTextField15"/>
+          </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
         </Component>
       </SubComponents>
     </Container>
