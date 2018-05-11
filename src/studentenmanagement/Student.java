@@ -5,17 +5,78 @@
  */
 package studentenmanagement;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Asus
  */
 public class Student extends javax.swing.JFrame {
-
+    
+    Connection con = null;
+    PreparedStatement pst=null;
+    ResultSet rs=null;
+    Vector<user> user_list = new Vector<>();
     /**
      * Creates new form Student
      */
     public Student() {
         initComponents();
+        initDB();
+        getAllusers();
+        show_user();
+        
+    }
+
+    
+    public void initDB(){
+       
+        try{
+          Class.forName("org.hsqldb.jdbcDriver");
+          String url = "jdbc:hsqldb:file:C:\\Users\\Asus\\Desktop\\sql\\;shutdown=true";  
+          con = DriverManager.getConnection(url,"G1", "1234");
+
+        }catch (ClassNotFoundException ex) {
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (SQLException ex) {
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            String url = "jdbc:hsqldb:file:C:\\Users\\Asus\\Desktop\\sql\\;shutdown=true"; 
+
+    }
+    
+    
+    public void getAllUsers(){
+        if (con != null) {
+        user_list.removeAllElements();
+            
+        try { 
+
+            String query ="SELECT * FROM DATABANTABLOADI";
+            Statement st= con.createStatement();
+            rs =st.executeQuery(query);
+            user User;
+            while(rs.next()){
+            User = new user(rs.getDouble("Martikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"));
+                
+                user_list.add(User);
+            }
+    }catch (Exception e) { 
+                   JOptionPane.showMessageDialog(null,"Olmadı");
+            }
+        }
+        
     }
 
     /**
@@ -62,7 +123,7 @@ public class Student extends javax.swing.JFrame {
         btSpeichern = new javax.swing.JButton();
         btBearbeiten = new javax.swing.JButton();
         btLoeschen = new javax.swing.JButton();
-        lbTemp = new javax.swing.JLabel();
+        lbFach = new javax.swing.JLabel();
         tfTemp = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
@@ -70,13 +131,10 @@ public class Student extends javax.swing.JFrame {
 
         Tablo_Student.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "MartikelNummer", "TC", "Vorname", "Nachname", "Fach", "AnfangsJahr"
             }
         ));
         jScrollPane1.setViewportView(Tablo_Student);
@@ -107,38 +165,25 @@ public class Student extends javax.swing.JFrame {
 
         lbEmail.setText("Email");
 
-        tfMartikel.setText("jTextField1");
+        tfTC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTCActionPerformed(evt);
+            }
+        });
 
-        tfVorname.setText("jTextField2");
-
-        tfNachname.setText("jTextField3");
-
-        tfTC.setText("jTextField4");
-
-        tfGesclecht.setText("jTextField5");
-
-        tfPLZ.setText("jTextField6");
-
-        tfOrt.setText("jTextField8");
         tfOrt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfOrtActionPerformed(evt);
             }
         });
 
-        tfBezirk.setText("jTextField9");
-
-        tfStrasse.setText("jTextField10");
-
-        tfHausnummer.setText("jTextField11");
-
-        tfTel.setText("jTextField12");
-
-        tfEmail.setText("jTextField13");
+        tfStrasse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfStrasseActionPerformed(evt);
+            }
+        });
 
         LbSuche.setText("Suche");
-
-        jTextField14.setText("jTextField14");
 
         btSuchen.setText("Suchen");
 
@@ -150,9 +195,7 @@ public class Student extends javax.swing.JFrame {
 
         btLoeschen.setText("Löschen");
 
-        lbTemp.setText("Temp");
-
-        tfTemp.setText("jTextField15");
+        lbFach.setText("Fach");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -179,37 +222,46 @@ public class Student extends javax.swing.JFrame {
                                             .addComponent(lbNachname)
                                             .addComponent(lbTC)
                                             .addComponent(lbGeschlecht)
-                                            .addComponent(lbPLZ)
-                                            .addComponent(lbMartikel))
-                                        .addGap(35, 35, 35)
+                                            .addComponent(lbMartikel)
+                                            .addComponent(lbFach))
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tfMartikel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfGesclecht, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfTC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfNachname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfVorname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(35, 35, 35)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(tfGesclecht)
+                                                    .addComponent(tfTC)
+                                                    .addComponent(tfNachname)
+                                                    .addComponent(tfVorname)
+                                                    .addComponent(tfMartikel)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(tfTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(120, 120, 120)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lbOrt)
-                                            .addComponent(lbBezirk)
-                                            .addComponent(lbStrasse)
-                                            .addComponent(lbHausnummer)
-                                            .addComponent(lbTel)
-                                            .addComponent(lbEmail)
-                                            .addComponent(lbTemp))
-                                        .addGap(35, 35, 35)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tfTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfStrasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfHausnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfBezirk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(lbEmail)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(lbOrt)
+                                                    .addComponent(lbBezirk)
+                                                    .addComponent(lbStrasse)
+                                                    .addComponent(lbHausnummer)
+                                                    .addComponent(lbTel)
+                                                    .addComponent(lbPLZ))
+                                                .addGap(35, 35, 35)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(tfHausnummer, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                                        .addComponent(tfTel)
+                                                        .addComponent(tfOrt)
+                                                        .addComponent(tfBezirk)
+                                                        .addComponent(tfStrasse))
+                                                    .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(btBearbeiten)
@@ -218,7 +270,8 @@ public class Student extends javax.swing.JFrame {
                                             .addComponent(btLoeschen)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(btSuchen)))))))
+                                        .addComponent(btSuchen)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -263,22 +316,28 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btBearbeiten))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbPLZ)
-                    .addComponent(lbEmail)
-                    .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbGeburtsdatum)
-                        .addComponent(btLoeschen)
-                        .addComponent(lbTemp)
-                        .addComponent(tfTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                        .addComponent(lbPLZ)
+                        .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbFach)
+                        .addComponent(tfTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbGeburtsdatum)
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btLoeschen)
+                                .addComponent(lbEmail)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -304,6 +363,14 @@ public class Student extends javax.swing.JFrame {
     private void tfOrtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfOrtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfOrtActionPerformed
+
+    private void tfTCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfTCActionPerformed
+
+    private void tfStrasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfStrasseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfStrasseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -354,6 +421,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField14;
     private javax.swing.JLabel lbBezirk;
     private javax.swing.JLabel lbEmail;
+    private javax.swing.JLabel lbFach;
     private javax.swing.JLabel lbGeburtsdatum;
     private javax.swing.JLabel lbGeschlecht;
     private javax.swing.JLabel lbHausnummer;
@@ -364,7 +432,6 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel lbStrasse;
     private javax.swing.JLabel lbTC;
     private javax.swing.JLabel lbTel;
-    private javax.swing.JLabel lbTemp;
     private javax.swing.JLabel lbVorname;
     private javax.swing.JTextField tfBezirk;
     private javax.swing.JTextField tfEmail;

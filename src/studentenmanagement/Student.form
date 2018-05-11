@@ -55,8 +55,8 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lbGeburtsdatum" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Component id="lbGeburtsdatum" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="LbSuche" min="-2" max="-2" attributes="0"/>
@@ -69,42 +69,58 @@
                                               <Component id="lbNachname" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="lbTC" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="lbGeschlecht" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbPLZ" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="lbMartikel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lbFach" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="tfMartikel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfPLZ" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfGesclecht" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfTC" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfNachname" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfVorname" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jDateChooser1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="tfGesclecht" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="tfTC" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="tfNachname" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="tfVorname" alignment="0" max="32767" attributes="0"/>
+                                                      <Component id="tfMartikel" alignment="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="tfTemp" min="-2" pref="91" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="lbOrt" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbBezirk" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbStrasse" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbHausnummer" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbTel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbEmail" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="lbTemp" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="tfTemp" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfOrt" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfStrasse" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfHausnummer" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfBezirk" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfEmail" min="-2" max="-2" attributes="0"/>
-                                              <Component id="tfTel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="lbEmail" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="tfEmail" min="-2" pref="91" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="lbOrt" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lbBezirk" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lbStrasse" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lbHausnummer" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lbTel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="lbPLZ" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="tfHausnummer" alignment="0" pref="91" max="32767" attributes="0"/>
+                                                          <Component id="tfTel" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="tfOrt" max="32767" attributes="0"/>
+                                                          <Component id="tfBezirk" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="tfStrasse" alignment="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="tfPLZ" min="-2" pref="91" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
@@ -117,6 +133,7 @@
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="btSuchen" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -175,25 +192,36 @@
                       <Component id="btBearbeiten" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbPLZ" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfPLZ" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbPLZ" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfPLZ" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="lbFach" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfTemp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbGeburtsdatum" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btLoeschen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lbTemp" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="tfTemp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lbGeburtsdatum" min="-2" max="-2" attributes="0"/>
+                              <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="btLoeschen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="44" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="85" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="tfEmail" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="85" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -206,12 +234,51 @@
             <Component class="javax.swing.JTable" name="Tablo_Student">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                  <Table columnCount="6" rowCount="0">
+                    <Column editable="true" title="MartikelNummer" type="java.lang.Object"/>
+                    <Column editable="true" title="TC" type="java.lang.Object"/>
+                    <Column editable="true" title="Vorname" type="java.lang.Object"/>
+                    <Column editable="true" title="Nachname" type="java.lang.Object"/>
+                    <Column editable="true" title="Fach" type="java.lang.Object"/>
+                    <Column editable="true" title="AnfangsJahr" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
+                </Property>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
             </Component>
@@ -283,67 +350,37 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfMartikel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfVorname">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField2"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfNachname">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField3"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfTC">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField4"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTCActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfGesclecht">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField5"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfPLZ">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField6"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfOrt">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField8"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfOrtActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfBezirk">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField9"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfStrasse">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField10"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfStrasseActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tfHausnummer">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField11"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfTel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField12"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfEmail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField13"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="LbSuche">
           <Properties>
@@ -351,9 +388,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField14">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField14"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btSuchen">
           <Properties>
@@ -380,15 +414,12 @@
             <Property name="text" type="java.lang.String" value="L&#xf6;schen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lbTemp">
+        <Component class="javax.swing.JLabel" name="lbFach">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Temp"/>
+            <Property name="text" type="java.lang.String" value="Fach"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tfTemp">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField15"/>
-          </Properties>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
         </Component>
