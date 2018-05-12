@@ -19,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import studentenmanagement.Klasse.ogrenci;
 
 /**
  *
@@ -29,14 +30,14 @@ public class Student extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst=null;
     ResultSet rs=null;
-    Vector<Student> student_list = new Vector<>();
+    Vector<ogrenci> Student_list = new Vector<>();
     /**
      * Creates new form Student
      */
     public Student() {
         initComponents();
         initDB();
-        getAllusers();
+        getAllUsers();
         show_user();
         
     }
@@ -46,7 +47,7 @@ public class Student extends javax.swing.JFrame {
        
         try{
           Class.forName("org.hsqldb.jdbcDriver");
-          String url = "jdbc:hsqldb:file:C:\\Users\\Asus\\Desktop\\sql\\;shutdown=true";  
+          String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";  
           con = DriverManager.getConnection(url,"G1", "1234");
 
         }catch (ClassNotFoundException ex) {
@@ -54,25 +55,25 @@ public class Student extends javax.swing.JFrame {
         }catch (SQLException ex) {
             Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
         }
-            String url = "jdbc:hsqldb:file:C:\\Users\\Asus\\Desktop\\sql\\;shutdown=true"; 
+            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true"; 
 
     }
     
     
     public void getAllUsers(){
         if (con != null) {
-        student_list.removeAllElements();
+        Student_list.removeAllElements();
             
         try { 
 
             String query ="SELECT * FROM Student";
             Statement st= con.createStatement();
             rs =st.executeQuery(query);
-            Student student;
+            ogrenci student;
             while(rs.next()){
-            student = new Student(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+            student = new ogrenci(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geschlecht"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getInt("PLZ"), rs.getString("Fach"),rs.getString("Geburtsdatum"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
                 
-                student_list.add(student);
+                Student_list.add(student);
             }
     }catch (Exception e) { 
                    JOptionPane.showMessageDialog(null,"Olmadı");
@@ -85,13 +86,13 @@ public class Student extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) Tablo_Student.getModel();
         model.setRowCount(0);
         Object[] row = new Object[7];
-        for(int i=0; i<student_list.size(); i++){
-        row[0]=student_list.get(i).getMatrikelnummer();
-        row[1]=student_list.get(i).getTC;
-        row[2]=student_list.get(i).getVorname();
-        row[3]=student_list.get(i).getNachname();
-        row[4]=student_list.get(i).getFach;
-        row[5]=student_list.get(i).getAnfangsJahr;
+        for(int i=0; i<Student_list.size(); i++){
+        row[0]=Student_list.get(i).getMatrikelnummer();
+        row[1]=Student_list.get(i).getTC();
+        row[2]=Student_list.get(i).getVorname();
+        row[3]=Student_list.get(i).getNachname();
+        row[4]=Student_list.get(i).getFach();
+        row[5]=Student_list.get(i).getAnfangsjahr();
         model.addRow(row);
         
     }
@@ -504,12 +505,11 @@ public class Student extends javax.swing.JFrame {
            try{
                
                String query = "insert into Student"
-                       +"(Matrikelnummer,Vornanme,Nachname,TC,Geburtsdatum,AnfangsJahr,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach)"
+                       +"(Matrikelnummer,Vorname,Nachname,TC,Geschlecht,Ort,Bezirk,Strasse,Hausnummer,PLZ,Geburtsdatum,Tel,Email,Fach,AnfangsJahr)"
                        +"(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                PreparedStatement pst = con.prepareStatement(query);
                
-               //HEPSİ STRİNG DEĞİL NE OLUCAK ŞİMDİ
-               //parseInt ınteger yapıyor ona göre
+
                pst.setInt(1,Integer.parseInt(tfMatrikel.getText()));
                pst.setString(2,tfVorname.getText());
                pst.setString(3,tfNachname.getText());
@@ -518,7 +518,7 @@ public class Student extends javax.swing.JFrame {
                pst.setString(6,tfOrt.getText());
                pst.setString(7,tfBezirk.getText());
                pst.setString(8,tfStrasse.getText());
-               pst.setString(9,tfHausnummer.getText());
+               pst.setInt(9,Integer.parseInt(tfHausnummer.getText()));
                pst.setInt(10,Integer.parseInt(tfPLZ.getText()));
                pst.setString(11,tfFach.getText());
                pst.setString(12,tfTel.getText());
@@ -541,12 +541,12 @@ public class Student extends javax.swing.JFrame {
                 String query ="select * from DATABASEADI WHERE VORNAME LIKE '%?%' ";
                 Statement st =con.createStatement();
                 rs=st.executeQuery("select * from DATABASEADI WHERE VORNAME LIKE '%"+ tfSuchen.getText()+"%'"+"OR NACHNAME LIKE '%"+tfSuchen.getText());
-                
-                student_list.removeAllElements();
-                Student student;
+    
+                Student_list.removeAllElements();
+                ogrenci student;
                 while(rs.next()==true){
-                    student =new Student(rs.getDouble("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
-                    student_list.add(Student);                
+                    student = new ogrenci(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geschlecht"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getInt("PLZ"), rs.getString("Fach"),rs.getString("Geburtsdatum"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+                    Student_list.add(student);                
                 }
             }catch(SQLException e){
                 JOptionPane.showMessageDialog(null,e);
@@ -595,37 +595,7 @@ public class Student extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Student().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tablo_Student;
@@ -670,3 +640,4 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTextField tfVorname;
     // End of variables declaration//GEN-END:variables
 }
+
