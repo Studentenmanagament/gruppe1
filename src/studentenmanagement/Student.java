@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+//SATIR 454 501 VE DAHA BİRÇOK YER İÇİN KODUN BAZI YERLERİNİ ANLAYAMADIĞIM İÇİN HATA ÇIKICAK U YÜZDEN LÜTFENAKTİF OLUNCAYARDIMCI OLUN İYİ ÇALIŞMALAR
 package studentenmanagement;
 
 import java.sql.Connection;
@@ -68,7 +70,7 @@ public class Student extends javax.swing.JFrame {
             rs =st.executeQuery(query);
             user User;
             while(rs.next()){
-            User = new user(rs.getDouble("Martikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"));
+            User = new user(rs.getDouble("Martikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
                 
                 user_list.add(User);
             }
@@ -77,6 +79,22 @@ public class Student extends javax.swing.JFrame {
             }
         }
         
+    }
+    
+    public void show_user(){
+        DefaultTableModel model = (DefaultTableModel) Tablo_Student.getModel();
+        model.setRowCount(0);
+        Object[] row = new Object[7];
+        for(int i=0; i<user_list.size(); i++){
+        row[0]=user_list.get(i).getMartikelnummer();
+        row[1]=user_list.get(i).getTC;
+        row[2]=user_list.get(i).getVorname();
+        row[3]=user_list.get(i).getNachname();
+        row[4]=user_list.get(i).getFach;
+        row[5]=user_list.get(i).getAnfangsJahr;
+        model.addRow(row);
+        
+    }
     }
 
     /**
@@ -108,7 +126,7 @@ public class Student extends javax.swing.JFrame {
         tfVorname = new javax.swing.JTextField();
         tfNachname = new javax.swing.JTextField();
         tfTC = new javax.swing.JTextField();
-        tfGesclecht = new javax.swing.JTextField();
+        tfGeschlecht = new javax.swing.JTextField();
         tfPLZ = new javax.swing.JTextField();
         tfOrt = new javax.swing.JTextField();
         tfBezirk = new javax.swing.JTextField();
@@ -116,16 +134,18 @@ public class Student extends javax.swing.JFrame {
         tfHausnummer = new javax.swing.JTextField();
         tfTel = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
-        LbSuche = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
+        lbSuche = new javax.swing.JLabel();
+        tfSuchen = new javax.swing.JTextField();
         btSuchen = new javax.swing.JButton();
         btNeu = new javax.swing.JButton();
         btSpeichern = new javax.swing.JButton();
         btBearbeiten = new javax.swing.JButton();
         btLoeschen = new javax.swing.JButton();
         lbFach = new javax.swing.JLabel();
-        tfTemp = new javax.swing.JTextField();
+        tfFach = new javax.swing.JTextField();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        lbAnfangsJahr = new javax.swing.JLabel();
+        tfAnfangsJahr = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,7 +156,15 @@ public class Student extends javax.swing.JFrame {
             new String [] {
                 "MartikelNummer", "TC", "Vorname", "Nachname", "Fach", "AnfangsJahr"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(Tablo_Student);
 
         lbMartikel.setText("MartikelNummer");
@@ -183,161 +211,207 @@ public class Student extends javax.swing.JFrame {
             }
         });
 
-        LbSuche.setText("Suche");
+        lbSuche.setText("Suche");
 
         btSuchen.setText("Suchen");
+        btSuchen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSuchenActionPerformed(evt);
+            }
+        });
 
         btNeu.setText("NeueStudent");
+        btNeu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNeuActionPerformed(evt);
+            }
+        });
 
         btSpeichern.setText("Speichern");
+        btSpeichern.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSpeichernActionPerformed(evt);
+            }
+        });
 
         btBearbeiten.setText("Bearbeiten");
+        btBearbeiten.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btBearbeitenActionPerformed(evt);
+            }
+        });
 
         btLoeschen.setText("Löschen");
+        btLoeschen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLoeschenActionPerformed(evt);
+            }
+        });
 
         lbFach.setText("Fach");
+
+        tfFach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfFachActionPerformed(evt);
+            }
+        });
+
+        lbAnfangsJahr.setText("AnfangsJahr");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbSuche)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfSuchen))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbGeburtsdatum)
+                            .addComponent(lbVorname)
+                            .addComponent(lbNachname)
+                            .addComponent(lbTC)
+                            .addComponent(lbGeschlecht)
+                            .addComponent(lbMartikel))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfGeschlecht, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                            .addComponent(tfTC)
+                            .addComponent(tfNachname)
+                            .addComponent(tfVorname)
+                            .addComponent(tfMartikel)))
+                    .addComponent(btNeu, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(btSpeichern)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btBearbeiten))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(LbSuche)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jTextField14))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lbVorname)
-                                            .addComponent(lbNachname)
-                                            .addComponent(lbTC)
-                                            .addComponent(lbGeschlecht)
-                                            .addComponent(lbMartikel)
-                                            .addComponent(lbFach))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(35, 35, 35)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(tfGesclecht)
-                                                    .addComponent(tfTC)
-                                                    .addComponent(tfNachname)
-                                                    .addComponent(tfVorname)
-                                                    .addComponent(tfMartikel)))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(tfTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(120, 120, 120)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(lbEmail)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(lbOrt)
-                                                    .addComponent(lbBezirk)
-                                                    .addComponent(lbStrasse)
-                                                    .addComponent(lbHausnummer)
-                                                    .addComponent(lbTel)
-                                                    .addComponent(lbPLZ))
-                                                .addGap(35, 35, 35)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(tfHausnummer, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                                                        .addComponent(tfTel)
-                                                        .addComponent(tfOrt)
-                                                        .addComponent(tfBezirk)
-                                                        .addComponent(tfStrasse))
-                                                    .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btBearbeiten)
-                                            .addComponent(btSpeichern)
-                                            .addComponent(btNeu)
-                                            .addComponent(btLoeschen)))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btSuchen)
-                                        .addGap(0, 0, Short.MAX_VALUE)))))))
-                .addContainerGap(47, Short.MAX_VALUE))
+                                .addComponent(lbPLZ)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lbHausnummer)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfHausnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lbStrasse)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfStrasse, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lbBezirk)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfBezirk, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lbOrt)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btSuchen)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(75, 75, 75)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbTel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbEmail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbGeburtsdatum)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbFach)
+                        .addGap(73, 73, 73)
+                        .addComponent(tfFach, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbAnfangsJahr)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btLoeschen)
+                            .addComponent(tfAnfangsJahr, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbSuche)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbSuche)
+                    .addComponent(tfSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btSuchen))
-                .addGap(40, 40, 40)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbMartikel)
-                    .addComponent(lbOrt)
-                    .addComponent(tfMartikel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btNeu))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(41, 41, 41)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lbMartikel)
+                                .addComponent(tfMartikel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbFach)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tfFach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbOrt)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbVorname)
-                    .addComponent(lbBezirk)
-                    .addComponent(tfVorname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfBezirk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbVorname)
+                        .addComponent(lbBezirk)
+                        .addComponent(tfVorname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfBezirk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbGeburtsdatum))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbNachname)
                     .addComponent(lbStrasse)
                     .addComponent(tfNachname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfStrasse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btSpeichern))
+                    .addComponent(lbEmail)
+                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbTC)
                     .addComponent(lbHausnummer)
                     .addComponent(tfTC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfHausnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfHausnummer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbTel)
+                    .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbGeschlecht)
-                    .addComponent(lbTel)
-                    .addComponent(tfGesclecht, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btBearbeiten))
+                    .addComponent(tfGeschlecht, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbPLZ)
+                    .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbAnfangsJahr)
+                    .addComponent(tfAnfangsJahr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btNeu)
+                    .addComponent(btSpeichern)
+                    .addComponent(btBearbeiten)
+                    .addComponent(btLoeschen))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbPLZ)
-                        .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbFach)
-                        .addComponent(tfTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbGeburtsdatum)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btLoeschen)
-                                .addComponent(lbEmail)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -372,6 +446,148 @@ public class Student extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfStrasseActionPerformed
 
+    private void tfFachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFachActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfFachActionPerformed
+
+    private void btLoeschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoeschenActionPerformed
+        if(con!=null){
+            int onay = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "DATABANKNAME", JOptionPane.YES_NO_OPTION);
+            
+            if(onay==JOptionPane.YES_OPTION){
+                try{ 
+                    //DATABANK TABLOSUNUN ADINI HENÜZ BİLMİYORUZ
+                    String query ="DELETE FROM DATABANKADI WHERE id=?";                
+                    pst = con.prepareStatement(query);
+                    //SILME İSLEMİNİ SOR
+                    pst.setInt(1,Integer.parseInt(tfSuchen.getText()));
+                    pst.executeUpdate();
+                    
+                    
+                    getAllUsers();
+                    show_user();
+                    JOptionPane.showMessageDialog(null,"Gelöscht!");
+                } catch (Exception e) {
+                    System.out.println(e);
+                    JOptionPane.showMessageDialog(null, "Nicht Gelöscht!");
+                }
+ 
+            }else {           
+
+            }
+
+        }
+    }//GEN-LAST:event_btLoeschenActionPerformed
+
+    private void btNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNeuActionPerformed
+        tfMartikel.setText("");
+        tfVorname.setText("");
+        tfNachname.setText("");
+        tfTC.setText("");
+        tfGeschlecht.setText("");
+        tfOrt.setText("");
+        tfBezirk.setText("");
+        tfStrasse.setText("");
+        tfHausnummer.setText("");
+        tfPLZ.setText("");
+        tfFach.setText("");
+        tfEmail.setText("");
+        tfTel.setText("");
+        tfAnfangsJahr.setText("");
+               
+    }//GEN-LAST:event_btNeuActionPerformed
+
+    private void btSpeichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSpeichernActionPerformed
+       if(con!=null){
+           try{
+               
+               String query = "insert into DATABANKADI"
+                       +"(Martikelnummer,Vornanme,Nachname,TC,Geburtsdatum,AnfangsJahr,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,tel,Email,Fach)"
+                       +"(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+               PreparedStatement pst = con.prepareStatement(query);
+               
+               //HEPSİ STRİNG DEĞİL NE OLUCAK ŞİMDİ
+               pst.setString(1,tfMartikel.getText());
+               pst.setString(2,tfVorname.getText());
+               pst.setString(3,tfNachname.getText());
+               pst.setString(4,tfTC.getText());
+               pst.setString(5,tfGeschlecht.getText());
+               pst.setString(6,tfOrt.getText());
+               pst.setString(7,tfBezirk.getText());
+               pst.setString(8,tfStrasse.getText());
+               pst.setString(9,tfHausnummer.getText());
+               pst.setString(10,tfPLZ.getText());
+               pst.setString(11,tfFach.getText());
+               pst.setString(12,tfTel.getText());
+               pst.setString(13,tfAnfangsJahr.getText());
+               
+               getAllUsers();
+               show_user();
+               JOptionPane.showMessageDialog(null,"Gespeichert!");
+               
+           }catch(SQLException e){
+                              JOptionPane.showMessageDialog(null,"falsch angemeldet!"); 
+           }
+       }
+    }//GEN-LAST:event_btSpeichernActionPerformed
+
+    private void btSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSuchenActionPerformed
+        if(con!=null){
+            try{
+                String query ="select * from DATABASEADI WHERE VORNAME LIKE '%?%' ";
+                Statement st =con.createStatement();
+                rs=st.executeQuery("select * from DATABASEADI WHERE VORNAME LIKE '%"+ tfSuchen.getText()+"%'"+"OR NACHNAME LIKE '%"+tfSuchen.getText());
+                
+                user_lst.removeAllElements();
+                user User;
+                while(rs.next()==true){
+                    User=new user(rs.getDouble("Maertikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+                    user_list.add(User);                
+                }
+            }catch(SQLException e){
+                JOptionPane.showMessageDialog(null,e);
+            }
+        }
+    }//GEN-LAST:event_btSuchenActionPerformed
+
+    private void btBearbeitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBearbeitenActionPerformed
+        if(con!=null){
+            int soru = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "hoca", JOptionPane.YES_NO_OPTION);
+            
+            if(soru==0){
+                
+                try{
+                String query = "UPDATE DATABANKADI SET Martikelnummer=?, Vorname=?,Nachname=?,TC=?,Geburtsdatum=?,Geschlecht=?,Ort=?,Bezirk=?,Strasse=?,Hausnummer=?,PLZ=?,Tel=?,Email=?,Fach=?,AnfangsJahr=?";
+                pst=con.prepareStatement(query);
+                
+                pst.setString(1,tfMartikel.getText());
+                pst.setString(2,tfVorname.getText());
+                pst.setString(3,tfNachname.getText());
+                pst.setInt(4,Integer.parseInt(tfTC.getText()));
+                pst.setString(5,tfGeschlecht.getText());
+                pst.setString(6,tfOrt.getText());
+                pst.setString(7,tfBezirk.getText());
+                pst.setString(8,tfStrasse.getText());
+                pst.setString(9,tfHausnummer.getText());
+                pst.setInt(10,Integer.parseInt(tfPLZ.getText()));
+                pst.setString(11,tfFach.getText());
+                pst.setString(12,tfEmail.getText());
+                pst.setString(13,tfTel.getText());
+                pst.setInt(13, Integer.parseInt(tfAnfangsJahr.getText()));
+                pst.executeUpdate();
+                
+                getAllUsers();
+                show_user();
+                JOptionPane.showMessageDialog(null,"Bearbeitet!");
+            }catch(SQLException e){
+                JOptionPane.showMessageDialog(null,"falsch angemeldet!");
+            }
+        }else{
+              JOptionPane.showMessageDialog(null,"Nicht bearbeitet!");    
+            }
+    }//GEN-LAST:event_btBearbeitenActionPerformed
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -408,7 +624,6 @@ public class Student extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LbSuche;
     private javax.swing.JTable Tablo_Student;
     private javax.swing.JButton btBearbeiten;
     private javax.swing.JButton btLoeschen;
@@ -418,7 +633,7 @@ public class Student extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField14;
+    private javax.swing.JLabel lbAnfangsJahr;
     private javax.swing.JLabel lbBezirk;
     private javax.swing.JLabel lbEmail;
     private javax.swing.JLabel lbFach;
@@ -430,21 +645,24 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel lbOrt;
     private javax.swing.JLabel lbPLZ;
     private javax.swing.JLabel lbStrasse;
+    private javax.swing.JLabel lbSuche;
     private javax.swing.JLabel lbTC;
     private javax.swing.JLabel lbTel;
     private javax.swing.JLabel lbVorname;
+    private javax.swing.JTextField tfAnfangsJahr;
     private javax.swing.JTextField tfBezirk;
     private javax.swing.JTextField tfEmail;
-    private javax.swing.JTextField tfGesclecht;
+    private javax.swing.JTextField tfFach;
+    private javax.swing.JTextField tfGeschlecht;
     private javax.swing.JTextField tfHausnummer;
     private javax.swing.JTextField tfMartikel;
     private javax.swing.JTextField tfNachname;
     private javax.swing.JTextField tfOrt;
     private javax.swing.JTextField tfPLZ;
     private javax.swing.JTextField tfStrasse;
+    private javax.swing.JTextField tfSuchen;
     private javax.swing.JTextField tfTC;
     private javax.swing.JTextField tfTel;
-    private javax.swing.JTextField tfTemp;
     private javax.swing.JTextField tfVorname;
     // End of variables declaration//GEN-END:variables
 }
