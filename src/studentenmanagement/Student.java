@@ -241,6 +241,8 @@ public class Student extends javax.swing.JFrame {
             }
         });
 
+        jDateChooser1.setDateFormatString("dd.MM.yyyy");
+
         lbAnfangsJahr.setText("AnfangsJahr");
 
         ogrenciler.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
@@ -315,7 +317,7 @@ public class Student extends javax.swing.JFrame {
                                 .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbHausnummer)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                                 .addComponent(tfHausnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbStrasse)
@@ -358,7 +360,7 @@ public class Student extends javax.swing.JFrame {
                         .addComponent(lbGeburtsdatum)
                         .addGap(18, 18, 18)
                         .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
@@ -516,10 +518,9 @@ public class Student extends javax.swing.JFrame {
            try{
                
                String query = "insert into Student"
-                       +"(Matrikelnummer,Vorname,Nachname,TC,Geschlecht,Ort,Bezirk,Strasse,Hausnummer,PLZ,Geburtsdatum,Tel,Email,Fach,AnfangsJahr)"
+                       +"(Matrikelnummer,Vorname,Nachname,TC,Geburtsdatum,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach,AnfangsJahr)"
                        +"(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                PreparedStatement pst = con.prepareStatement(query);
-               
 
                pst.setInt(1,Integer.parseInt(tfMatrikel.getText()));
                pst.setString(2,tfVorname.getText());
@@ -590,7 +591,7 @@ public class Student extends javax.swing.JFrame {
                 pst.setString(11,tfFach.getText());
                 pst.setString(12,tfEmail.getText());
                 pst.setString(13,tfTel.getText());
-                pst.setInt(13, Integer.parseInt(tfAnfangsJahr.getText()));
+                pst.setInt(14, Integer.parseInt(tfAnfangsJahr.getText()));
                 pst.executeUpdate();
                 
                 getAllUsers();

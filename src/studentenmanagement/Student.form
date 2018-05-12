@@ -95,7 +95,7 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="lbHausnummer" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="61" max="32767" attributes="0"/>
+                                  <EmptySpace pref="64" max="32767" attributes="0"/>
                                   <Component id="tfHausnummer" min="-2" pref="91" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
@@ -154,7 +154,7 @@
                           <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
               </Group>
               <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
           </Group>
@@ -397,6 +397,9 @@
           </Events>
         </Component>
         <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="dd.MM.yyyy"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbAnfangsJahr">
           <Properties>
