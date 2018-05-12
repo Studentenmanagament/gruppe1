@@ -129,11 +129,17 @@ public class hocalar extends javax.swing.JFrame {
         sID = new javax.swing.JLabel();
         löschen = new javax.swing.JTextField();
         idl = new javax.swing.JLabel();
+        pf2 = new javax.swing.JLabel();
+        pf3 = new javax.swing.JLabel();
+        pf1 = new javax.swing.JLabel();
+        pf4 = new javax.swing.JLabel();
+        pflichtfeld = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
+        hoca.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         hoca.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -164,38 +170,55 @@ public class hocalar extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(hoca);
 
+        vn.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         vn.setText("Vorname");
 
+        nn.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         nn.setText("Nachname");
 
+        bn.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         bn.setText("Benutzername");
 
+        p.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         p.setText("Passwort");
 
+        tn.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         tn.setText("Telefonnummer");
 
+        em.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         em.setText("Email");
 
+        su.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         su.setText("Suche");
 
+        vor.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         vor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vorActionPerformed(evt);
             }
         });
 
+        nach.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+
+        benutzer.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+
+        pass.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passActionPerformed(evt);
             }
         });
 
+        tel.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+
+        mail.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         mail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mailActionPerformed(evt);
             }
         });
 
+        such1.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         such1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 such1ActionPerformed(evt);
@@ -208,6 +231,7 @@ public class hocalar extends javax.swing.JFrame {
         });
 
         speichern.setBackground(new java.awt.Color(0, 102, 255));
+        speichern.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         speichern.setForeground(new java.awt.Color(255, 255, 255));
         speichern.setText("Speichern");
         speichern.addActionListener(new java.awt.event.ActionListener() {
@@ -217,6 +241,7 @@ public class hocalar extends javax.swing.JFrame {
         });
 
         suche.setBackground(new java.awt.Color(0, 102, 255));
+        suche.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         suche.setForeground(new java.awt.Color(255, 255, 255));
         suche.setText("Suchen");
         suche.addActionListener(new java.awt.event.ActionListener() {
@@ -226,6 +251,7 @@ public class hocalar extends javax.swing.JFrame {
         });
 
         bearbeit.setBackground(new java.awt.Color(0, 102, 255));
+        bearbeit.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         bearbeit.setForeground(new java.awt.Color(255, 255, 255));
         bearbeit.setText("Bearbeiten");
         bearbeit.addActionListener(new java.awt.event.ActionListener() {
@@ -235,6 +261,7 @@ public class hocalar extends javax.swing.JFrame {
         });
 
         lösche.setBackground(new java.awt.Color(0, 102, 255));
+        lösche.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         lösche.setForeground(new java.awt.Color(255, 255, 255));
         lösche.setText("Löschen");
         lösche.addActionListener(new java.awt.event.ActionListener() {
@@ -244,6 +271,7 @@ public class hocalar extends javax.swing.JFrame {
         });
 
         neu.setBackground(new java.awt.Color(0, 102, 255));
+        neu.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         neu.setForeground(new java.awt.Color(255, 255, 255));
         neu.setText("Neu");
         neu.addActionListener(new java.awt.event.ActionListener() {
@@ -252,11 +280,33 @@ public class hocalar extends javax.swing.JFrame {
             }
         });
 
+        sid.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
         sid.setEnabled(false);
+        sid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sidActionPerformed(evt);
+            }
+        });
 
+        sID.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         sID.setText("ID");
 
+        löschen.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+
+        idl.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         idl.setText("Benutzername");
+
+        pf2.setText("*");
+
+        pf3.setText("*");
+
+        pf1.setText("*");
+
+        pf4.setText("*");
+
+        pflichtfeld.setFont(new java.awt.Font("Arial", 2, 13)); // NOI18N
+        pflichtfeld.setForeground(new java.awt.Color(153, 153, 153));
+        pflichtfeld.setText("*/ Pflichtfeld zum ausfüllen");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -278,8 +328,7 @@ public class hocalar extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(such1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(suche)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(em)
@@ -298,11 +347,29 @@ public class hocalar extends javax.swing.JFrame {
                                         .addComponent(idl)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(benutzer, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nach, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(vor, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sid, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(pf4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(benutzer, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(pf3))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(nach, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(pf2))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(vor, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(pf1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(sid, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(suche)
+                                .addGap(513, 513, 513))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(pflichtfeld, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(316, 316, 316)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addGap(27, 27, 27))
@@ -322,19 +389,23 @@ public class hocalar extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(vn)
-                    .addComponent(vor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pf1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nn)
-                    .addComponent(nach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pf2))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(benutzer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bn))
+                    .addComponent(bn)
+                    .addComponent(pf3))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(p))
+                    .addComponent(p)
+                    .addComponent(pf4))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -345,7 +416,9 @@ public class hocalar extends javax.swing.JFrame {
                     .addComponent(em)
                     .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(idl))
-                .addGap(30, 30, 30)
+                .addGap(1, 1, 1)
+                .addComponent(pflichtfeld)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bearbeit)
                     .addComponent(speichern)
@@ -547,6 +620,10 @@ public class hocalar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passActionPerformed
 
+    private void sidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sidActionPerformed
+
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -566,6 +643,11 @@ public class hocalar extends javax.swing.JFrame {
     private javax.swing.JLabel nn;
     private javax.swing.JLabel p;
     private javax.swing.JTextField pass;
+    private javax.swing.JLabel pf1;
+    private javax.swing.JLabel pf2;
+    private javax.swing.JLabel pf3;
+    private javax.swing.JLabel pf4;
+    private javax.swing.JLabel pflichtfeld;
     private javax.swing.JLabel sID;
     private javax.swing.JTextField sid;
     private javax.swing.JButton speichern;
@@ -577,6 +659,7 @@ public class hocalar extends javax.swing.JFrame {
     private javax.swing.JLabel vn;
     private javax.swing.JTextField vor;
     // End of variables declaration//GEN-END:variables
+
 
 private void close() {
         
