@@ -70,7 +70,7 @@ public class Student extends javax.swing.JFrame {
             rs =st.executeQuery(query);
             Student student;
             while(rs.next()){
-            student = new Student(rs.getInt("Martikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+            student = new Student(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
                 
                 student_list.add(student);
             }
@@ -86,7 +86,7 @@ public class Student extends javax.swing.JFrame {
         model.setRowCount(0);
         Object[] row = new Object[7];
         for(int i=0; i<student_list.size(); i++){
-        row[0]=student_list.get(i).getMartikelnummer();
+        row[0]=student_list.get(i).getMatrikelnummer();
         row[1]=student_list.get(i).getTC;
         row[2]=student_list.get(i).getVorname();
         row[3]=student_list.get(i).getNachname();
@@ -169,7 +169,7 @@ public class Student extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tablo_Student);
 
-        lbMatrikel.setText("MartikelNummer");
+        lbMatrikel.setText("MatrikelNummer");
 
         lbVorname.setText("Vorname");
 
@@ -504,7 +504,7 @@ public class Student extends javax.swing.JFrame {
            try{
                
                String query = "insert into DATABANKADI"
-                       +"(Martikelnummer,Vornanme,Nachname,TC,Geburtsdatum,AnfangsJahr,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach)"
+                       +"(Matrikelnummer,Vornanme,Nachname,TC,Geburtsdatum,AnfangsJahr,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach)"
                        +"(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                PreparedStatement pst = con.prepareStatement(query);
                
@@ -545,7 +545,7 @@ public class Student extends javax.swing.JFrame {
                 student_list.removeAllElements();
                 Student student;
                 while(rs.next()==true){
-                    User=new user(rs.getDouble("Maertikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+                    User=new user(rs.getDouble("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
                     student_list.add(Student);                
                 }
             }catch(SQLException e){
@@ -561,7 +561,7 @@ public class Student extends javax.swing.JFrame {
             if(soru==0){
                 
                 try{
-                String query = "UPDATE DATABANKADI SET Martikelnummer=?, Vorname=?,Nachname=?,TC=?,Geburtsdatum=?,Geschlecht=?,Ort=?,Bezirk=?,Strasse=?,Hausnummer=?,PLZ=?,Tel=?,Email=?,Fach=?,AnfangsJahr=?";
+                String query = "UPDATE DATABANKADI SET Matrikelnummer=?, Vorname=?,Nachname=?,TC=?,Geburtsdatum=?,Geschlecht=?,Ort=?,Bezirk=?,Strasse=?,Hausnummer=?,PLZ=?,Tel=?,Email=?,Fach=?,AnfangsJahr=?";
                 pst=con.prepareStatement(query);
                 
                 pst.setString(1,tfMatrikel.getText());

@@ -303,7 +303,7 @@
         </Container>
         <Component class="javax.swing.JLabel" name="lbMatrikel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="MartikelNummer"/>
+            <Property name="text" type="java.lang.String" value="MatrikelNummer"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lbVorname">
