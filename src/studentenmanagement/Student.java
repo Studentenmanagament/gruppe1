@@ -70,7 +70,7 @@ public class Student extends javax.swing.JFrame {
             rs =st.executeQuery(query);
             Student student;
             while(rs.next()){
-            student = new Student(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+            student = new Student(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
                 
                 student_list.add(student);
             }
@@ -545,7 +545,7 @@ public class Student extends javax.swing.JFrame {
                 student_list.removeAllElements();
                 Student student;
                 while(rs.next()==true){
-                    User=new user(rs.getDouble("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+                    student =new Student(rs.getDouble("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
                     student_list.add(Student);                
                 }
             }catch(SQLException e){
@@ -572,7 +572,7 @@ public class Student extends javax.swing.JFrame {
                 pst.setString(6,tfOrt.getText());
                 pst.setString(7,tfBezirk.getText());
                 pst.setString(8,tfStrasse.getText());
-                pst.setString(9,tfHausnummer.getText());
+                pst.setInt(9,Integer.parseInt(tfHausnummer.getText()));
                 pst.setInt(10,Integer.parseInt(tfPLZ.getText()));
                 pst.setString(11,tfFach.getText());
                 pst.setString(12,tfEmail.getText());
