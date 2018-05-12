@@ -65,7 +65,7 @@ public class Student extends javax.swing.JFrame {
             
         try { 
 
-            String query ="SELECT * FROM DATABANTABLOADI";
+            String query ="SELECT * FROM Student";
             Statement st= con.createStatement();
             rs =st.executeQuery(query);
             Student student;
@@ -454,12 +454,12 @@ public class Student extends javax.swing.JFrame {
 
     private void btLoeschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoeschenActionPerformed
         if(con!=null){
-            int onay = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "DATABANKNAME", JOptionPane.YES_NO_OPTION);
+            int onay = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "Student", JOptionPane.YES_NO_OPTION);
             
             if(onay==JOptionPane.YES_OPTION){
                 try{ 
                     //DATABANK TABLOSUNUN ADINI HENÜZ BİLMİYORUZ
-                    String query ="DELETE FROM DATABANKADI WHERE Matrikelnummer=?";                
+                    String query ="DELETE FROM Student WHERE Matrikelnummer=?";                
                     pst = con.prepareStatement(query);
                     //SILME İSLEMİNİ SOR
                     pst.setInt(1,Integer.parseInt(tfSuchen.getText()));
@@ -503,14 +503,14 @@ public class Student extends javax.swing.JFrame {
        if(con!=null){
            try{
                
-               String query = "insert into DATABANKADI"
+               String query = "insert into Student"
                        +"(Matrikelnummer,Vornanme,Nachname,TC,Geburtsdatum,AnfangsJahr,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach)"
                        +"(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                PreparedStatement pst = con.prepareStatement(query);
                
                //HEPSİ STRİNG DEĞİL NE OLUCAK ŞİMDİ
                //parseInt ınteger yapıyor ona göre
-               pst.setString(1,Integer.parseInt(tfMatrikel.getText()));
+               pst.setInt(1,Integer.parseInt(tfMatrikel.getText()));
                pst.setString(2,tfVorname.getText());
                pst.setString(3,tfNachname.getText());
                pst.setString(4,tfTC.getText());
@@ -519,10 +519,10 @@ public class Student extends javax.swing.JFrame {
                pst.setString(7,tfBezirk.getText());
                pst.setString(8,tfStrasse.getText());
                pst.setString(9,tfHausnummer.getText());
-               pst.setString(10,tfPLZ.getText());
+               pst.setInt(10,Integer.parseInt(tfPLZ.getText()));
                pst.setString(11,tfFach.getText());
                pst.setString(12,tfTel.getText());
-               pst.setString(13,tfAnfangsJahr.getText());
+               pst.setInt(13,Integer.parseInt(tfAnfangsJahr.getText()));
                pst.setString(14,jDateChooser1.getDateFormatString());
                
                getAllUsers();
@@ -561,7 +561,7 @@ public class Student extends javax.swing.JFrame {
             if(soru==0){
                 
                 try{
-                String query = "UPDATE DATABANKADI SET Matrikelnummer=?, Vorname=?,Nachname=?,TC=?,Geburtsdatum=?,Geschlecht=?,Ort=?,Bezirk=?,Strasse=?,Hausnummer=?,PLZ=?,Tel=?,Email=?,Fach=?,AnfangsJahr=?";
+                String query = "UPDATE Student SET Matrikelnummer=?, Vorname=?,Nachname=?,TC=?,Geburtsdatum=?,Geschlecht=?,Ort=?,Bezirk=?,Strasse=?,Hausnummer=?,PLZ=?,Tel=?,Email=?,Fach=?,AnfangsJahr=?";
                 pst=con.prepareStatement(query);
                 
                 pst.setString(1,tfMatrikel.getText());
