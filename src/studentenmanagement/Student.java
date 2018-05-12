@@ -488,6 +488,7 @@ public class Student extends javax.swing.JFrame {
         tfNachname.setText("");
         tfTC.setText("");
         tfGeschlecht.setText("");
+        jDateChooser1.setDateFormatString("");
         tfOrt.setText("");
         tfBezirk.setText("");
         tfStrasse.setText("");
