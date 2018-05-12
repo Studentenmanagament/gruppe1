@@ -29,7 +29,7 @@ public class Student extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst=null;
     ResultSet rs=null;
-    Vector<user> user_list = new Vector<>();
+    Vector<Student> student_list = new Vector<>();
     /**
      * Creates new form Student
      */
@@ -61,18 +61,18 @@ public class Student extends javax.swing.JFrame {
     
     public void getAllUsers(){
         if (con != null) {
-        user_list.removeAllElements();
+        student_list.removeAllElements();
             
         try { 
 
             String query ="SELECT * FROM DATABANTABLOADI";
             Statement st= con.createStatement();
             rs =st.executeQuery(query);
-            user User;
+            Student student;
             while(rs.next()){
-            User = new user(rs.getDouble("Martikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+            student = new Student(rs.getInt("Martikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
                 
-                user_list.add(User);
+                student_list.add(student);
             }
     }catch (Exception e) { 
                    JOptionPane.showMessageDialog(null,"Olmadı");
@@ -85,13 +85,13 @@ public class Student extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) Tablo_Student.getModel();
         model.setRowCount(0);
         Object[] row = new Object[7];
-        for(int i=0; i<user_list.size(); i++){
-        row[0]=user_list.get(i).getMartikelnummer();
-        row[1]=user_list.get(i).getTC;
-        row[2]=user_list.get(i).getVorname();
-        row[3]=user_list.get(i).getNachname();
-        row[4]=user_list.get(i).getFach;
-        row[5]=user_list.get(i).getAnfangsJahr;
+        for(int i=0; i<student_list.size(); i++){
+        row[0]=student_list.get(i).getMartikelnummer();
+        row[1]=student_list.get(i).getTC;
+        row[2]=student_list.get(i).getVorname();
+        row[3]=student_list.get(i).getNachname();
+        row[4]=student_list.get(i).getFach;
+        row[5]=student_list.get(i).getAnfangsJahr;
         model.addRow(row);
         
     }
@@ -109,7 +109,7 @@ public class Student extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tablo_Student = new javax.swing.JTable();
-        lbMartikel = new javax.swing.JLabel();
+        lbMatrikel = new javax.swing.JLabel();
         lbVorname = new javax.swing.JLabel();
         lbNachname = new javax.swing.JLabel();
         lbTC = new javax.swing.JLabel();
@@ -122,7 +122,7 @@ public class Student extends javax.swing.JFrame {
         lbHausnummer = new javax.swing.JLabel();
         lbTel = new javax.swing.JLabel();
         lbEmail = new javax.swing.JLabel();
-        tfMartikel = new javax.swing.JTextField();
+        tfMatrikel = new javax.swing.JTextField();
         tfVorname = new javax.swing.JTextField();
         tfNachname = new javax.swing.JTextField();
         tfTC = new javax.swing.JTextField();
@@ -149,12 +149,14 @@ public class Student extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
         Tablo_Student.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "MartikelNummer", "TC", "Vorname", "Nachname", "Fach", "AnfangsJahr"
+                "MatrikelNummer", "TC", "Vorname", "Nachname", "Fach", "AnfangsJahr"
             }
         ) {
             Class[] types = new Class [] {
@@ -167,7 +169,7 @@ public class Student extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Tablo_Student);
 
-        lbMartikel.setText("MartikelNummer");
+        lbMatrikel.setText("MartikelNummer");
 
         lbVorname.setText("Vorname");
 
@@ -220,7 +222,7 @@ public class Student extends javax.swing.JFrame {
             }
         });
 
-        btNeu.setText("NeueStudent");
+        btNeu.setText("Neu");
         btNeu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btNeuActionPerformed(evt);
@@ -275,14 +277,14 @@ public class Student extends javax.swing.JFrame {
                             .addComponent(lbNachname)
                             .addComponent(lbTC)
                             .addComponent(lbGeschlecht)
-                            .addComponent(lbMartikel))
+                            .addComponent(lbMatrikel))
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfGeschlecht, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                             .addComponent(tfTC)
                             .addComponent(tfNachname)
                             .addComponent(tfVorname)
-                            .addComponent(tfMartikel)))
+                            .addComponent(tfMatrikel)))
                     .addComponent(btNeu, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -360,8 +362,8 @@ public class Student extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(41, 41, 41)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lbMartikel)
-                                .addComponent(tfMartikel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbMatrikel)
+                                .addComponent(tfMatrikel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(tfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lbFach)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -457,7 +459,7 @@ public class Student extends javax.swing.JFrame {
             if(onay==JOptionPane.YES_OPTION){
                 try{ 
                     //DATABANK TABLOSUNUN ADINI HENÜZ BİLMİYORUZ
-                    String query ="DELETE FROM DATABANKADI WHERE id=?";                
+                    String query ="DELETE FROM DATABANKADI WHERE Matrikelnummer=?";                
                     pst = con.prepareStatement(query);
                     //SILME İSLEMİNİ SOR
                     pst.setInt(1,Integer.parseInt(tfSuchen.getText()));
@@ -480,7 +482,7 @@ public class Student extends javax.swing.JFrame {
     }//GEN-LAST:event_btLoeschenActionPerformed
 
     private void btNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNeuActionPerformed
-        tfMartikel.setText("");
+        tfMatrikel.setText("");
         tfVorname.setText("");
         tfNachname.setText("");
         tfTC.setText("");
@@ -502,12 +504,13 @@ public class Student extends javax.swing.JFrame {
            try{
                
                String query = "insert into DATABANKADI"
-                       +"(Martikelnummer,Vornanme,Nachname,TC,Geburtsdatum,AnfangsJahr,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,tel,Email,Fach)"
+                       +"(Martikelnummer,Vornanme,Nachname,TC,Geburtsdatum,AnfangsJahr,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach)"
                        +"(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                PreparedStatement pst = con.prepareStatement(query);
                
                //HEPSİ STRİNG DEĞİL NE OLUCAK ŞİMDİ
-               pst.setString(1,tfMartikel.getText());
+               //parseInt ınteger yapıyor ona göre
+               pst.setString(1,Integer.parseInt(tfMatrikel.getText()));
                pst.setString(2,tfVorname.getText());
                pst.setString(3,tfNachname.getText());
                pst.setString(4,tfTC.getText());
@@ -520,6 +523,7 @@ public class Student extends javax.swing.JFrame {
                pst.setString(11,tfFach.getText());
                pst.setString(12,tfTel.getText());
                pst.setString(13,tfAnfangsJahr.getText());
+               pst.setString(14,jDateChooser1.getDateFormatString());
                
                getAllUsers();
                show_user();
@@ -538,11 +542,11 @@ public class Student extends javax.swing.JFrame {
                 Statement st =con.createStatement();
                 rs=st.executeQuery("select * from DATABASEADI WHERE VORNAME LIKE '%"+ tfSuchen.getText()+"%'"+"OR NACHNAME LIKE '%"+tfSuchen.getText());
                 
-                user_lst.removeAllElements();
-                user User;
+                student_list.removeAllElements();
+                Student student;
                 while(rs.next()==true){
                     User=new user(rs.getDouble("Maertikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getInt("Geburtsdatum"),rs.getString("Geschlecht"),rs.getString("Fach"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getString("Hausnummer"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
-                    user_list.add(User);                
+                    student_list.add(Student);                
                 }
             }catch(SQLException e){
                 JOptionPane.showMessageDialog(null,e);
@@ -560,7 +564,7 @@ public class Student extends javax.swing.JFrame {
                 String query = "UPDATE DATABANKADI SET Martikelnummer=?, Vorname=?,Nachname=?,TC=?,Geburtsdatum=?,Geschlecht=?,Ort=?,Bezirk=?,Strasse=?,Hausnummer=?,PLZ=?,Tel=?,Email=?,Fach=?,AnfangsJahr=?";
                 pst=con.prepareStatement(query);
                 
-                pst.setString(1,tfMartikel.getText());
+                pst.setString(1,tfMatrikel.getText());
                 pst.setString(2,tfVorname.getText());
                 pst.setString(3,tfNachname.getText());
                 pst.setInt(4,Integer.parseInt(tfTC.getText()));
@@ -640,7 +644,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel lbGeburtsdatum;
     private javax.swing.JLabel lbGeschlecht;
     private javax.swing.JLabel lbHausnummer;
-    private javax.swing.JLabel lbMartikel;
+    private javax.swing.JLabel lbMatrikel;
     private javax.swing.JLabel lbNachname;
     private javax.swing.JLabel lbOrt;
     private javax.swing.JLabel lbPLZ;
@@ -655,7 +659,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JTextField tfFach;
     private javax.swing.JTextField tfGeschlecht;
     private javax.swing.JTextField tfHausnummer;
-    private javax.swing.JTextField tfMartikel;
+    private javax.swing.JTextField tfMatrikel;
     private javax.swing.JTextField tfNachname;
     private javax.swing.JTextField tfOrt;
     private javax.swing.JTextField tfPLZ;
