@@ -76,14 +76,14 @@ public class Student extends javax.swing.JFrame {
                 Student_list.add(student);
             }
     }catch (Exception e) { 
-                   JOptionPane.showMessageDialog(null,"Olmadı");
+                   JOptionPane.showMessageDialog(null,"Wir haben Problem!");
             }
         }
         
     }
     
     public void show_user(){
-        DefaultTableModel model = (DefaultTableModel) Tablo_Student.getModel();
+        DefaultTableModel model = (DefaultTableModel) ogrenciler.getModel();
         model.setRowCount(0);
         Object[] row = new Object[7];
         for(int i=0; i<Student_list.size(); i++){
@@ -108,8 +108,6 @@ public class Student extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Tablo_Student = new javax.swing.JTable();
         lbMatrikel = new javax.swing.JLabel();
         lbVorname = new javax.swing.JLabel();
         lbNachname = new javax.swing.JLabel();
@@ -147,28 +145,12 @@ public class Student extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         lbAnfangsJahr = new javax.swing.JLabel();
         tfAnfangsJahr = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ogrenciler = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
-
-        Tablo_Student.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "MatrikelNummer", "TC", "Vorname", "Nachname", "Fach", "AnfangsJahr"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(Tablo_Student);
 
         lbMatrikel.setText("MatrikelNummer");
 
@@ -261,6 +243,37 @@ public class Student extends javax.swing.JFrame {
 
         lbAnfangsJahr.setText("AnfangsJahr");
 
+        ogrenciler.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        ogrenciler.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Matrikelnummer", "TC", "Vorname", "Nachname", "Fach", "Anfangsjahr"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        ogrenciler.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ogrencilerMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(ogrenciler);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -302,7 +315,7 @@ public class Student extends javax.swing.JFrame {
                                 .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbHausnummer)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                                 .addComponent(tfHausnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbStrasse)
@@ -321,34 +334,32 @@ public class Student extends javax.swing.JFrame {
                         .addComponent(btSuchen)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(75, 75, 75)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbTel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbEmail)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbTel)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbEmail)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbFach)
+                            .addGap(73, 73, 73)
+                            .addComponent(tfFach, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbAnfangsJahr)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(btLoeschen)
+                                .addComponent(tfAnfangsJahr, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lbGeburtsdatum)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbFach)
-                        .addGap(73, 73, 73)
-                        .addComponent(tfFach, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbAnfangsJahr)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btLoeschen)
-                            .addComponent(tfAnfangsJahr, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 857, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(62, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,9 +423,8 @@ public class Student extends javax.swing.JFrame {
                     .addComponent(btSpeichern)
                     .addComponent(btBearbeiten)
                     .addComponent(btLoeschen))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -515,16 +525,18 @@ public class Student extends javax.swing.JFrame {
                pst.setString(2,tfVorname.getText());
                pst.setString(3,tfNachname.getText());
                pst.setString(4,tfTC.getText());
-               pst.setString(5,tfGeschlecht.getText());
-               pst.setString(6,tfOrt.getText());
-               pst.setString(7,tfBezirk.getText());
-               pst.setString(8,tfStrasse.getText());
-               pst.setInt(9,Integer.parseInt(tfHausnummer.getText()));
-               pst.setInt(10,Integer.parseInt(tfPLZ.getText()));
-               pst.setString(11,tfFach.getText());
+               pst.setString(5,jDateChooser1.getDateFormatString());
+               pst.setString(6,tfGeschlecht.getText());
+               pst.setInt(7,Integer.parseInt(tfPLZ.getText()));
+               pst.setString(8,tfOrt.getText());
+               pst.setString(9,tfBezirk.getText());
+               pst.setString(10,tfStrasse.getText());
+               pst.setInt(11,Integer.parseInt(tfHausnummer.getText()));
                pst.setString(12,tfTel.getText());
-               pst.setInt(13,Integer.parseInt(tfAnfangsJahr.getText()));
-               pst.setString(14,jDateChooser1.getDateFormatString());
+               pst.setString(13,tfEmail.getText());
+               pst.setString(14,tfFach.getText());
+               pst.setInt(15,Integer.parseInt(tfAnfangsJahr.getText()));
+               
                
                getAllUsers();
                show_user();
@@ -539,9 +551,9 @@ public class Student extends javax.swing.JFrame {
     private void btSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSuchenActionPerformed
         if(con!=null){
             try{
-                String query ="select * from DATABASEADI WHERE VORNAME LIKE '%?%' ";
+                String query ="select * from Student WHERE VORNAME LIKE '%?%' ";
                 Statement st =con.createStatement();
-                rs=st.executeQuery("select * from DATABASEADI WHERE VORNAME LIKE '%"+ tfSuchen.getText()+"%'"+"OR NACHNAME LIKE '%"+tfSuchen.getText());
+                rs=st.executeQuery("select * from Student WHERE VORNAME LIKE '%"+ tfSuchen.getText()+"%'"+"OR NACHNAME LIKE '%"+tfSuchen.getText());
     
                 Student_list.removeAllElements();
                 ogrenci student;
@@ -557,7 +569,7 @@ public class Student extends javax.swing.JFrame {
 
     private void btBearbeitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBearbeitenActionPerformed
         if(con!=null){
-            int soru = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "hoca", JOptionPane.YES_NO_OPTION);
+            int soru = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "student", JOptionPane.YES_NO_OPTION);
             
             if(soru==0){
                 
@@ -590,16 +602,34 @@ public class Student extends javax.swing.JFrame {
         }else{
               JOptionPane.showMessageDialog(null,"Nicht bearbeitet!");    
             }
-    }//GEN-LAST:event_btBearbeitenActionPerformed
-    }
+        }
+   
     
+    }//GEN-LAST:event_btBearbeitenActionPerformed
+
+    private void ogrencilerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ogrencilerMouseClicked
+
+        int row=ogrenciler.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) ogrenciler.getModel();
+
+        tfMatrikel.setText(model.getValueAt(row, 0).toString());
+        tfTC.setText(model.getValueAt(row, 1).toString());
+        tfVorname.setText(model.getValueAt(row, 2).toString());
+        tfNachname.setText(model.getValueAt(row, 3).toString());
+        tfFach.setText(model.getValueAt(row, 4).toString());
+        tfAnfangsJahr.setText(model.getValueAt(row, 5).toString());
+        
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ogrencilerMouseClicked
+    
+
     /**
      * @param args the command line arguments
      */
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Tablo_Student;
     private javax.swing.JButton btBearbeiten;
     private javax.swing.JButton btLoeschen;
     private javax.swing.JButton btNeu;
@@ -624,6 +654,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel lbTC;
     private javax.swing.JLabel lbTel;
     private javax.swing.JLabel lbVorname;
+    private javax.swing.JTable ogrenciler;
     private javax.swing.JTextField tfAnfangsJahr;
     private javax.swing.JTextField tfBezirk;
     private javax.swing.JTextField tfEmail;
