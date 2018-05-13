@@ -6,7 +6,7 @@
 package studentenmanagement;
 
 
-/*import yedekler.StudentFenster;*/
+ 
 import javax.swing.*;
 import java.io.*;
 import java.sql.Connection;
