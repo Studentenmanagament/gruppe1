@@ -6,6 +6,7 @@
 package studentenmanagement;
 
 
+import yedekler.StudentFenster;
 import javax.swing.*;
 import java.io.*;
 import java.sql.Connection;
@@ -84,7 +85,6 @@ public class Anfangsfenster extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("Selaaammmmmms");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -125,7 +125,7 @@ public class Anfangsfenster extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void RaumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaumActionPerformed
-        Raum frame= new Raum();
+        RaumFenster frame= new RaumFenster();
         frame.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_RaumActionPerformed
 
@@ -135,18 +135,18 @@ public class Anfangsfenster extends javax.swing.JFrame {
 
     private void StudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentActionPerformed
         // TODO add your handling code here:
-        Student frame= new Student();
+        StudentFenster frame= new StudentFenster();
         frame.setVisible(true);
     }//GEN-LAST:event_StudentActionPerformed
 
     private void LehrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LehrerActionPerformed
         // TODO add your handling code here:
-        Lehrer frame= new Lehrer();
+        hocalar frame= new hocalar();
         frame.setVisible(true);
     }//GEN-LAST:event_LehrerActionPerformed
 
     private void KlasseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KlasseActionPerformed
-        Studentenklasse frame = new Studentenklasse ();
+        StudentenklasseFenster frame = new StudentenklasseFenster ();
         frame.setVisible (true);// TODO add your handling code here:
     }//GEN-LAST:event_KlasseActionPerformed
 
