@@ -8,25 +8,30 @@ package studentenmanagement.Klasse;
 /**
  */
 public class Raum {
-    int id;
+    int ID;
     String Lagebeschreibung;
     String Name;
     int Kapazitat;
  
-    public Raum(int ID, String Lagebeschreibung, String Name,int Kapazitat) {
-        this.id = ID;
-        this.Lagebeschreibung = Lagebeschreibung;
+    public Raum(int ID,String Name, String Lagebeschreibung, int Kapazitat) {
+        this.ID = ID;
         this.Name = Name;
+        this.Lagebeschreibung = Lagebeschreibung;
         this.Kapazitat = Kapazitat;     
     }
+    
+     public int getID(){
+     return ID;
+    }
 
+    public String getName(){
+    return Name;
+    }
+         
     public String getLagebeschreibung(){
       return Lagebeschreibung;
     }
     
-    public String getName(){
-      return Name;
-    }
     
     public int getKapazitat(){
       return Kapazitat;
