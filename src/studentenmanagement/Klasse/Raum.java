@@ -13,8 +13,8 @@ public class Raum {
     String Name;
     int Kapazitat;
  
-    public Raum(int i, String l,String n,int k) {
-        this.id = i;
+    public Raum(int ID, String l,String n,int k) {
+        this.id = ID;
         this.Lagebeschreibung = l;
         this.Name = n;
         this.Kapazitat = k;     
