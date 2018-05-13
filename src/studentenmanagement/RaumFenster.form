@@ -52,80 +52,64 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="su3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="such3" min="-2" pref="176" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="suche3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="60" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                  <Component id="id_label" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="neu3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="speichern3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="sID" min="-2" max="-2" attributes="0"/>
+                                              <Component id="snn" min="-2" max="-2" attributes="0"/>
+                                              <Component id="svn" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="sid" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
+                              <Component id="skapazitat" min="-2" pref="176" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                  <Component id="sname" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
+                                  <Component id="slagebe" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="392" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
                                   <Component id="lname" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="löschen" min="-2" pref="140" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="neu3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="160" max="32767" attributes="0"/>
-                                          <Component id="speichern3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="vn3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="id" alignment="1" min="-2" max="-2" attributes="0"/>
-                                              <Component id="nn3" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="kapazitat" max="32767" attributes="0"/>
-                                              <Component id="lagebe" max="32767" attributes="0"/>
-                                              <Component id="name" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <Component id="su3" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Group type="102" alignment="1" attributes="0">
-                                                          <Component id="sID" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Component id="sname" min="-2" pref="176" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="1" attributes="0">
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="id_label" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="svn" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="snn" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                      <Component id="skapazitat" alignment="0" pref="176" max="32767" attributes="0"/>
-                                                      <Component id="slagebe" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="such3" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="sid" alignment="0" max="32767" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="suche3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                                          <Component id="bearbeit3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="lösch" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="bearbeit3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+                                  <Component id="lösch" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -137,25 +121,18 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="name" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="su3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="such3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="suche3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lagebe" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="vn3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="id_label" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="sid" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="id_label" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="kapazitat" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nn3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="sID" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="sname" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sID" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -167,21 +144,21 @@
                       <Component id="skapazitat" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="snn" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="115" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="löschen" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lname" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lösch" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="bearbeit3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="speichern3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="neu3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lösch" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Component id="jScrollPane4" min="-2" pref="96" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jScrollPane4" min="-2" pref="131" max="-2" attributes="0"/>
+                  <EmptySpace pref="112" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -229,27 +206,10 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="vn3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Lagebeschreibung"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="nn3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Kapazitat"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="su3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Suche"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="lagebe">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lagebeActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="kapazitat">
         </Component>
         <Component class="javax.swing.JTextField" name="such3">
           <Events>
@@ -318,16 +278,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="neu3ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="name">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="id">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Raum Name"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="sname">
         </Component>
         <Component class="javax.swing.JTextField" name="slagebe">
@@ -366,7 +316,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lname">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Name"/>
+            <Property name="text" type="java.lang.String" value="Raum Name"/>
           </Properties>
         </Component>
       </SubComponents>

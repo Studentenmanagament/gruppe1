@@ -85,19 +85,13 @@ public class RaumFenster extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         raum_table = new javax.swing.JTable();
-        vn3 = new javax.swing.JLabel();
-        nn3 = new javax.swing.JLabel();
         su3 = new javax.swing.JLabel();
-        lagebe = new javax.swing.JTextField();
-        kapazitat = new javax.swing.JTextField();
         such3 = new javax.swing.JTextField();
         speichern3 = new javax.swing.JButton();
         suche3 = new javax.swing.JButton();
         bearbeit3 = new javax.swing.JButton();
         lösch = new javax.swing.JButton();
         neu3 = new javax.swing.JButton();
-        name = new javax.swing.JTextField();
-        id = new javax.swing.JLabel();
         sname = new javax.swing.JTextField();
         slagebe = new javax.swing.JTextField();
         skapazitat = new javax.swing.JTextField();
@@ -138,17 +132,7 @@ public class RaumFenster extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(raum_table);
 
-        vn3.setText("Lagebeschreibung");
-
-        nn3.setText("Kapazitat");
-
         su3.setText("Suche");
-
-        lagebe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lagebeActionPerformed(evt);
-            }
-        });
 
         such3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,14 +187,6 @@ public class RaumFenster extends javax.swing.JFrame {
             }
         });
 
-        name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameActionPerformed(evt);
-            }
-        });
-
-        id.setText("Raum Name");
-
         sID.setText("Raum Name");
 
         svn.setText("Lagebeschreibung");
@@ -227,7 +203,7 @@ public class RaumFenster extends javax.swing.JFrame {
 
         sid.setEditable(false);
 
-        lname.setText("Name");
+        lname.setText("Raum Name");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -238,61 +214,50 @@ public class RaumFenster extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(su3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(such3, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(suche3)
+                                .addGap(0, 60, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(id_label)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(neu3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(speichern3))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(sID)
+                                            .addComponent(snn)
+                                            .addComponent(svn))))
+                                .addGap(5, 5, 5)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sid, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(skapazitat, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(sname, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(slagebe, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(392, 392, 392))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(lname)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(neu3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
-                                        .addComponent(speichern3))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(vn3)
-                                            .addComponent(id, javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(nn3, javax.swing.GroupLayout.Alignment.TRAILING))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(kapazitat)
-                                            .addComponent(lagebe)
-                                            .addComponent(name))))
-                                .addGap(111, 111, 111)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(44, 44, 44)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                                        .addComponent(su3)
-                                                        .addGap(27, 27, 27))
-                                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                                        .addComponent(sID)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                                .addComponent(sname, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(id_label)
-                                                    .addComponent(svn)
-                                                    .addComponent(snn))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(skapazitat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                                                    .addComponent(slagebe, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(such3, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(sid, javax.swing.GroupLayout.Alignment.LEADING))))
-                                        .addGap(87, 87, 87)
-                                        .addComponent(suche3))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(116, 116, 116)
-                                        .addComponent(bearbeit3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(lösch)))))
-                        .addGap(21, 21, 21)))
+                                .addComponent(bearbeit3)
+                                .addGap(190, 190, 190)
+                                .addComponent(lösch)))
+                        .addGap(29, 29, 29)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -300,23 +265,16 @@ public class RaumFenster extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(id)
                     .addComponent(su3)
                     .addComponent(such3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(suche3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lagebe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vn3)
-                    .addComponent(id_label)
-                    .addComponent(sid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(sid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id_label))
+                .addGap(4, 4, 4)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(kapazitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nn3)
-                    .addComponent(sID)
-                    .addComponent(sname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sID))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(slagebe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -325,19 +283,19 @@ public class RaumFenster extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(skapazitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(snn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lname))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lösch)
                     .addComponent(bearbeit3)
                     .addComponent(speichern3)
-                    .addComponent(neu3)
-                    .addComponent(lösch))
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53))
+                    .addComponent(neu3))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -359,9 +317,12 @@ public class RaumFenster extends javax.swing.JFrame {
 
     private void neu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_neu3ActionPerformed
 
-        lagebe.setText("");
-        name.setText("");
-        kapazitat.setText("");
+        slagebe.setText("");
+        sname.setText("");
+        skapazitat.setText("");
+        sid.setText("");
+        such3.setText("");
+        löschen.setText("");
     }//GEN-LAST:event_neu3ActionPerformed
 
     private void löschActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_löschActionPerformed
@@ -374,7 +335,6 @@ public class RaumFenster extends javax.swing.JFrame {
                     String query ="DELETE FROM raum WHERE NAME =?";
                     pst = con.prepareStatement(query);
                     pst.setString(1,löschen.getText());
-                     System.out.println(pst.toString());
                     pst.executeUpdate();
                     
                     show_Raum();
@@ -439,9 +399,9 @@ public class RaumFenster extends javax.swing.JFrame {
                 +" (Lagebeschreibung,Name,Kapazitat)"
                 +" values(?,?,?)";
                 PreparedStatement pst = con.prepareStatement(query);
-                pst.setString(1,lagebe.getText());
-                pst.setString(2,name.getText());
-                pst.setInt(3,Integer.parseInt(kapazitat.getText()));
+                pst.setString(1,slagebe.getText());
+                pst.setString(2,sname.getText());
+                pst.setInt(3,Integer.parseInt(skapazitat.getText()));
                 pst.executeUpdate();
                 
                 show_Raum();
@@ -462,14 +422,6 @@ public class RaumFenster extends javax.swing.JFrame {
     private void such3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_such3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_such3ActionPerformed
-
-    private void lagebeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lagebeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lagebeActionPerformed
-
-    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameActionPerformed
 
     private void löschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_löschenActionPerformed
         // TODO add your handling code here:
@@ -513,18 +465,13 @@ public class RaumFenster extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bearbeit3;
-    private javax.swing.JLabel id;
     private javax.swing.JLabel id_label;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField kapazitat;
-    private javax.swing.JTextField lagebe;
     private javax.swing.JLabel lname;
     private javax.swing.JButton lösch;
     private javax.swing.JTextField löschen;
-    private javax.swing.JTextField name;
     private javax.swing.JButton neu3;
-    private javax.swing.JLabel nn3;
     private javax.swing.JTable raum_table;
     private javax.swing.JLabel sID;
     private javax.swing.JTextField sid;
@@ -537,6 +484,5 @@ public class RaumFenster extends javax.swing.JFrame {
     private javax.swing.JTextField such3;
     private javax.swing.JButton suche3;
     private javax.swing.JLabel svn;
-    private javax.swing.JLabel vn3;
     // End of variables declaration//GEN-END:variables
 }
