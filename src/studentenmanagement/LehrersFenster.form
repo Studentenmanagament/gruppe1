@@ -53,7 +53,7 @@
                           <Component id="neu" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
                           <Component id="speichern" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="148" pref="148" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                           <Component id="bearbeit" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="lösche" min="-2" max="-2" attributes="0"/>

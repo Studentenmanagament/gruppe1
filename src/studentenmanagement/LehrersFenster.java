@@ -320,7 +320,7 @@ public class LehrersFenster extends javax.swing.JFrame {
                         .addComponent(neu)
                         .addGap(188, 188, 188)
                         .addComponent(speichern)
-                        .addGap(148, 148, 148)
+                        .addGap(155, 155, 155)
                         .addComponent(bearbeit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lösche))
