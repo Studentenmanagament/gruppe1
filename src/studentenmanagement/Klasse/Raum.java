@@ -13,11 +13,11 @@ public class Raum {
     String Name;
     int Kapazitat;
  
-    public Raum(int ID, String l,String n,int k) {
+    public Raum(int ID, String Lagebeschreibung, String Name,int Kapazitat) {
         this.id = ID;
-        this.Lagebeschreibung = l;
-        this.Name = n;
-        this.Kapazitat = k;     
+        this.Lagebeschreibung = Lagebeschreibung;
+        this.Name = Name;
+        this.Kapazitat = Kapazitat;     
     }
 
     public String getLagebeschreibung(){
