@@ -7,7 +7,7 @@ package studentenmanagement.Klasse;
 
 /**
  *
- * @author mertcenk
+ * @author domin
  */
     
  
