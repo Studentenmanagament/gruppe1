@@ -29,7 +29,7 @@ public class RaumFenster extends javax.swing.JFrame {
 
        try { 
            Class.forName("org.hsqldb.jdbcDriver"); 
-           String url = "jdbc:hsqldb:file:C:\\Users\\emirhan\\Desktop\\sql\\;shutdown=true";  
+           String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";  
            con = DriverManager.getConnection(url,"G1", "1234");
            
        }  catch (Exception e) { 
@@ -107,10 +107,11 @@ public class RaumFenster extends javax.swing.JFrame {
         löschen = new javax.swing.JTextField();
         id_label = new javax.swing.JLabel();
         sid = new javax.swing.JTextField();
+        lname = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 204));
 
         raum_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -226,6 +227,8 @@ public class RaumFenster extends javax.swing.JFrame {
 
         sid.setEditable(false);
 
+        lname.setText("Name");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -234,54 +237,61 @@ public class RaumFenster extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane4)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(neu3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(lösch))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(vn3)
-                                    .addComponent(id))
-                                .addGap(61, 61, 61)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(lagebe)))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(nn3)
-                                .addGap(53, 53, 53)
-                                .addComponent(kapazitat))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(speichern3)))
-                        .addGap(111, 111, 111)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lname)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(335, 335, 335)
-                                .addComponent(bearbeit3))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(su3)
-                                        .addComponent(sID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(svn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(snn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(id_label))
-                                .addGap(27, 27, 27)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(skapazitat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
-                                        .addComponent(slagebe, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(such3, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(sid, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(sname, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(87, 87, 87)
-                                .addComponent(suche3)))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(neu3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                                        .addComponent(speichern3))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(vn3)
+                                            .addComponent(id, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(nn3, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(kapazitat)
+                                            .addComponent(lagebe)
+                                            .addComponent(name))))
+                                .addGap(111, 111, 111)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(44, 44, 44)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                                        .addComponent(su3)
+                                                        .addGap(27, 27, 27))
+                                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                                        .addComponent(sID)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                                .addComponent(sname, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(id_label)
+                                                    .addComponent(svn)
+                                                    .addComponent(snn))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(skapazitat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                                                    .addComponent(slagebe, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(such3, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(sid, javax.swing.GroupLayout.Alignment.LEADING))))
+                                        .addGap(87, 87, 87)
+                                        .addComponent(suche3))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(116, 116, 116)
+                                        .addComponent(bearbeit3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lösch)))))
                         .addGap(21, 21, 21)))
                 .addContainerGap())
         );
@@ -315,18 +325,19 @@ public class RaumFenster extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(skapazitat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(snn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                .addComponent(speichern3)
-                .addGap(37, 37, 37)
-                .addComponent(bearbeit3)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lname))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bearbeit3)
+                    .addComponent(speichern3)
                     .addComponent(neu3)
-                    .addComponent(lösch)
-                    .addComponent(löschen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(lösch))
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -501,46 +512,19 @@ public class RaumFenster extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bearbeit;
-    private javax.swing.JButton bearbeit1;
     private javax.swing.JButton bearbeit3;
-    private javax.swing.JTextField benutzer;
-    private javax.swing.JTextField benutzer1;
-    private javax.swing.JLabel bn;
-    private javax.swing.JLabel bn1;
-    private javax.swing.JLabel em;
-    private javax.swing.JLabel em1;
-    private javax.swing.JTable hoca;
-    private javax.swing.JTable hoca1;
     private javax.swing.JLabel id;
     private javax.swing.JLabel id_label;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField kapazitat;
     private javax.swing.JTextField lagebe;
+    private javax.swing.JLabel lname;
     private javax.swing.JButton lösch;
-    private javax.swing.JButton lösche;
-    private javax.swing.JButton lösche1;
     private javax.swing.JTextField löschen;
-    private javax.swing.JTextField mail;
-    private javax.swing.JTextField mail1;
-    private javax.swing.JTextField nach;
-    private javax.swing.JTextField nach1;
     private javax.swing.JTextField name;
-    private javax.swing.JButton neu;
-    private javax.swing.JButton neu1;
     private javax.swing.JButton neu3;
-    private javax.swing.JLabel nn;
-    private javax.swing.JLabel nn1;
     private javax.swing.JLabel nn3;
-    private javax.swing.JLabel p;
-    private javax.swing.JLabel p1;
-    private javax.swing.JTextField pass;
-    private javax.swing.JTextField pass1;
     private javax.swing.JTable raum_table;
     private javax.swing.JLabel sID;
     private javax.swing.JTextField sid;
@@ -548,27 +532,11 @@ public class RaumFenster extends javax.swing.JFrame {
     private javax.swing.JTextField slagebe;
     private javax.swing.JTextField sname;
     private javax.swing.JLabel snn;
-    private javax.swing.JButton speichern;
-    private javax.swing.JButton speichern1;
     private javax.swing.JButton speichern3;
-    private javax.swing.JLabel su;
-    private javax.swing.JLabel su1;
     private javax.swing.JLabel su3;
-    private javax.swing.JTextField such;
-    private javax.swing.JTextField such1;
     private javax.swing.JTextField such3;
-    private javax.swing.JButton suche;
-    private javax.swing.JButton suche1;
     private javax.swing.JButton suche3;
     private javax.swing.JLabel svn;
-    private javax.swing.JTextField tel;
-    private javax.swing.JTextField tel1;
-    private javax.swing.JLabel tn;
-    private javax.swing.JLabel tn1;
-    private javax.swing.JLabel vn;
-    private javax.swing.JLabel vn1;
     private javax.swing.JLabel vn3;
-    private javax.swing.JTextField vor;
-    private javax.swing.JTextField vor1;
     // End of variables declaration//GEN-END:variables
 }
