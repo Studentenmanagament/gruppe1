@@ -61,11 +61,10 @@ public class RaumFenster extends javax.swing.JFrame {
            while(rs.next()){
                 raum = new Raum (rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
                 raum_list.add(raum);
-           }
-        } catch (SQLException e) { 
+            }
+           } catch (SQLException e) { 
             JOptionPane.showMessageDialog(null,e);
-        }
-        
+           }
         }
     }
     
