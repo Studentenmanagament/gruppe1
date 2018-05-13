@@ -9,19 +9,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import studentenmanagement.Klasse.*;
+
 
 public class RaumFenster extends javax.swing.JFrame {
     
     Connection con = null;
     PreparedStatement pst=null;
     ResultSet rs=null;
+    Vector <Raum> raum_list = new Vector<>();
+
     
     public RaumFenster() {
         initComponents();
         initDB();
+        getAllUsers();
         show_Raum();
     }
     
@@ -31,16 +38,20 @@ public class RaumFenster extends javax.swing.JFrame {
            Class.forName("org.hsqldb.jdbcDriver"); 
            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";  
            con = DriverManager.getConnection(url,"G1", "1234");
-           
-       }  catch (Exception e) { 
-            JOptionPane.showMessageDialog(null,e);
-       }
+           } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LehrersFenster.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(LehrersFenster.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true"; 
     }
+
     
     
-    public ArrayList<Raum> RaumList(){
-        
-        ArrayList<Raum> r= new ArrayList<>();
+    
+    public void getAllUsers(){
+        raum_list.removeAllElements();
+
         if (con != null) {
         try {
            String query ="SELECT * FROM raum";
@@ -48,27 +59,25 @@ public class RaumFenster extends javax.swing.JFrame {
            rs =st.executeQuery(query);
            Raum raum;
            while(rs.next()){
-                raum = new Raum(rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
-                r.add(raum);
+                raum = new Raum (rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
+                raum_list.add(raum);
            }
-        } catch (Exception e) { 
+        } catch (SQLException e) { 
             JOptionPane.showMessageDialog(null,e);
         }
         
         }
-        return r;
     }
     
     public void show_Raum(){
         
-        ArrayList<Raum> list = RaumList();
         DefaultTableModel model = (DefaultTableModel) raum_table.getModel();
         model.setRowCount(0);
         Object[] row = new Object[3];
-        for(int i=0;i<list.size();i++){
-            row[0]=list.get(i).getLagebeschreibung();
-            row[1]=list.get(i).getName();
-            row[2]=list.get(i).getKapazitat();
+        for(int i=0;i<raum_list.size();i++){
+            row[0]=raum_list.get(i).getLagebeschreibung();
+            row[1]=raum_list.get(i).getName();
+            row[2]=raum_list.get(i).getKapazitat();
             model.addRow(row);
         }
     }
