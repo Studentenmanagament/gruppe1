@@ -6,7 +6,7 @@
 package studentenmanagement;
 
 
-import yedekler.StudentFenster;
+/*import yedekler.StudentFenster;*/
 import javax.swing.*;
 import java.io.*;
 import java.sql.Connection;
@@ -141,7 +141,7 @@ public class Anfangsfenster extends javax.swing.JFrame {
 
     private void LehrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LehrerActionPerformed
         // TODO add your handling code here:
-        hocalar frame= new hocalar();
+        LehrersFenster frame= new LehrersFenster();
         frame.setVisible(true);
     }//GEN-LAST:event_LehrerActionPerformed
 
