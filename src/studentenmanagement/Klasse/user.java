@@ -11,7 +11,8 @@ package studentenmanagement.Klasse;
  */
 public class user {
     private int ID;
-    private String Vorname,Nachname,Benutzername,Passwort,Tel,Email;
+    private String Vorname;
+    private String Nachname,Benutzername,Passwort,Tel,Email;
     
     public user(int ID, String Vorname,String Nachname,String Benutzername,String Passwort,String Tel,String Email) {
         this.ID = ID;
