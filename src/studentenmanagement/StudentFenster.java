@@ -47,7 +47,7 @@ public class StudentFenster extends javax.swing.JFrame {
        
         try{
           Class.forName("org.hsqldb.jdbcDriver");
-          String url = "jdbc:hsqldb:file:C:\\Users\\emirhan\\Desktop\\sql\\;shutdown=true";  
+          String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";  
           con = DriverManager.getConnection(url,"G1", "1234");
 
         }catch (ClassNotFoundException ex) {
@@ -55,7 +55,7 @@ public class StudentFenster extends javax.swing.JFrame {
         }catch (SQLException ex) {
             Logger.getLogger(StudentFenster.class.getName()).log(Level.SEVERE, null, ex);
         }
-            String url = "jdbc:hsqldb:file:C:\\Users\\emirhan\\Desktop\\sql\\;shutdown=true"; 
+            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true"; 
 
     }
     
@@ -516,8 +516,8 @@ public class StudentFenster extends javax.swing.JFrame {
            try{
                
                String query = "insert into Student"
-                       +"(Matrikelnummer,Vorname,Nachname,TC,Geburtsdatum,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach,AnfangsJahr)"
-                       +"(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                       +" (Matrikelnummer,Vorname,Nachname,TC,Geburtsdatum,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach,AnfangsJahr)"
+                       +" VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                PreparedStatement pst = con.prepareStatement(query);
 
                pst.setInt(1,Integer.parseInt(tfMatrikel.getText()));
@@ -535,6 +535,7 @@ public class StudentFenster extends javax.swing.JFrame {
                pst.setString(13,tfEmail.getText());
                pst.setString(14,tfFach.getText());
                pst.setInt(15,Integer.parseInt(tfAnfangsJahr.getText()));
+               pst.executeUpdate();
                
                
                getAllUsers();
@@ -542,6 +543,7 @@ public class StudentFenster extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(null,"Gespeichert!");
                
            }catch(SQLException e){
+               System.out.println(e);
                               JOptionPane.showMessageDialog(null,"falsch angemeldet!"); 
            }
        }
@@ -550,9 +552,9 @@ public class StudentFenster extends javax.swing.JFrame {
     private void btSuchenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSuchenActionPerformed
         if(con!=null){
             try{
-                String query ="select * from Student WHERE VORNAME LIKE '%?%' ";
+                String query ="select * from Student WHERE MATRIKELNUMMER LIKE '%?%' ";
                 Statement st =con.createStatement();
-                rs=st.executeQuery("select * from Student WHERE VORNAME LIKE '%"+ tfSuchen.getText()+"%'"+"OR NACHNAME LIKE '%"+tfSuchen.getText());
+                rs=st.executeQuery("select * from Student WHERE MATRIKELNUMMER LIKE '%"+ tfSuchen.getText()+"%'");
     
                 Student_list.removeAllElements();
                 ogrenci student;
