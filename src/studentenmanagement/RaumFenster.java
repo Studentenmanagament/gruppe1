@@ -59,10 +59,10 @@ public class RaumFenster extends javax.swing.JFrame {
            rs =st.executeQuery(query);
            Raum raum;
            while(rs.next()){
-                raum = new Raum (rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
+                raum = new Raum(rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
                 raum_list.add(raum);
             }
-           } catch (SQLException e) { 
+           } catch (SQLException e) {
             JOptionPane.showMessageDialog(null,e);
            }
         }
@@ -72,11 +72,12 @@ public class RaumFenster extends javax.swing.JFrame {
         
         DefaultTableModel model = (DefaultTableModel) raum_table.getModel();
         model.setRowCount(0);
-        Object[] row = new Object[3];
+        Object[] row = new Object[4];
         for(int i=0;i<raum_list.size();i++){
-            row[0]=raum_list.get(i).getLagebeschreibung();
+            row[0]=raum_list.get(i).getID();
             row[1]=raum_list.get(i).getName();
-            row[2]=raum_list.get(i).getKapazitat();
+            row[2]=raum_list.get(i).getLagebeschreibung();
+            row[3]=raum_list.get(i).getKapazitat();
             model.addRow(row);
         }
     }
