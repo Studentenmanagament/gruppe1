@@ -402,7 +402,8 @@ public class StudentenklasseFenster extends javax.swing.JFrame {
                 } 
                 if (!fach.getText().equals("")) {
                     query = query + " WHERE kapazitat LIKE '" + fach.getText() + "'";
-                } 
+                }  //Burda her bölüm doldurulunca sql koduna sürekli where where yazacak.Kac bölümde doldurulursa buda kodda hata olucak bu haliyle sadece tek kisim doldurulup aran
+                   //abilir. 
                
                 Statement st =con.createStatement();
                 rs=st.executeQuery(query);
@@ -432,6 +433,7 @@ public class StudentenklasseFenster extends javax.swing.JFrame {
                     
                    
                 }
+                siniflar.updateUI();                
             }catch(SQLException e){
                 JOptionPane.showMessageDialog(null,e);
             }

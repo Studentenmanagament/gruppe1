@@ -5,6 +5,7 @@
  */
 
 //SATIR 454 501 VE DAHA BİRÇOK YER İÇİN KODUN BAZI YERLERİNİ ANLAYAMADIĞIM İÇİN HATA ÇIKICAK U YÜZDEN LÜTFENAKTİF OLUNCAYARDIMCI OLUN İYİ ÇALIŞMALAR
+//Studentte deisiklik yorumu.
 package studentenmanagement;
 
 import java.sql.Connection;
