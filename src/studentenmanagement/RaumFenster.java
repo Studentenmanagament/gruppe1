@@ -121,14 +121,14 @@ public class RaumFenster extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Raum Name", "Lagebeschreibung", "Kapazitat"
+                "ID", "Raum Name", "Lagebeschreibung", "Kapazitat"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                true, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -137,6 +137,11 @@ public class RaumFenster extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        raum_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                raum_tableMouseClicked(evt);
             }
         });
         jScrollPane4.setViewportView(raum_table);
@@ -196,6 +201,12 @@ public class RaumFenster extends javax.swing.JFrame {
             }
         });
 
+        sname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                snameActionPerformed(evt);
+            }
+        });
+
         sID.setText("Raum Name");
 
         svn.setText("Lagebeschreibung");
@@ -251,9 +262,8 @@ public class RaumFenster extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(sid, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(skapazitat, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(sname, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(slagebe, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(sname, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(slagebe, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(392, 392, 392))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -395,6 +405,8 @@ public class RaumFenster extends javax.swing.JFrame {
                           skapazitat.setText("" + rs.getInt("Kapazitat"));
                           sid.setText("" + rs.getInt("ID"));
                 }
+                getAllUsers();
+                show_Raum();
             } catch (Exception e) { 
                 JOptionPane.showMessageDialog(null,e);
             }
@@ -405,16 +417,16 @@ public class RaumFenster extends javax.swing.JFrame {
         if (con != null) {
             try {
                 String query ="insert into raum"
-                +" (Lagebeschreibung,Name,Kapazitat)"
+                +" (Name,Lagebeschreibung,Kapazitat)"
                 +" values(?,?,?)";
                 PreparedStatement pst = con.prepareStatement(query);
-                pst.setString(1,slagebe.getText());
-                pst.setString(2,sname.getText());
+                pst.setString(1,sname.getText());
+                pst.setString(2,slagebe.getText());
                 pst.setInt(3,Integer.parseInt(skapazitat.getText()));
                 pst.executeUpdate();
                 
+                getAllUsers();
                 show_Raum();
-                JOptionPane.showMessageDialog(null,"Gespeichert!");
             }
             catch (SQLException e) {
                 System.out.println(e);
@@ -435,6 +447,22 @@ public class RaumFenster extends javax.swing.JFrame {
     private void löschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_löschenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_löschenActionPerformed
+
+    private void snameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_snameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_snameActionPerformed
+
+    private void raum_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_raum_tableMouseClicked
+int row=raum_table.getSelectedRow();
+            DefaultTableModel model = (DefaultTableModel) raum_table.getModel();
+       
+                      
+                      sid.setText(model.getValueAt(row, 0).toString());                      
+                      sname.setText(model.getValueAt(row, 1).toString());                      
+                      slagebe.setText(model.getValueAt(row, 2).toString());                      
+                      skapazitat.setText(model.getValueAt(row, 3).toString());                      
+       // TODO add your handling code here:
+    }//GEN-LAST:event_raum_tableMouseClicked
 
     /**
      * @param args the command line arguments
