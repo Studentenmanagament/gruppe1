@@ -50,21 +50,21 @@ public class RaumFenster extends javax.swing.JFrame {
     
     
     public void getAllUsers(){
-        raum_list.removeAllElements();
 
         if (con != null) {
-        try {
-           String query ="SELECT * FROM raum";
-           Statement st= con.createStatement();
-           rs =st.executeQuery(query);
-           Raum raum;
-           while(rs.next()){
-                raum = new Raum(rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
-                raum_list.add(raum);
+            raum_list.removeAllElements();
+            try {
+                String query ="SELECT * FROM raum";
+                Statement st= con.createStatement();
+                rs =st.executeQuery(query);
+                Raum raum;
+                while(rs.next()){
+                    raum = new Raum(rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
+                    raum_list.add(raum);
+                }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null,e);
             }
-           } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null,e);
-           }
         }
     }
     
@@ -348,14 +348,16 @@ public class RaumFenster extends javax.swing.JFrame {
         if (con != null) {
             int onay = JOptionPane.showConfirmDialog(null, "Sind Sie sicher?", "raum", JOptionPane.YES_NO_OPTION);
 
-            if (onay == 0) {
+            if (onay == JOptionPane.YES_OPTION) {
 
                 try{
-                    String query ="DELETE FROM raum WHERE NAME =?";
+                    String query ="DELETE FROM raum WHERE NAME=?";                
                     pst = con.prepareStatement(query);
                     pst.setString(1,löschen.getText());
                     pst.executeUpdate();
                     
+                    
+                    getAllUsers();                                      
                     show_Raum();
                     JOptionPane.showMessageDialog(null,"Gelöscht!");
                 } catch (Exception ex) {
@@ -382,6 +384,7 @@ public class RaumFenster extends javax.swing.JFrame {
                 pst.setInt(4,Integer.parseInt(sid.getText()));
                 pst.executeUpdate();
                 
+                getAllUsers();
                 show_Raum();
 
             } catch (Exception e) {
@@ -394,18 +397,15 @@ public class RaumFenster extends javax.swing.JFrame {
     private void suche3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suche3ActionPerformed
         if (con != null) {
             try {                       
-                String query ="select * from raum WHERE NAME=?";
-                pst = con.prepareStatement(query);
-                pst.setString(1,such3.getText()); 
-
-                rs = pst.executeQuery();
-                if (rs.next()){
-                          slagebe.setText(rs.getString("Lagebeschreibung"));
-                          sname.setText(rs.getString("Name"));
-                          skapazitat.setText("" + rs.getInt("Kapazitat"));
-                          sid.setText("" + rs.getInt("ID"));
+                String query ="select * from raum WHERE NAME LIKE '%?%'";
+                Statement st = con.createStatement();
+                rs = st.executeQuery("select * from raum WHERE NAME LIKE '%" + such3.getText() + "%'" );
+                raum_list.removeAllElements();
+                Raum raum;
+                while(rs.next()){
+                    raum = new Raum(rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
+                    raum_list.add(raum);
                 }
-                getAllUsers();
                 show_Raum();
             } catch (Exception e) { 
                 JOptionPane.showMessageDialog(null,e);
