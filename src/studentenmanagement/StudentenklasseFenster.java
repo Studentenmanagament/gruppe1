@@ -59,6 +59,14 @@ public class StudentenklasseFenster extends javax.swing.JFrame {
         initComponents();
        // initDB();
     }
+    
+    /* show_ogrenci  show_raum fonksiyonu tanımlayın sonra ordan 
+    DefaultTableModel model = (DefaultTableModel) hoca.getModel();
+        model.setRowCount(0);
+     bu kodu uyarlayın panel için büyük ihtimal bu kod benzer gelecek ama doğru çıkmayacak kodu araştırın.
+    bunla panele çekersiniz sonrada kullanıcıya gösterirsiniz */
+    
+    
     public void initDB() {
 
        try { 
