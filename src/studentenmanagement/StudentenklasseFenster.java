@@ -53,7 +53,10 @@ public class StudentenklasseFenster extends javax.swing.JFrame {
     Vector <Raum> raum_list = new Vector<>();
     Vector <Studentenklasse> ögrenciBox = new Vector<>();
     Vector <Studentenklasse> sinifBox = new Vector<>();
-    
+    private JCheckBox checkBox;
+    private JLabel label;
+    //private JPanel siniflar;
+    //private JPanel ögrenciler;
     
     public StudentenklasseFenster() {
         initComponents();
@@ -76,6 +79,7 @@ public class StudentenklasseFenster extends javax.swing.JFrame {
            } catch (ClassNotFoundException ex) {
             Logger.getLogger(LehrersFenster.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
+            System.out.println(ex);
             Logger.getLogger(LehrersFenster.class.getName()).log(Level.SEVERE, null, ex);
         }
             String url = "jdbc:hsqldb:file:C:\\Users\\emirhan\\Desktop\\sql\\;shutdown=true"; 
@@ -97,7 +101,8 @@ public class StudentenklasseFenster extends javax.swing.JFrame {
                 raum = new Raum (rs.getInt("ID"), rs.getString("Name"),rs.getString("Lagebeschreibung"),rs.getInt("Kapazitat"));
                 raum_list.add(raum);
             }
-           } catch (SQLException e) { 
+        } catch (SQLException e) {
+            System.out.println(e);
             JOptionPane.showMessageDialog(null,e);
            }
         }
@@ -130,7 +135,8 @@ public class StudentenklasseFenster extends javax.swing.JFrame {
                 
                 Student_list.add(student);
             }
-    }catch (Exception e) { 
+        }catch (Exception e) {
+                    System.out.println(e);
                    JOptionPane.showMessageDialog(null,"Wir haben Problem!");
             }
         }
@@ -439,17 +445,20 @@ public class StudentenklasseFenster extends javax.swing.JFrame {
                         siniflar.add(L2);
                         siniflar.add(L3);
                         siniflar.validate();
-                        /*for(int x = 0; x < CheckBoxNumber ; x++) {
+                        /*
+                        javax.swing.JCheckBox[] jCheckboxArray;
+                        int CheckBoxNumber = 5;
+                        for(int x = 0; x < CheckBoxNumber ; x++) {
                             jCheckboxArray[x] = new javax.swing.JCheckBox();
                             jCheckboxArray[x].setText("CheckBox " + x);
                             siniflar.add(jCheckboxArray[x]);
                         }*/
-                    
-                    
-                   
+                                    
+                  
                 }
                 siniflar.updateUI();                
             }catch(SQLException e){
+                System.out.println(e);
                 JOptionPane.showMessageDialog(null,e);
             }
         }
@@ -519,6 +528,7 @@ System.out.println("dsadsad");
                 }
                 ögrenciler.updateUI();
             }catch(SQLException e){
+                System.out.println(e);
                 JOptionPane.showMessageDialog(null,e);
             }
        // }
@@ -549,12 +559,16 @@ System.out.println("dsadsad");
                 }
             }
         } catch (ClassNotFoundException ex) {
+            System.out.println(ex);
             java.util.logging.Logger.getLogger(StudentenklasseFenster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
+            System.out.println(ex);
             java.util.logging.Logger.getLogger(StudentenklasseFenster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
+            System.out.println(ex);
             java.util.logging.Logger.getLogger(StudentenklasseFenster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            System.out.println(ex);
             java.util.logging.Logger.getLogger(StudentenklasseFenster.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
