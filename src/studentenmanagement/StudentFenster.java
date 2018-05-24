@@ -4,21 +4,27 @@
  * and open the template in the editor.
  */
 
-//SATIR 454 501 VE DAHA BİRÇOK YER İÇİN KODUN BAZI YERLERİNİ ANLAYAMADIĞIM İÇİN HATA ÇIKICAK U YÜZDEN LÜTFENAKTİF OLUNCAYARDIMCI OLUN İYİ ÇALIŞMALAR
-//Studentte deisiklik yorumu.
+
 package studentenmanagement;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import studentenmanagement.Klasse.*;
 
@@ -31,7 +37,9 @@ public class StudentFenster extends javax.swing.JFrame {
     Connection con = null;
     PreparedStatement pst=null;
     ResultSet rs=null;
+    SimpleDateFormat sdf = null;
     Vector<ogrenci> Student_list = new Vector<>();
+    
     /**
      * Creates new form Student
      */
@@ -63,23 +71,22 @@ public class StudentFenster extends javax.swing.JFrame {
     
     public void getAllUsers(){
         if (con != null) {
-        Student_list.removeAllElements();
-            
-        try { 
+            Student_list.removeAllElements();
 
-            String query ="SELECT * FROM Student";
-            Statement st= con.createStatement();
-            rs =st.executeQuery(query);
-            ogrenci student;
-            while(rs.next()){
-            student = new ogrenci(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geschlecht"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getInt("PLZ"), rs.getString("Fach"),rs.getString("Geburtsdatum"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
-                
-                Student_list.add(student);
+            try { 
+
+                String query ="SELECT * FROM Student";
+                Statement st= con.createStatement();
+                rs =st.executeQuery(query);
+                ogrenci student;
+                while(rs.next()){
+                student = new ogrenci(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geschlecht"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getInt("PLZ"), rs.getString("Fach"),rs.getString("Geburtsdatum"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"),rs.getString("Stufe"));
+                   Student_list.add(student);
+                }
+            }catch (Exception e) { 
+                           JOptionPane.showMessageDialog(null,"Wir haben Problem!");
             }
-    }catch (Exception e) { 
-                   JOptionPane.showMessageDialog(null,"Wir haben Problem!");
-            }
-        }
+         }
         
     }
     
@@ -126,7 +133,7 @@ public class StudentFenster extends javax.swing.JFrame {
         tfVorname = new javax.swing.JTextField();
         tfNachname = new javax.swing.JTextField();
         tfTC = new javax.swing.JTextField();
-        tfGeschlecht = new javax.swing.JTextField();
+        tfLoeschen = new javax.swing.JTextField();
         tfPLZ = new javax.swing.JTextField();
         tfOrt = new javax.swing.JTextField();
         tfBezirk = new javax.swing.JTextField();
@@ -134,7 +141,6 @@ public class StudentFenster extends javax.swing.JFrame {
         tfHausnummer = new javax.swing.JTextField();
         tfTel = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
-        lbSuche = new javax.swing.JLabel();
         tfSuchen = new javax.swing.JTextField();
         btSuchen = new javax.swing.JButton();
         btNeu = new javax.swing.JButton();
@@ -143,11 +149,16 @@ public class StudentFenster extends javax.swing.JFrame {
         btLoeschen = new javax.swing.JButton();
         lbFach = new javax.swing.JLabel();
         tfFach = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         lbAnfangsJahr = new javax.swing.JLabel();
         tfAnfangsJahr = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         ogrenciler = new javax.swing.JTable();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        lbStufe = new javax.swing.JLabel();
+        tfStufe = new javax.swing.JTextField();
+        cbGeschlecht = new javax.swing.JComboBox<>();
+        btimport = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -197,8 +208,6 @@ public class StudentFenster extends javax.swing.JFrame {
             }
         });
 
-        lbSuche.setText("Suche");
-
         btSuchen.setText("Suchen");
         btSuchen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,7 +215,7 @@ public class StudentFenster extends javax.swing.JFrame {
             }
         });
 
-        btNeu.setText("Neu");
+        btNeu.setText("Neu/Clear");
         btNeu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btNeuActionPerformed(evt);
@@ -250,22 +259,15 @@ public class StudentFenster extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Matrikelnummer", "TC", "Vorname", "Nachname", "Fach", "Anfangsjahr"
+                "Matrikelnummer", "Vorname", "Nachname", "TC", "Fach", "Anfangsjahr"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         ogrenciler.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -275,116 +277,144 @@ public class StudentFenster extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(ogrenciler);
 
+        jDateChooser1.setDateFormatString("yyyy-MM-dd");
+
+        lbStufe.setText("Deutsche Niveau");
+
+        cbGeschlecht.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Auswählen", "Frau", "Mann" }));
+        cbGeschlecht.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbGeschlechtActionPerformed(evt);
+            }
+        });
+
+        btimport.setText("Import File");
+        btimport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btimportActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbSuche)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tfSuchen))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btimport)
+                        .addGap(74, 74, 74)
+                        .addComponent(btNeu))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbVorname)
                             .addComponent(lbNachname)
                             .addComponent(lbTC)
-                            .addComponent(lbGeschlecht)
-                            .addComponent(lbMatrikel))
+                            .addComponent(lbMatrikel)
+                            .addComponent(lbFach)
+                            .addComponent(lbAnfangsJahr))
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfGeschlecht, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                            .addComponent(tfTC)
-                            .addComponent(tfNachname)
-                            .addComponent(tfVorname)
-                            .addComponent(tfMatrikel)))
-                    .addComponent(btNeu, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(tfFach, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(tfTC, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                .addComponent(tfNachname)
+                                .addComponent(tfVorname)
+                                .addComponent(tfMatrikel))
+                            .addComponent(tfAnfangsJahr, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel2))
+                    .addComponent(tfSuchen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(btSpeichern)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btBearbeiten))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                        .addGap(95, 95, 95)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lbPLZ)
+                                .addComponent(btSpeichern)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btBearbeiten)
+                                .addGap(10, 10, 10))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lbHausnummer)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                                .addComponent(tfHausnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lbStrasse)
+                                .addComponent(lbGeschlecht)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfStrasse, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(cbGeschlecht, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lbBezirk)
+                                .addComponent(lbTel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfBezirk, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(lbOrt)
+                                .addComponent(lbStufe)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btSuchen)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(75, 75, 75)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(lbTel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(lbEmail)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(lbFach)
-                            .addGap(73, 73, 73)
-                            .addComponent(tfFach, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(lbAnfangsJahr)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tfStufe, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbEmail)
+                                    .addComponent(lbGeburtsdatum))
+                                .addGap(58, 105, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(tfEmail))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                                .addComponent(tfLoeschen, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
                                 .addComponent(btLoeschen)
-                                .addComponent(tfAnfangsJahr, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(84, 84, 84))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lbPLZ)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lbHausnummer)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                                        .addComponent(tfHausnummer, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lbStrasse)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfStrasse, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lbBezirk)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfBezirk, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(lbOrt)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 47, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lbGeburtsdatum)
-                        .addGap(18, 18, 18)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btSuchen)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbSuche)
-                    .addComponent(tfSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btSuchen))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btSuchen))))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbGeschlecht)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(41, 41, 41)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(lbMatrikel)
-                                .addComponent(tfMatrikel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tfOrt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lbFach)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tfFach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbOrt)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbMatrikel)
+                            .addComponent(tfMatrikel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lbOrt, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(tfOrt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cbGeschlecht, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -412,18 +442,24 @@ public class StudentFenster extends javax.swing.JFrame {
                     .addComponent(tfTel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbGeschlecht)
-                    .addComponent(tfGeschlecht, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbPLZ)
                     .addComponent(tfPLZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbAnfangsJahr)
-                    .addComponent(tfAnfangsJahr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                    .addComponent(lbFach)
+                    .addComponent(tfFach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbStufe)
+                    .addComponent(tfStufe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btNeu)
+                    .addComponent(tfAnfangsJahr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbAnfangsJahr))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btLoeschen)
+                    .addComponent(tfLoeschen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btimport)
                     .addComponent(btSpeichern)
                     .addComponent(btBearbeiten)
-                    .addComponent(btLoeschen))
+                    .addComponent(btNeu))
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -470,11 +506,11 @@ public class StudentFenster extends javax.swing.JFrame {
             
             if(onay==JOptionPane.YES_OPTION){
                 try{ 
-                    //DATABANK TABLOSUNUN ADINI HENÜZ BİLMİYORUZ
+                    
                     String query ="DELETE FROM Student WHERE Matrikelnummer=?";                
                     pst = con.prepareStatement(query);
-                    //SILME İSLEMİNİ SOR
-                    pst.setInt(1,Integer.parseInt(tfSuchen.getText()));
+                    
+                    pst.setInt(1,Integer.parseInt(tfLoeschen.getText()));
                     pst.executeUpdate();
                     
                     
@@ -494,12 +530,14 @@ public class StudentFenster extends javax.swing.JFrame {
     }//GEN-LAST:event_btLoeschenActionPerformed
 
     private void btNeuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNeuActionPerformed
+        
+        
         tfMatrikel.setText("");
         tfVorname.setText("");
         tfNachname.setText("");
         tfTC.setText("");
-        tfGeschlecht.setText("");
-        jDateChooser1.setDateFormatString("");
+        //cbGeschlecht.setUI(null);
+        //jDateChooser1.setDateFormatString("           ");
         tfOrt.setText("");
         tfBezirk.setText("");
         tfStrasse.setText("");
@@ -509,6 +547,8 @@ public class StudentFenster extends javax.swing.JFrame {
         tfEmail.setText("");
         tfTel.setText("");
         tfAnfangsJahr.setText("");
+        tfStufe.setText("");
+       
                
     }//GEN-LAST:event_btNeuActionPerformed
 //at Yusufhan
@@ -517,16 +557,16 @@ public class StudentFenster extends javax.swing.JFrame {
            try{
                
                String query = "insert into Student"
-                       +" (Matrikelnummer,Vorname,Nachname,TC,Geburtsdatum,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach,AnfangsJahr)"
-                       +" VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                       +" (Matrikelnummer,Vorname,Nachname,TC,Geburtsdatum,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach,AnfangsJahr,Stufe)"
+                       +" VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
                PreparedStatement pst = con.prepareStatement(query);
 
                pst.setInt(1,Integer.parseInt(tfMatrikel.getText()));
                pst.setString(2,tfVorname.getText());
                pst.setString(3,tfNachname.getText());
                pst.setString(4,tfTC.getText());
-               pst.setString(5,jDateChooser1.getDateFormatString());
-               pst.setString(6,tfGeschlecht.getText());
+               pst.setString(5,((JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText());
+               pst.setString(6,String.valueOf(cbGeschlecht.getSelectedItem()));
                pst.setInt(7,Integer.parseInt(tfPLZ.getText()));
                pst.setString(8,tfOrt.getText());
                pst.setString(9,tfBezirk.getText());
@@ -536,6 +576,7 @@ public class StudentFenster extends javax.swing.JFrame {
                pst.setString(13,tfEmail.getText());
                pst.setString(14,tfFach.getText());
                pst.setInt(15,Integer.parseInt(tfAnfangsJahr.getText()));
+               pst.setString(16, tfStufe.getText());
                pst.executeUpdate();
                
                
@@ -543,7 +584,7 @@ public class StudentFenster extends javax.swing.JFrame {
                show_user();
                JOptionPane.showMessageDialog(null,"Gespeichert!");
                
-           }catch(SQLException e){
+            }catch(SQLException e){
                System.out.println(e);
                               JOptionPane.showMessageDialog(null,"falsch angemeldet!"); 
            }
@@ -560,7 +601,7 @@ public class StudentFenster extends javax.swing.JFrame {
                 Student_list.removeAllElements();
                 ogrenci student;
                 while(rs.next()==true){
-                    student = new ogrenci(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geschlecht"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getInt("PLZ"), rs.getString("Fach"),rs.getString("Geburtsdatum"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"));
+                    student = new ogrenci(rs.getInt("Matrikelnummer"),rs.getString("Vorname"),rs.getString("Nachname"),rs.getInt("TC"),rs.getString("Geschlecht"),rs.getString("Ort"),rs.getString("Bezirk"),rs.getString("Strasse"),rs.getInt("Hausnummer"),rs.getInt("PLZ"), rs.getString("Fach"),rs.getString("Geburtsdatum"),rs.getString("Tel"),rs.getString("Email"),rs.getInt("AnfangsJahr"),rs.getString("Stufe"));
                     Student_list.add(student);                
                 }
             }catch(SQLException e){
@@ -576,23 +617,25 @@ public class StudentFenster extends javax.swing.JFrame {
             if(soru==0){
                 
                 try{
-                String query = "UPDATE Student SET Matrikelnummer=?, Vorname=?,Nachname=?,TC=?,Geburtsdatum=?,Geschlecht=?,Ort=?,Bezirk=?,Strasse=?,Hausnummer=?,PLZ=?,Tel=?,Email=?,Fach=?,AnfangsJahr=?";
+                String query = "UPDATE Student SET  Vorname=?,Nachname=?,TC=?,Geburtsdatum=?,Geschlecht=?,Ort=?,Bezirk=?,Strasse=?,Hausnummer=?,PLZ=?,Tel=?,Email=?,Fach=?,AnfangsJahr=?,Stufe=? WHERE Matrikelnummer=?";
                 pst=con.prepareStatement(query);
-                
-                pst.setString(1,tfMatrikel.getText());
-                pst.setString(2,tfVorname.getText());
-                pst.setString(3,tfNachname.getText());
-                pst.setInt(4,Integer.parseInt(tfTC.getText()));
-                pst.setString(5,tfGeschlecht.getText());
+                //ÇALIŞ
+                pst.setInt(16,Integer.parseInt(tfMatrikel.getText()));
+                pst.setString(1,tfVorname.getText());
+                pst.setString(2,tfNachname.getText());
+                pst.setInt(3,Integer.parseInt(tfTC.getText()));
+                pst.setString(4,((JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText());
+                pst.setString(5,String.valueOf(cbGeschlecht.getSelectedItem()));
                 pst.setString(6,tfOrt.getText());
                 pst.setString(7,tfBezirk.getText());
                 pst.setString(8,tfStrasse.getText());
-                pst.setInt(9,Integer.parseInt(tfHausnummer.getText()));
+                pst.setString(9,tfHausnummer.getText());
                 pst.setInt(10,Integer.parseInt(tfPLZ.getText()));
                 pst.setString(11,tfFach.getText());
                 pst.setString(12,tfEmail.getText());
                 pst.setString(13,tfTel.getText());
                 pst.setInt(14, Integer.parseInt(tfAnfangsJahr.getText()));
+                pst.setString(15,tfStufe.getText());
                 pst.executeUpdate();
                 
                 getAllUsers();
@@ -601,7 +644,8 @@ public class StudentFenster extends javax.swing.JFrame {
             }catch(SQLException e){
                 JOptionPane.showMessageDialog(null,"falsch angemeldet!");
             }
-        }else{
+        }
+            else{
               JOptionPane.showMessageDialog(null,"Nicht bearbeitet!");    
             }
         }
@@ -615,6 +659,7 @@ public class StudentFenster extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) ogrenciler.getModel();
 
         tfMatrikel.setText(model.getValueAt(row, 0).toString());
+        tfLoeschen.setText(model.getValueAt(row, 0).toString());
         tfTC.setText(model.getValueAt(row, 1).toString());
         tfVorname.setText(model.getValueAt(row, 2).toString());
         tfNachname.setText(model.getValueAt(row, 3).toString());
@@ -624,6 +669,77 @@ public class StudentFenster extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_ogrencilerMouseClicked
+
+    private void cbGeschlechtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbGeschlechtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbGeschlechtActionPerformed
+
+    private void btimportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btimportActionPerformed
+         if(con!=null){
+             
+            try{
+                JFileChooser chooser = new JFileChooser();
+                chooser.showOpenDialog(null);
+                File datachooser = chooser.getSelectedFile();
+                String filename = datachooser.getAbsolutePath();
+                System.out.println(filename);
+                
+                
+                
+                File studentfile = new File(filename);
+                FileReader fr = new FileReader(studentfile);
+                BufferedReader br =new BufferedReader(fr);
+                DefaultTableModel model = (DefaultTableModel) ogrenciler.getModel();
+                Object[] lines = br.lines().toArray();
+                   for(int s=0; s<lines.length; s++){
+                        System.out.println(lines[s].toString());
+                       String[] row = lines[s].toString().split("\t");
+                       
+                       String query = "insert into Student"
+                               + " (Matrikelnummer,Vorname,Nachname,TC,Geburtsdatum,Geschlecht,PLZ,Ort,Bezirk,Strasse,Hausnummer,Tel,Email,Fach,Anfangsjahr,Stufe) "
+                               + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+                                System.out.println(row[0]);
+                               pst = con.prepareStatement(query);
+                              
+                               pst.setInt(1, Integer.parseInt(row[0]));
+                               pst.setString(2, row[1]);
+                               pst.setString(3, row[2]);
+                               pst.setInt(4, Integer.parseInt(row[3]));
+                               pst.setString(5, row[4]);
+                               pst.setString(6, row[5]);
+                               pst.setString(7, row[6]);
+                               pst.setString(8, row[7]);
+                               pst.setString(9, row[8]);
+                               pst.setString(10, row[9]);
+                               pst.setString(11, row[10]);
+                               pst.setString(12, row[11]);
+                               pst.setString(13, row[12]);
+                               pst.setString(14, row[13]);
+                               pst.setInt(15, Integer.parseInt(row[14]));
+                               pst.setString(16, row[15]);
+                               
+                               pst.executeUpdate();
+                               
+                   }
+                
+                getAllUsers();
+                show_user();
+                
+                JOptionPane.showMessageDialog(null,"Datein werden importiert!");
+            
+            }
+            catch(IOException ex){
+                    JOptionPane.showMessageDialog(null,ex);
+                    
+                }
+            catch(SQLException e){
+                    JOptionPane.showMessageDialog(null,e);
+                    
+                } 
+             
+             
+         }
+    }//GEN-LAST:event_btimportActionPerformed
     
 
     /**
@@ -637,7 +753,10 @@ public class StudentFenster extends javax.swing.JFrame {
     private javax.swing.JButton btNeu;
     private javax.swing.JButton btSpeichern;
     private javax.swing.JButton btSuchen;
+    private javax.swing.JButton btimport;
+    private javax.swing.JComboBox<String> cbGeschlecht;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbAnfangsJahr;
@@ -652,7 +771,7 @@ public class StudentFenster extends javax.swing.JFrame {
     private javax.swing.JLabel lbOrt;
     private javax.swing.JLabel lbPLZ;
     private javax.swing.JLabel lbStrasse;
-    private javax.swing.JLabel lbSuche;
+    private javax.swing.JLabel lbStufe;
     private javax.swing.JLabel lbTC;
     private javax.swing.JLabel lbTel;
     private javax.swing.JLabel lbVorname;
@@ -661,13 +780,14 @@ public class StudentFenster extends javax.swing.JFrame {
     private javax.swing.JTextField tfBezirk;
     private javax.swing.JTextField tfEmail;
     private javax.swing.JTextField tfFach;
-    private javax.swing.JTextField tfGeschlecht;
     private javax.swing.JTextField tfHausnummer;
+    private javax.swing.JTextField tfLoeschen;
     private javax.swing.JTextField tfMatrikel;
     private javax.swing.JTextField tfNachname;
     private javax.swing.JTextField tfOrt;
     private javax.swing.JTextField tfPLZ;
     private javax.swing.JTextField tfStrasse;
+    private javax.swing.JTextField tfStufe;
     private javax.swing.JTextField tfSuchen;
     private javax.swing.JTextField tfTC;
     private javax.swing.JTextField tfTel;

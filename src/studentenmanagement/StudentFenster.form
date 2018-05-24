@@ -51,142 +51,156 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lbSuche" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="tfSuchen" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="btimport" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          <Component id="btNeu" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lbVorname" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lbNachname" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lbTC" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbGeschlecht" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lbMatrikel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbFach" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbAnfangsJahr" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="tfGeschlecht" alignment="0" pref="91" max="32767" attributes="0"/>
-                              <Component id="tfTC" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tfNachname" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tfVorname" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tfMatrikel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="tfFach" min="-2" pref="91" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="tfTC" alignment="0" pref="91" max="32767" attributes="0"/>
+                                  <Component id="tfNachname" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfVorname" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="tfMatrikel" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="tfAnfangsJahr" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="btNeu" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="tfSuchen" alignment="1" min="-2" pref="217" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                          <Component id="btSpeichern" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btBearbeiten" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Component id="lbPLZ" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btSpeichern" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="tfPLZ" min="-2" pref="91" max="-2" attributes="0"/>
+                                  <Component id="btBearbeiten" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="lbHausnummer" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="64" max="32767" attributes="0"/>
-                                  <Component id="tfHausnummer" min="-2" pref="91" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="lbStrasse" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbGeschlecht" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="tfStrasse" min="-2" pref="91" max="-2" attributes="0"/>
+                                  <Component id="cbGeschlecht" min="-2" pref="91" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="lbBezirk" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lbTel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="tfBezirk" min="-2" pref="91" max="-2" attributes="0"/>
+                                  <Component id="tfTel" min="-2" pref="91" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="lbOrt" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lbStufe" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="tfOrt" min="-2" pref="91" max="-2" attributes="0"/>
+                                  <Component id="tfStufe" min="-2" pref="91" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lbEmail" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbGeburtsdatum" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="58" pref="105" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jDateChooser1" max="32767" attributes="0"/>
+                                      <Component id="tfEmail" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace pref="69" max="32767" attributes="0"/>
+                                  <Component id="tfLoeschen" min="-2" pref="91" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                  <Component id="btLoeschen" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="lbPLZ" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="tfPLZ" min="-2" pref="91" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="lbHausnummer" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace pref="34" max="32767" attributes="0"/>
+                                          <Component id="tfHausnummer" min="-2" pref="91" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="lbStrasse" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="tfStrasse" min="-2" pref="91" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="lbBezirk" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="tfBezirk" min="-2" pref="91" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="lbOrt" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="tfOrt" min="-2" pref="91" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="0" pref="47" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
                           <Component id="btSuchen" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="lbTel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="tfTel" min="-2" pref="91" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lbEmail" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="tfEmail" min="-2" pref="91" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lbFach" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                              <Component id="tfFach" min="-2" pref="91" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="lbAnfangsJahr" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btLoeschen" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfAnfangsJahr" min="-2" pref="90" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lbGeburtsdatum" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="66" max="32767" attributes="0"/>
               </Group>
-              <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbSuche" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfSuchen" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btSuchen" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lbMatrikel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfMatrikel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfOrt" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbFach" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tfFach" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tfSuchen" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btSuchen" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lbOrt" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="lbGeschlecht" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lbMatrikel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tfMatrikel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lbOrt" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="tfOrt" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbGeschlecht" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -220,19 +234,26 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbGeschlecht" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfGeschlecht" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lbPLZ" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tfPLZ" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbAnfangsJahr" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfAnfangsJahr" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbFach" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfFach" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbStufe" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfStufe" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="57" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btNeu" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfAnfangsJahr" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbAnfangsJahr" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btLoeschen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfLoeschen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btimport" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btSpeichern" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btBearbeiten" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btLoeschen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btNeu" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="140" max="-2" attributes="0"/>
@@ -317,7 +338,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTCActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfGeschlecht">
+        <Component class="javax.swing.JTextField" name="tfLoeschen">
         </Component>
         <Component class="javax.swing.JTextField" name="tfPLZ">
         </Component>
@@ -339,11 +360,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tfEmail">
         </Component>
-        <Component class="javax.swing.JLabel" name="lbSuche">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Suche"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="tfSuchen">
         </Component>
         <Component class="javax.swing.JButton" name="btSuchen">
@@ -356,7 +372,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btNeu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Neu"/>
+            <Property name="text" type="java.lang.String" value="Neu/Clear"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btNeuActionPerformed"/>
@@ -417,12 +433,12 @@
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="6" rowCount="0">
-                    <Column editable="false" title="Matrikelnummer" type="java.lang.Integer"/>
-                    <Column editable="false" title="TC" type="java.lang.Integer"/>
-                    <Column editable="false" title="Vorname" type="java.lang.String"/>
-                    <Column editable="false" title="Nachname" type="java.lang.String"/>
-                    <Column editable="false" title="Fach" type="java.lang.String"/>
-                    <Column editable="false" title="Anfangsjahr" type="java.lang.Integer"/>
+                    <Column editable="true" title="Matrikelnummer" type="java.lang.Integer"/>
+                    <Column editable="true" title="Vorname" type="java.lang.String"/>
+                    <Column editable="true" title="Nachname" type="java.lang.String"/>
+                    <Column editable="true" title="TC" type="java.lang.Integer"/>
+                    <Column editable="true" title="Fach" type="java.lang.String"/>
+                    <Column editable="true" title="Anfangsjahr" type="java.lang.Integer"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -470,6 +486,43 @@
           </SubComponents>
         </Container>
         <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbStufe">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Deutsche Niveau"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tfStufe">
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbGeschlecht">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Ausw&#xe4;hlen"/>
+                <StringItem index="1" value="Frau"/>
+                <StringItem index="2" value="Mann"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbGeschlechtActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btimport">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Import File"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btimportActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
         </Component>
       </SubComponents>
     </Container>
