@@ -85,6 +85,7 @@ public class Anfangsfenster extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setText("Willkommen!");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
