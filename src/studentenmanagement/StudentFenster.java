@@ -64,7 +64,7 @@ public class StudentFenster extends javax.swing.JFrame {
         }catch (SQLException ex) {
             Logger.getLogger(StudentFenster.class.getName()).log(Level.SEVERE, null, ex);
         }
-            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true"; 
+            String url = "jdbc:hsqldb:file:C:\\Users\\emirhan\\Desktop\\sql\\;shutdown=true"; 
 
     }
     

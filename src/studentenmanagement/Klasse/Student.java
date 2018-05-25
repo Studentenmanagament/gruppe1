@@ -17,9 +17,9 @@ public class Student {
     int Hausnummer;
     int PLZ;
     int Anfangsjahr;
-    String Vorname,Nachname,Geschlecht,Ort, Bezirk, Strasse,Fach,Geburtsdatum, Tel,Email;
+    String Vorname,Nachname,Geschlecht,Ort, Bezirk, Strasse,Fach,Geburtsdatum, Tel,Email, Stufe;
     
-    public Student(int Matrikelnummer, String Vorname,String Nachname,int TC, String Geschlecht,String Ort,String Bezirk, String Strasse,int Hausnummer,int PLZ, String Fach, String Geburtsdatum, String Tel,String Email, int Anfangsjahr) {
+    public Student(int Matrikelnummer, String Vorname,String Nachname,int TC, String Geschlecht,String Ort,String Bezirk, String Strasse,int Hausnummer,int PLZ, String Fach, String Geburtsdatum, String Tel,String Email, int Anfangsjahr, String Stufe) {
         this.Matrikelnummer = Matrikelnummer;
         this.Vorname = Vorname;
         this.Nachname = Nachname;
@@ -34,8 +34,13 @@ public class Student {
         this.Email = Email; 
         this.Tel = Tel;
         this.Anfangsjahr = Anfangsjahr;
+        this.Stufe = Stufe;
     }
 
+    
+    public Student(int i) {
+        this.Matrikelnummer = i;
+    }
      
      public int getMatrikelnummer(){
         return Matrikelnummer;
@@ -83,5 +88,8 @@ public class Student {
     public int getAnfangsjahr(){
      return Anfangsjahr;
 }
+    public String getStufe() {
+     return Stufe;
+    }
   
 }

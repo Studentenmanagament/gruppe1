@@ -10,12 +10,15 @@ package studentenmanagement.Klasse;
  * @author domin
  */
     
- 
 public class ogrenci {
-    int Matrikelnummer, TC, Hausnummer, PLZ, Anfangsjahr;
-    String Vorname,Nachname,Geschlecht,Ort, Bezirk, Strasse,Fach,Geburtsdatum, Tel,Email;
+    int Matrikelnummer; 
+    int TC;
+    int Hausnummer;
+    int PLZ;
+    int Anfangsjahr;
+    String Vorname,Nachname,Geschlecht,Ort, Bezirk, Strasse,Fach,Geburtsdatum, Tel,Email, Stufe;
     
-    public ogrenci(int Matrikelnummer, String Vorname,String Nachname,int TC, String Geschlecht,String Ort,String Bezirk, String Strasse,int Hausnummer,int PLZ, String Fach, String Geburtsdatum, String Tel,String Email, int Anfangsjahr) {
+    public ogrenci (int Matrikelnummer, String Vorname,String Nachname,int TC, String Geschlecht,String Ort,String Bezirk, String Strasse,int Hausnummer,int PLZ, String Fach, String Geburtsdatum, String Tel,String Email, int Anfangsjahr, String Stufe) {
         this.Matrikelnummer = Matrikelnummer;
         this.Vorname = Vorname;
         this.Nachname = Nachname;
@@ -30,8 +33,8 @@ public class ogrenci {
         this.Email = Email; 
         this.Tel = Tel;
         this.Anfangsjahr = Anfangsjahr;
+        this.Stufe = Stufe;
     }
-
      
      public int getMatrikelnummer(){
         return Matrikelnummer;
@@ -79,5 +82,8 @@ public class ogrenci {
     public int getAnfangsjahr(){
      return Anfangsjahr;
 }
+    public String getStufe() {
+     return Stufe;
+    }
   
 }

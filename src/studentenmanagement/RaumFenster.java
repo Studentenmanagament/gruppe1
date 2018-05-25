@@ -36,14 +36,15 @@ public class RaumFenster extends javax.swing.JFrame {
 
        try { 
            Class.forName("org.hsqldb.jdbcDriver"); 
-           String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true";  
+           String url = "jdbc:hsqldb:file:C:\\Users\\emirhan\\Desktop\\sql\\;shutdown=true";  
            con = DriverManager.getConnection(url,"G1", "1234");
            } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LehrersFenster.class.getName()).log(Level.SEVERE, null, ex);
+               System.out.println(ex);
+               Logger.getLogger(LehrersFenster.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
+            System.out.println(ex);
             Logger.getLogger(LehrersFenster.class.getName()).log(Level.SEVERE, null, ex);
         }
-            String url = "jdbc:hsqldb:file:C:\\Users\\domin\\Desktop\\sql\\;shutdown=true"; 
     }
 
     
@@ -63,6 +64,7 @@ public class RaumFenster extends javax.swing.JFrame {
                     raum_list.add(raum);
                 }
             } catch (SQLException e) {
+                System.out.println(e);
                 JOptionPane.showMessageDialog(null,e);
             }
         }
@@ -453,7 +455,7 @@ public class RaumFenster extends javax.swing.JFrame {
     }//GEN-LAST:event_snameActionPerformed
 
     private void raum_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_raum_tableMouseClicked
-int row=raum_table.getSelectedRow();
+        int row=raum_table.getSelectedRow();
             DefaultTableModel model = (DefaultTableModel) raum_table.getModel();
        
                       
